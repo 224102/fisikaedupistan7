@@ -3,38 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Praktikum GLBB</title>
+  <title>Praktikum GLBB - Bifocal Modeling</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: #f5f7fa;
+      background-color: #f4f6fa;
       color: #333;
     }
 
-    header {
-      background-color: #ffffff;
+    .hero-header {
+      background: linear-gradient(135deg, #1976d2, #42a5f5);
+      color: white;
       padding: 30px 20px;
       text-align: center;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 4px solid #ffb300;
     }
 
-    header .logo {
+    .header-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .header-logo img {
       height: 60px;
-      margin-bottom: 10px;
     }
 
-    header h1 {
-      font-size: 1.8em;
-      color: #1976d2;
+    .header-text h1 {
+      font-size: 1.5em;
       margin: 0;
     }
 
-    header p {
+    .header-text p {
       font-size: 1em;
-      color: #444;
-      margin-top: 5px;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    .praktikum-title {
+      margin-top: 20px;
+      font-size: 2em;
+      font-weight: bold;
     }
 
     nav ul {
@@ -56,13 +72,59 @@
       font-weight: 600;
     }
 
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    }
+
+    .hero-text {
+      flex: 1 1 400px;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #1976d2;
+    }
+
+    .hero-text p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    .download-btn {
+      background-color: #ffb300;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hero-img {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .hero-img img {
+      max-width: 90%;
+      height: auto;
+    }
+
     section {
       padding: 40px 20px;
       max-width: 1000px;
-      margin: 0 auto 30px auto;
+      margin: 0 auto;
       background-color: #fff;
       border-radius: 8px;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
     }
 
     section h3 {
@@ -70,32 +132,11 @@
       margin-bottom: 20px;
     }
 
-    .download-btn {
-      background-color: #ffb300;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 10px;
-    }
-
     iframe {
       width: 100%;
       border: none;
       border-radius: 6px;
       min-height: 400px;
-    }
-
-    .hero-img {
-      text-align: center;
-      margin: 20px 0;
-    }
-
-    .hero-img img {
-      max-width: 300px;
-      height: auto;
     }
 
     footer {
@@ -109,27 +150,40 @@
 </head>
 
 <body>
-  <header>
-    <img src="img/um_logo_resized.png" alt="Logo UM" class="logo">
-    <h1>Modul Gerak Lurus Berubah Beraturan</h1>
-    <p>Berbasis Bifocal Modeling</p>
+
+  <header class="hero-header">
+    <div class="header-logo">
+      <img src="img/um_logo_resized.png" alt="Logo UM" />
+      <div class="header-text">
+        <h1>Departemen Fisika</h1>
+        <p>Universitas Negeri Malang</p>
+      </div>
+    </div>
+    <h2 class="praktikum-title">Praktikum GLBB</h2>
   </header>
 
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">Beranda</a></li>
       <li><a href="materi/glbb.html">Materi</a></li>
       <li><a href="praktikum.html">Praktikum</a></li>
-      <li><a href="https://forms.gle/gcSB4qCNuzJSfVLv7" target="_blank">Asesmen Sumatif</a></li>
-      <li><a href="profil.html">Profil Pengembang</a></li>
+      <li><a href="https://forms.gle/gcSB4qCNuzJSfVLv7" target="_blank">Asesmen</a></li>
+      <li><a href="profil.html">Profil</a></li>
     </ul>
   </nav>
 
-  <section class="hero-img">
-    <img src="img/ilustrasi-siswa.png" alt="Ilustrasi siswa belajar">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Eksplorasi Gerak Lurus Berubah Beraturan</h1>
+      <p>Gunakan simulasi interaktif dan lembar kerja digital untuk memperdalam pemahaman kalian tentang GLBB.</p>
+      <a href="#praktikum" class="download-btn">🔍 Mulai Praktikum</a>
+    </div>
+    <div class="hero-img">
+      <img src="img/ilustrasi-siswa.png" alt="Ilustrasi siswa belajar" />
+    </div>
   </section>
 
-  <section>
+  <section id="praktikum">
     <h3>🔬 Simulasi GLBB (PhET)</h3>
     <iframe src="https://phet.colorado.edu/sims/cheerpj/moving-man/latest/moving-man.html" height="1000"></iframe>
   </section>
@@ -156,7 +210,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang | Bifocal Modeling</p>
   </footer>
 </body>
 </html>
