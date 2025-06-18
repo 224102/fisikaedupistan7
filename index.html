@@ -1,44 +1,142 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modul GLBB</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul GLBB - Bifocal Modeling</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f4f6fa;
+      color: #333;
+    }
+
+    .hero-header {
+      background: linear-gradient(135deg, #1976d2, #42a5f5);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 4px solid #ffb300;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .header-logo img {
+      height: 60px;
+    }
+
+    .header-text h1 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    .header-text p {
+      font-size: 1em;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      background-color: #1976d2;
+      margin: 0;
+      padding: 10px 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    main h2 {
+      font-size: 2em;
+      color: #1976d2;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="img/um_logo_resized.png" alt="Logo UM" class="logo">
+
+  <header class="hero-header">
+    <div class="header-logo">
+      <img src="img/um_logo_resized.png" alt="Logo UM">
+      <div class="header-text">
         <h1>Modul Gerak Lurus Berubah Beraturan</h1>
         <p>Berbasis Bifocal Modeling</p>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="materi/glbb.html">Materi</a></li>
-            <li><a href="praktikum.html">Praktikum</a></li>
-            <li><a href="https://forms.gle/your-gform-link" target="_blank">Asesmen Sumatif</a></li>
-            <li><a href="profil.html">Profil Pengembang</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="materi/glbb.html">Materi</a></li>
+      <li><a href="praktikum.html">Praktikum</a></li>
+      <li><a href="https://forms.gle/your-gform-link" target="_blank">Asesmen Sumatif</a></li>
+      <li><a href="profil.html">Profil Pengembang</a></li>
+    </ul>
+  </nav>
 
-    <main>
-        <section>
-            <h2>Selamat datang!</h2>
-            <p>Modul ini dirancang untuk membantu siswa memahami konsep Gerak Lurus Berubah Beraturan (GLBB) secara mendalam dengan pendekatan <strong>Bifocal Modeling</strong>, yaitu menggabungkan pembelajaran nyata dan virtual.</p>
-            <p>Dengan modul ini, kamu bisa:</p>
-            <ul>
-                <li>Memahami konsep GLBB secara teori dan praktik</li>
-                <li>Melakukan praktikum secara daring melalui simulasi</li>
-                <li>Melatih keterampilan proses sains melalui asesmen</li>
-            </ul>
-            <p>Silakan gunakan menu navigasi di atas untuk menjelajahi isi modul ini!</p>
-        </section>
-    </main>
+  <main>
+    <section>
+      <h2>Selamat datang!</h2>
+      <p>Modul ini dirancang untuk membantu siswa memahami konsep <strong>Gerak Lurus Berubah Beraturan (GLBB)</strong> secara mendalam dengan pendekatan <strong>Bifocal Modeling</strong>, yaitu menggabungkan pembelajaran nyata dan virtual.</p>
+      <p>Dengan modul ini, kamu bisa:</p>
+      <ul>
+        <li>Memahami konsep GLBB secara teori dan praktik</li>
+        <li>Melakukan praktikum secara daring melalui simulasi</li>
+        <li>Melatih keterampilan proses sains melalui asesmen</li>
+      </ul>
+      <p>Silakan gunakan menu navigasi di atas untuk menjelajahi isi modul ini!</p>
+    </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
 </body>
 </html>
