@@ -60,16 +60,18 @@
       background-color: #1976d2;
       margin: 0;
       padding: 10px 0;
+      flex-wrap: wrap;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 5px 15px;
     }
 
     nav ul li a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
+      font-size: 0.95em;
     }
 
     .hero {
@@ -105,6 +107,7 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
+      display: inline-block;
     }
 
     .hero-img {
@@ -146,75 +149,83 @@
       font-size: 0.9em;
       color: #555;
     }
-<style>
-  @media (max-width: 768px) {
-    .header-logo {
-      flex-direction: column;
-      text-align: center;
-    }
 
-    .header-logo img {
-      height: 50px;
-    }
+    /* Tambahan responsive untuk HP */
+    @media (max-width: 768px) {
+      .header-logo {
+        flex-direction: column;
+        text-align: center;
+      }
 
-    .header-text h1 {
-      font-size: 1.2em;
-    }
+      .header-logo img {
+        height: 50px;
+      }
 
-    .header-text p {
-      font-size: 0.9em;
-    }
+      .header-text h1 {
+        font-size: 1.2em;
+      }
 
-    .praktikum-title {
-      font-size: 1.5em;
-      text-align: center;
-    }
+      .header-text p {
+        font-size: 0.9em;
+      }
 
-    nav ul {
-      flex-direction: column;
-      align-items: center;
-    }
+      .praktikum-title {
+        font-size: 1.5em;
+        text-align: center;
+      }
 
-    nav ul li {
-      margin: 8px 0;
-    }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
 
-    .hero {
-      flex-direction: column-reverse;
-      text-align: center;
-      padding: 30px 20px;
-    }
+      nav ul li {
+        margin: 8px 0;
+      }
 
-    .hero-text h1 {
-      font-size: 1.5em;
-    }
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 30px 20px;
+      }
 
-    .hero-text p {
-      font-size: 1em;
-    }
+      .hero-text h1 {
+        font-size: 1.5em;
+      }
 
-    iframe {
-      min-height: 400px;
-      height: auto;
-    }
+      .hero-text p {
+        font-size: 1em;
+      }
 
-    .download-btn {
-      display: inline-block;
-      font-size: 0.95em;
-      padding: 10px 18px;
-      margin-top: 10px;
-    }
+      iframe {
+        min-height: 400px;
+        height: auto;
+      }
 
-    section {
-      padding: 20px;
-      margin-bottom: 20px;
-    }
+      .download-btn {
+        font-size: 0.95em;
+        padding: 10px 18px;
+        margin-top: 10px;
+      }
 
-    .hero-img img {
-      max-width: 100%;
-    }
+      section {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .hero-img img {
+        max-width: 100%;
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
-</style>
+
+  nav ul li {
+    margin: 8px 0;
+  }
+}
+  </style>
 </head>
 
 <body>
@@ -230,15 +241,15 @@
     <h2 class="praktikum-title">Praktikum GLBB</h2>
   </header>
 
- <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="materi/glbb.html">Materi</a></li>
-    <li><a href="praktikum.html">Praktikum</a></li>
-    <li><a href="asesmen.html">Asesmen Sumatif</a></li>
-    <li><a href="profil.html">Profil Pengembang</a></li>
-  </ul>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="materi/glbb.html">Materi</a></li>
+      <li><a href="praktikum.html">Praktikum</a></li>
+      <li><a href="asesmen.html">Asesmen Sumatif</a></li>
+      <li><a href="profil.html">Profil Pengembang</a></li>
+    </ul>
+  </nav>
 
   <section class="hero">
     <div class="hero-text">
@@ -280,5 +291,6 @@
   <footer>
     <p>&copy; 2025 Muizz - Universitas Negeri Malang | Bifocal Modeling</p>
   </footer>
+
 </body>
 </html>
