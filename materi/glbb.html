@@ -1,56 +1,115 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi GLBB</title>
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materi GLBB</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f4f6fa;
+      color: #333;
+    }
+    header {
+      background-color: #1976d2;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      background-color: #1565c0;
+      margin: 0;
+      padding: 10px 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-bottom: 80px;
+    }
+    section {
+      background-color: #fff;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    section h2 {
+      color: #1976d2;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Materi Gerak Lurus Berubah Beraturan (GLBB)</h1>
-        <p>Modul Pembelajaran Berbasis Bifocal Modeling</p>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="glbb.html">Materi</a></li>
-            <li><a href="../praktikum.html">Praktikum</a></li>
-            <li><a href="https://forms.gle/your-gform-link" target="_blank">Asesmen Sumatif</a></li>
-            <li><a href="../profil.html">Profil Pengembang</a></li>
-        </ul>
-    </nav>
+  <header>
+    <h1>Materi Gerak Lurus Berubah Beraturan (GLBB)</h1>
+    <p>Modul Pembelajaran Berbasis Bifocal Modeling</p>
+  </header>
 
-    <main>
-        <section>
-            <h2>Apa itu GLBB?</h2>
-            <p>Gerak Lurus Berubah Beraturan (GLBB) adalah gerak benda pada lintasan lurus dengan perubahan kecepatan secara teratur.</p>
-            <ul>
-                <li>Percepatan tetap (a ≠ 0)</li>
-                <li>Lintasan lurus</li>
-                <li>Dapat berupa perlambatan atau percepatan</li>
-            </ul>
-        </section>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="glbb.html">Materi</a></li>
+      <li><a href="../praktikum.html">Praktikum</a></li>
+      <li><a href="../asesmen.html">Asesmen Sumatif</a></li>
+      <li><a href="../profil.html">Profil Pengembang</a></li>
+    </ul>
+  </nav>
 
-        <section>
-            <h2>Persamaan GLBB</h2>
-            <ul>
-                <li>v = v₀ + a·t</li>
-                <li>s = v₀·t + ½·a·t²</li>
-                <li>v² = v₀² + 2·a·s</li>
-            </ul>
-        </section>
+  <main>
+    <section>
+      <h2>Apa itu GLBB?</h2>
+      <p>Gerak Lurus Berubah Beraturan (GLBB) adalah gerak benda pada lintasan lurus dengan perubahan kecepatan secara teratur.</p>
+      <ul>
+        <li>Percepatan tetap (a ≠ 0)</li>
+        <li>Lintasan lurus</li>
+        <li>Dapat berupa perlambatan atau percepatan</li>
+      </ul>
+    </section>
 
-        <section>
-            <h2>Contoh Soal</h2>
-            <p>Sebuah mobil mula-mula diam, kemudian dipercepat 2 m/s² selama 5 detik. Hitung jarak tempuh mobil tersebut!</p>
-            <p><strong>Penyelesaian:</strong> s = ½·a·t² = ½·2·5² = 25 meter</p>
-        </section>
-    </main>
+    <section>
+      <h2>Persamaan GLBB</h2>
+      <ul>
+        <li>v = v₀ + a·t</li>
+        <li>s = v₀·t + ½·a·t²</li>
+        <li>v² = v₀² + 2·a·s</li>
+      </ul>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
-    </footer>
+    <section>
+      <h2>Contoh Soal</h2>
+      <p><strong>Soal:</strong> Sebuah mobil mula-mula diam, kemudian dipercepat 2 m/s² selama 5 detik. Hitung jarak tempuh mobil tersebut!</p>
+      <p><strong>Penyelesaian:</strong> s = ½·a·t² = ½·2·5² = 25 meter</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
 </body>
 </html>
