@@ -22,6 +22,20 @@
       padding: 30px 20px;
       text-align: center;
       border-bottom: 4px solid #ffb300;
+      position: relative;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1000;
     }
 
     .header-logo {
@@ -150,8 +164,26 @@
       color: #555;
     }
 
-    /* Tambahan responsive untuk HP */
+    /* Responsif */
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 8px 0;
+      }
+
       .header-logo {
         flex-direction: column;
         text-align: center;
@@ -174,15 +206,6 @@
         text-align: center;
       }
 
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav ul li {
-        margin: 8px 0;
-      }
-
       .hero {
         flex-direction: column-reverse;
         text-align: center;
@@ -195,6 +218,10 @@
 
       .hero-text p {
         font-size: 1em;
+      }
+
+      .hero-img img {
+        max-width: 100%;
       }
 
       iframe {
@@ -212,19 +239,7 @@
         padding: 20px;
         margin-bottom: 20px;
       }
-
-      .hero-img img {
-        max-width: 100%;
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 8px 0;
-  }
-}
+    }
   </style>
 </head>
 
@@ -238,6 +253,7 @@
         <p>Universitas Negeri Malang</p>
       </div>
     </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <h2 class="praktikum-title">Praktikum GLBB</h2>
   </header>
 
@@ -291,6 +307,12 @@
   <footer>
     <p>&copy; 2025 Muizz - Universitas Negeri Malang | Bifocal Modeling</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector("nav ul").classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>
