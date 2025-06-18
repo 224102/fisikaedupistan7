@@ -108,7 +108,19 @@
       font-size: 0.9em;
       color: #555;
     }
-  </style>
+    .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
 </head>
 <body>
   <header>
@@ -133,7 +145,7 @@
       <a href="#praktikum" class="download-btn">🔍 Mulai Praktikum</a>
     </div>
     <div class="hero-img">
-      <img src="img/ilustrasi-siswa.png" alt="Ilustrasi siswa belajar">
+      <img src=\"img/ilustrasi-siswa.png\" alt=\"Ilustrasi siswa belajar\" class=\"fade-in\">
     </div>
   </section>
 
