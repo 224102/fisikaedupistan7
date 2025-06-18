@@ -5,139 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Praktikum GLBB - Bifocal Modeling</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    * {box-sizing: border-box;}
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      background-color: #f3f6f9;
+      background-color: #f4f6fa;
+      color: #333;
     }
-    header, footer {
-      background-color: #1976d2;
-      color: white;
+    header {
+      background-color: #fff;
+      padding: 40px 20px;
       text-align: center;
-      padding: 20px 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    header h1 {
+      font-size: 2em;
+      color: #1976d2;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.1em;
     }
     nav ul {
-      list-style-type: none;
+      list-style: none;
       display: flex;
       justify-content: center;
-      background-color: #e3f2fd;
-      padding: 10px;
+      background-color: #1976d2;
       margin: 0;
+      padding: 10px 0;
     }
     nav ul li {
       margin: 0 15px;
     }
     nav ul li a {
+      color: #fff;
       text-decoration: none;
-      color: #1976d2;
-      font-weight: bold;
+      font-weight: 600;
     }
-    h2, h3 {
-      text-align: center;
-      color: #333;
-    }
-    .container {
+    .hero {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    }
+    .hero-text {
+      flex: 1 1 400px;
+      max-width: 600px;
       padding: 20px;
     }
-    .column {
-      flex: 1 1 450px;
-      margin: 10px;
-      background-color: white;
+    .hero-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #1976d2;
+    }
+    .hero-text p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+    .download-btn {
+      background-color: #ffb300;
+      color: #fff;
+      padding: 12px 24px;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero-img {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+    .hero-img img {
+      max-width: 90%;
+      height: auto;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    section h3 {
+      color: #1976d2;
+      margin-bottom: 20px;
     }
     iframe {
       width: 100%;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
+      min-height: 400px;
     }
-    .download-btn, button {
-      background-color: #1976d2;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .download-btn:hover, button:hover {
-      background-color: #1565c0;
-    }
-    form label {
-      font-weight: bold;
-      display: block;
-      margin-top: 10px;
-    }
-    form input, form select {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    section {
-      background-color: #fff;
+    footer {
+      text-align: center;
       padding: 20px;
-      margin: 20px;
-      border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      background-color: #f0f0f0;
+      font-size: 0.9em;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Praktikum Gerak Lurus Berubah Beraturan (GLBB)</h1>
-    <p>Modul Interaktif Berbasis Bifocal Modeling</p>
+    <h1>Praktikum GLBB</h1>
+    <p>Modul Interaktif Berbasis Bifocal Modeling Universitas Negeri Malang</p>
   </header>
 
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">Beranda</a></li>
       <li><a href="materi/glbb.html">Materi</a></li>
       <li><a href="praktikum.html">Praktikum</a></li>
-      <li><a href="https://forms.gle/your-gform-link" target="_blank">Asesmen Sumatif</a></li>
-      <li><a href="profil.html">Profil Pengembang</a></li>
+      <li><a href="https://forms.gle/your-gform-link" target="_blank">Asesmen</a></li>
+      <li><a href="profil.html">Profil</a></li>
     </ul>
   </nav>
 
-  <main>
-    <h2>💡 Eksplorasi Konsep GLBB melalui Praktikum Digital</h2>
-
-    <div class="container">
-      <div class="column">
-        <h3>🔬 Simulasi PhET GLBB</h3>
-        <iframe src="https://phet.colorado.edu/sims/cheerpj/moving-man/latest/moving-man.html" height="500"></iframe>
-      </div>
-
-      <div class="column">
-        <h3>📑 Prosedur Praktikum</h3>
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRe_g5shz3gMujsxSthAh-4LQIgkInIdFJv18N0RsscmmJn8r6cst-Ye5WbUbBSVQ/pubembed?start=false&loop=false&delayms=3000" height="315"></iframe>
-      </div>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Eksplorasi Gerak Lurus Berubah Beraturan</h1>
+      <p>Gunakan simulasi interaktif dan lembar kerja digital untuk memperdalam pemahaman kalian tentang GLBB.</p>
+      <a href="#praktikum" class="download-btn">🔍 Mulai Praktikum</a>
     </div>
+    <div class="hero-img">
+      <img src="img/illustrasi-siswa.svg" alt="Ilustrasi siswa belajar">
+    </div>
+  </section>
 
-    <section>
-      <h3>📥 Unduh LKPD</h3>
-      <a class="download-btn" href="file/LKPD_PHET.pdf" download>⬇️ Download LKPD (PDF)</a>
-    </section>
+  <section id="praktikum">
+    <h3>🔬 Simulasi GLBB (PhET)</h3>
+    <iframe src="https://phet.colorado.edu/sims/cheerpj/moving-man/latest/moving-man.html"></iframe>
+  </section>
 
-    <section>
-      <h3>📤 Unggah LKPD Kamu</h3>
-      <p>Silakan klik tombol di bawah ini untuk mengunggah file LKPD (PDF, max 5MB):</p>
-      <a href="https://forms.gle/gcSB4qCNuzJSfVLv7" target="_blank" class="download-btn">📝 Buka Form Unggah LKPD</a>
-    </section>
+  <section>
+    <h3>📑 Prosedur Praktikum</h3>
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRe_g5shz3gMujsxSthAh-4LQIgkInIdFJv18N0RsscmmJn8r6cst-Ye5WbUbBSVQ/pubembed?start=false&loop=false&delayms=3000"></iframe>
+  </section>
 
-    <section>
-      <h3>📂 Hasil Unggahan Siswa</h3>
-      <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQQjVcySTNa4aBFHhApF60WuJVy76hf08tgFRYp2Tp_go4lUjuuozdOxiEN13nW3D8bjXbA_nubPuWO/pubhtml?widget=true&amp;headers=false" height="400"></iframe>
-    </section>
-  </main>
+  <section>
+    <h3>📥 Unduh LKPD</h3>
+    <a class="download-btn" href="file/LKPD_PHET.pdf" download>⬇️ Download LKPD (PDF)</a>
+  </section>
+
+  <section>
+    <h3>📤 Unggah LKPD Kamu</h3>
+    <p>Silakan klik tombol di bawah ini untuk mengunggah file LKPD kalian (PDF, max 5MB):</p>
+    <a href="https://forms.gle/gcSB4qCNuzJSfVLv7" target="_blank" class="download-btn">📝 Buka Form Unggah</a>
+  </section>
+
+  <section>
+    <h3>📂 Hasil Unggahan Siswa</h3>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQQjVcySTNa4aBFHhApF60WuJVy76hf08tgFRYp2Tp_go4lUjuuozdOxiEN13nW3D8bjXbA_nubPuWO/pubhtml?widget=true&amp;headers=false"></iframe>
+  </section>
 
   <footer>
     <p>&copy; 2025 Muizz - Universitas Negeri Malang | Bifocal Modeling</p>
