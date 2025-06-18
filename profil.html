@@ -21,6 +21,20 @@
       padding: 30px 20px;
       text-align: center;
       border-bottom: 4px solid #ffb300;
+      position: relative;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1000;
     }
 
     .header-logo {
@@ -131,6 +145,24 @@
     }
 
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 8px 0;
+      }
+
       .header-logo {
         flex-direction: column;
         text-align: center;
@@ -142,15 +174,6 @@
 
       .header-text h1 {
         font-size: 1.2em;
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav ul li {
-        margin: 8px 0;
       }
 
       .profile-container {
@@ -174,6 +197,7 @@
         <p>Modul Bifocal Modeling GLBB</p>
       </div>
     </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
 
   <nav>
@@ -212,6 +236,12 @@
   <footer>
     <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector("nav ul").classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>
