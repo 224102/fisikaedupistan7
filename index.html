@@ -1,60 +1,200 @@
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li class="dropdown">
-      <a href="#">Materi ▼</a>
-      <ul class="dropdown-content">
-        <li><a href="materi/glbb.html">GLBB</a></li>
-        <li><a href="materi/gerak_melingkar.html">Gerak Melingkar</a></li>
-        <li><a href="materi/gelombang.html">Gelombang</a></li>
-        <li><a href="materi/optik.html">Optik</a></li>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modul GLBB - Bifocal Modeling</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f4f6fa;
+      color: #333;
+    }
+
+    .hero-header {
+      background: linear-gradient(135deg, #1976d2, #42a5f5);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 4px solid #ffb300;
+      position: relative;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .header-logo img {
+      height: 60px;
+    }
+
+    .header-text h1 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    .header-text p {
+      font-size: 1em;
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      background-color: #1976d2;
+      margin: 0;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    main h2 {
+      font-size: 2em;
+      color: #1976d2;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .header-logo {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-logo img {
+        height: 50px;
+      }
+
+      .header-text h1 {
+        font-size: 1.2em;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        width: 100%;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      main h2 {
+        font-size: 1.6em;
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero-header">
+    <div class="header-logo">
+      <img src="img/um_logo_resized.png" alt="Logo UM">
+      <div class="header-text">
+        <h1>Modul Gerak Lurus Berubah Beraturan</h1>
+        <p>Berbasis Bifocal Modeling</p>
+        <h1>Modul Fisika Untuk SMA-LAB UM</h1>
+      </div>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+@@ -183,26 +182,26 @@
+  <main>
+    <section>
+      <h2>Selamat datang!</h2>
+      <p>Modul ini dirancang untuk membantu siswa memahami konsep <strong>Gerak Lurus Berubah Beraturan (GLBB)</strong> secara mendalam dengan pendekatan <strong>Bifocal Modeling</strong>, yaitu menggabungkan pembelajaran nyata dan virtual.</p>
+      <p>Modul ini dirancang untuk membantu siswa memahami konsep <strong>Fisika</strong> dengan berbagai model pembelajaran</strong></p>
+      <p>Dengan modul ini, kamu bisa:</p>
+      <ul>
+        <li>Memahami konsep GLBB secara teori dan praktik</li>
+        <li>Memahami konsep Fisika secara teori dan praktik</li>
+        <li>Melakukan praktikum secara daring melalui simulasi</li>
+        <li>Melatih keterampilan proses sains melalui asesmen</li>
       </ul>
-    </li>
-    <li><a href="praktikum.html">Praktikum</a></li>
-    <li><a href="asesmen.html">Asesmen Sumatif</a></li>
-    <li><a href="profil.html">Profil Pengembang</a></li>
-  </ul>
-</nav>
+      <p>Silakan gunakan menu navigasi di atas untuk menjelajahi isi modul ini!</p>
+    </section>
+  </main>
 
-<style>
-/* Dropdown basic styling */
-nav ul li.dropdown {
-  position: relative;
-}
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
 
-nav ul li.dropdown ul.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 35px;
-  left: 0;
-  background-color: #1976d2;
-  min-width: 180px;
-  border-radius: 5px;
-  overflow: hidden;
-  z-index: 1000;
-  flex-direction: column;
-}
+  <script>
+    function toggleMenu() {
+      document.querySelector("nav ul").classList.toggle("show");
+    }
+  </script>
 
-nav ul li.dropdown ul.dropdown-content li {
-  margin: 0;
-}
-
-nav ul li.dropdown ul.dropdown-content li a {
-  padding: 10px 15px;
-  display: block;
-  color: #fff;
-  font-weight: 500;
-}
-
-nav ul li.dropdown:hover ul.dropdown-content {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Responsive fix for small screens */
-@media (max-width: 768px) {
-  nav ul li.dropdown ul.dropdown-content {
-    position: static;
-  }
-}
-</style>
+</body>
+</html>
