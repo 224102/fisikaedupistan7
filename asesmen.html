@@ -296,6 +296,16 @@
       <p>Tuliskan ringkasan pemahaman yang kalian peroleh hari ini tentang gerak melingkar dan gaya sentripetal:</p>
       <textarea></textarea>
     </section>
+ <button onclick="downloadPDF()" style="
+  background:#1976d2; 
+  color:white; 
+  border:none; 
+  padding:12px 20px; 
+  font-size:1em; 
+  border-radius:6px;
+  cursor:pointer;
+  margin-top:20px;
+">Download PDF</button>
   </main>
 
   <footer>
@@ -312,6 +322,65 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+
+  let y = 10;
+
+  function addText(label, value) {
+    doc.text(`${label}: ${value}`, 10, y);
+    y += 10;
+  }
+
+  // ambil nama & kelas
+  const nama = document.querySelector('input[name="nama"]').value;
+  const kelas = document.querySelector('input[name="kelas"]').value;
+
+  doc.setFontSize(14);
+  doc.text("Lembar Kerja Peserta Didik (LKPD)", 10, y); y+=10;
+  doc.text("Gerak Melingkar", 10, y); y+=10;
+  doc.setFontSize(12);
+
+  addText("Nama", nama);
+  addText("Kelas", kelas);
+  y += 5;
+
+  // ambil tabel
+  doc.text("Tabel Analisis Percobaan:", 10, y); y+=10;
+  document.querySelectorAll("table tr").forEach((row, i) => {
+    let cols = row.querySelectorAll("td input, th");
+    let rowText = [];
+    cols.forEach(c => {
+      rowText.push(c.tagName==="INPUT" ? c.value : c.innerText);
+    });
+    doc.text(rowText.join(" | "), 10, y);
+    y+=8;
+  });
+  y+=5;
+
+  // ambil textarea (jawaban diskusi, analisis, dll)
+  document.querySelectorAll("textarea").forEach((ta, idx) => {
+    let val = ta.value.trim();
+    if(val){
+      doc.text(`${idx+1}. ${val}`, 10, y);
+      y += 10;
+      if (y > 270) { // kalau halaman penuh, tambah halaman baru
+        doc.addPage();
+        y = 10;
+      }
+    }
+  });
+
+  // simpan pdf
+  doc.save(`LKPD_${nama||"noname"}.pdf`);
+}
+</script>
 
 </body>
 </html>
