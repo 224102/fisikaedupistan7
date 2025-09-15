@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asesmen - LKPD Gerak Melingkar</title>
+  <title>Asesmen</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -11,7 +11,6 @@
       margin: 0;
       background-color: #f4f6fa;
       color: #333;
-      line-height: 1.6;
     }
 
     .hero-header {
@@ -64,7 +63,6 @@
       color: #ffd700;
     }
 
-    /* Dropdown */
     nav ul li ul {
       display: none;
       position: absolute;
@@ -93,32 +91,22 @@
       font-weight: 500;
     }
 
-    .container {
+    main {
+      padding: 40px 20px;
       max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background: #fff;
+      margin: 0 auto 100px;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 30px;
       border-radius: 10px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
 
     h2 {
       color: #1976d2;
-      border-left: 5px solid #1976d2;
-      padding-left: 10px;
-      margin-bottom: 15px;
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 80px;
-      margin-top: 8px;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95em;
-      resize: vertical;
+      margin-top: 0;
     }
 
     table {
@@ -136,9 +124,14 @@
       text-align: center;
     }
 
-    th {
-      background-color: #e3f2fd;
-      color: #1976d2;
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      padding: 8px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
     }
 
     footer {
@@ -147,7 +140,6 @@
       background-color: #f0f0f0;
       font-size: 0.9em;
       color: #555;
-      margin-top: 30px;
     }
 
     @media (max-width: 768px) {
@@ -184,8 +176,8 @@
 <body>
 
   <header class="hero-header">
-    <h1>Asesmen - LKPD Gerak Melingkar</h1>
-    <p>Evaluasi & Analisis Konsep Fisika</p>
+    <h1>Asesmen</h1>
+    <p>Evaluasi Pemahaman Kamu Disini</p>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
   </header>
 
@@ -206,85 +198,91 @@
     </ul>
   </nav>
 
-  <div class="container">
-    <h2>Identitas</h2>
-    <p>Nama: <input type="text" style="width:60%"></p>
-    <p>Kelas: <input type="text" style="width:40%"></p>
+  <main>
+    <section>
+      <h2>LEMBAR KERJA PESERTA DIDIK (LKPD)</h2>
+      <h3>GERAK MELINGKAR</h3>
 
-    <h2>Capaian Pembelajaran</h2>
-    <p>Siswa menganalisis hubungan kecepatan sudut, percepatan sentripetal, dan gaya sentripetal pada gerak melingkar, serta penerapannya dalam fenomena sehari-hari.</p>
+      <h4>Identitas</h4>
+      <p>Nama: ____________ &nbsp;&nbsp; Kelas: ____________</p>
 
-    <h2>Tujuan Pembelajaran</h2>
-    <ul>
-      <li>Siswa mampu memahami hubungan gaya, percepatan, dan kecepatan pada gerak melingkar dengan benar.</li>
-      <li>Siswa mampu mengaplikasikan konsep gaya sentripetal untuk menganalisis fenomena alam dan teknologi dengan benar.</li>
-      <li>Siswa mampu mengevaluasi peranan dinamika rotasi dalam kehidupan dan rekayasa teknologi dengan benar.</li>
-    </ul>
+      <h4>Capaian Pembelajaran</h4>
+      <p>Siswa menganalisis hubungan kecepatan sudut, percepatan sentripetal, dan gaya sentripetal pada gerak melingkar, serta penerapannya dalam fenomena sehari-hari.</p>
 
-    <h2>Petunjuk</h2>
-    <ul>
-      <li>Berdoalah terlebih dahulu sebelum mengerjakan LKPD.</li>
-      <li>Bacalah dengan cermat setiap studi kasus yang diberikan.</li>
-      <li>Diskusikan dengan anggota kelompok untuk mencari solusi.</li>
-      <li>Catat hasil diskusi dan tuliskan dalam tabel yang tersedia.</li>
-      <li>Presentasikan hasil diskusi kelompok di depan kelas.</li>
-    </ul>
+      <h4>Tujuan Pembelajaran</h4>
+      <ul>
+        <li>Siswa mampu memahami hubungan gaya, percepatan, dan kecepatan pada gerak melingkar dengan benar.</li>
+        <li>Siswa mampu mengaplikasikan konsep gaya sentripetal untuk menganalisis fenomena alam dan teknologi dengan benar.</li>
+        <li>Siswa mampu mengevaluasi peranan dinamika rotasi dalam kehidupan dan rekayasa teknologi dengan benar.</li>
+      </ul>
 
-    <h2>Uraian Kegiatan</h2>
-    <h3>Orientasi Masalah</h3>
-    <p>baca materi yang ada di toolbar atas: 
-    </p>
-    <h3>Investigasi</h3>
-    <p>Percobaan virtual gerak melingkar berubah beraturan</p>
-    <h4>Simulasi Gerak Melingkar Berubah Beraturan</h4>
-    <video autoplay loop muted playsinline style="max-width:100%; border-radius:8px; margin:15px 0; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
-      <source src="video/simulasi-gmbb.mp4" type="video/mp4">
-      Browser kamu tidak mendukung video tag.
-    </video>
+      <h4>Petunjuk</h4>
+      <ul>
+        <li>Berdoalah terlebih dahulu sebelum mengerjakan LKPD.</li>
+        <li>Bacalah dengan cermat setiap studi kasus yang diberikan.</li>
+        <li>Diskusikan dengan anggota kelompok untuk mencari solusi.</li>
+        <li>Catat hasil diskusi dan tuliskan dalam tabel yang tersedia.</li>
+        <li>Presentasikan hasil diskusi kelompok di depan kelas.</li>
+      </ul>
 
-    <ol>
-      <li>Amati Video yang ada di-atas</li>
-      <li>Amati perubahan percepatan ketika kecepatan sudut dipercepat.</li>
-      <li>Tulis hasil kecepatan sudut dan waktu pada tabel yang tersedia.</li>
-      <li>Buatlah grafik kecepatan sudut terhadap waktu dan percepatan sudut terhadap waktu dengan \( \omega = v/R \) dan \( a_s = v^2/R \).</li>
-    </ol>
+      <h4>Uraian Kegiatan</h4>
+      <h5>Orientasi Masalah</h5>
+      <p>Buka tautan berikut <a href="https://muizz-afk.github.io/Bifocal-Modeling-GLBB/index.html" target="_blank">Simulasi Gerak Melingkar</a></p>
 
-    <h2>Tabel Analisis Percobaan</h2>
-    <table>
-      <tr>
-        <th>No</th>
-        <th>Waktu (s)</th>
-        <th>Kecepatan (m/s)</th>
-      </tr>
-      <tr><td>1</td><td></td><td></td></tr>
-      <tr><td>2</td><td></td><td></td></tr>
-      <tr><td>3</td><td></td><td></td></tr>
-      <tr><td>4</td><td></td><td></td></tr>
-      <tr><td>5</td><td></td><td></td></tr>
-    </table>
+      <h5>Investigasi</h5>
+      <p>Percobaan virtual gerak melingkar berubah beraturan</p>
 
-    <h2>Pertanyaan Diskusi</h2>
-    <p>1. Bagaimana hubungan antara kecepatan sudut terhadap waktu pada gerak melingkar berubah beraturan?</p>
-    <textarea></textarea>
-    <p>2. Bagaimana hubungan antara percepatan sudut terhadap waktu pada gerak melingkar berubah beraturan?</p>
-    <textarea></textarea>
-    <p>3. Fenomena sehari-hari apa yang sering kalian lihat pada gerak melingkar berubah beraturan?</p>
-    <textarea></textarea>
+      <!-- Video simulasi -->
+      <video autoplay loop muted playsinline controls 
+             style="max-width:100%; border-radius:8px; margin:15px 0; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+        <source src="video/simulasi-gmbb.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video tag.
+      </video>
 
-    <h2>Analisis</h2>
-    <p>1. Apakah hipotesis awal kalian sesuai dengan hasil percobaan dan studi kasus? Jelaskan!</p>
-    <textarea></textarea>
-    <p>2. Bandingkan hasil grafik kalian dengan fenomena nyata, misalnya pembalap MotoGp saat menikung, kipas yang berputar, dll!</p>
-    <textarea></textarea>
+      <p>Langkah-langkah percobaan:</p>
+      <ol>
+        <li>Amati Video diatas!</li>
+        <li>Amati perubahan percepatan ketika kecepatan dipercepat.</li>
+        <li>Tulis hasil kecepatan dan waktu pada tabel yang tersedia.</li>
+        <li>Buatlah grafik kecepatan sudut terhadap waktu dan percepatan sudut terhadap waktu dengan ω = v/R dan a<sub>s</sub> = v²/R.</li>
+      </ol>
 
-    <h2>Presentasi</h2>
-    <p>Tuliskan hasil analisis kelompok kalian tentang gerak melingkar berubah beraturan.</p>
-    <textarea style="min-height:200px"></textarea>
+      <h5>Tabel Analisis Percobaan</h5>
+      <table>
+        <tr><th>No</th><th>Waktu (s)</th><th>Kecepatan (m/s)</th></tr>
+        <tr><td>1</td><td></td><td></td></tr>
+        <tr><td>2</td><td></td><td></td></tr>
+        <tr><td>3</td><td></td><td></td></tr>
+        <tr><td>4</td><td></td><td></td></tr>
+        <tr><td>5</td><td></td><td></td></tr>
+      </table>
 
-    <h2>Kesimpulan</h2>
-    <p>Tuliskan ringkasan pemahaman yang kalian peroleh hari ini tentang gerak melingkar dan gaya sentripetal:</p>
-    <textarea style="min-height:200px"></textarea>
-  </div>
+      <h4>Pertanyaan Diskusi</h4>
+      <p>1. Bagaimana hubungan antara kecepatan sudut terhadap waktu pada gerak melingkar berubah beraturan?</p>
+      <textarea></textarea>
+
+      <p>2. Bagaimana hubungan antara percepatan sudut terhadap waktu pada gerak melingkar berubah beraturan?</p>
+      <textarea></textarea>
+
+      <p>3. Fenomena sehari-hari apa yang sering kalian lihat pada gerak melingkar berubah beraturan?</p>
+      <textarea></textarea>
+
+      <h4>Analisis</h4>
+      <p>Apakah hipotesis awal kalian sesuai dengan hasil percobaan dan studi kasus? Jelaskan!</p>
+      <textarea></textarea>
+
+      <p>Bandingkan hasil grafik kalian dengan fenomena nyata, misalnya pembalap MotoGP saat menikung, kipas yang berputar, dll!</p>
+      <textarea></textarea>
+
+      <h4>Presentasi</h4>
+      <p>Tuliskan hasil analisis kelompok kalian tentang gerak melingkar berubah beraturan.</p>
+      <textarea style="min-height:200px;"></textarea>
+
+      <h4>Kesimpulan</h4>
+      <p>Tuliskan ringkasan pemahaman yang kalian peroleh hari ini tentang gerak melingkar dan gaya sentripetal:</p>
+      <textarea style="min-height:200px;"></textarea>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
