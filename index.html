@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Modul Fisika</title>
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; }
@@ -73,6 +72,7 @@
 
     nav ul li {
       margin: 0 15px;
+      position: relative;
     }
 
     nav ul li a {
@@ -80,6 +80,45 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95em;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    /* Dropdown */
+    nav ul li ul.dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #1976d2;
+      padding: 10px 0;
+      list-style: none;
+      min-width: 250px;
+      border-radius: 4px;
+      z-index: 999;
+    }
+
+    nav ul li ul.dropdown li {
+      margin: 0;
+      text-align: left;
+    }
+
+    nav ul li ul.dropdown li a {
+      display: block;
+      padding: 10px 20px;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    nav ul li ul.dropdown li a:hover {
+      background: #1565c0;
+      color: #ffd700;
+    }
+
+    nav ul li:hover ul.dropdown {
+      display: block;
     }
 
     main {
@@ -173,7 +212,14 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="materi/glbb.html">Materi</a></li>
+      <li>
+        <a href="#">Materi ▾</a>
+        <ul class="dropdown">
+          <li><a href="materi/materi1.html">Materi 1: Gerak Melingkar Beraturan</a></li>
+          <li><a href="materi/materi2.html">Materi 2: Hubungan Roda-Roda</a></li>
+          <li><a href="materi/materi3.html">Materi 3: Gerak Melingkar Berubah Beraturan</a></li>
+        </ul>
+      </li>
       <li><a href="praktikum.html">Praktikum</a></li>
       <li><a href="asesmen.html">Asesmen Sumatif</a></li>
       <li><a href="profil.html">Profil Pengembang</a></li>
@@ -183,11 +229,11 @@
   <main>
     <section>
       <h2>Selamat datang!</h2>
-      <p>Modul ini dirancang untuk membantu siswa memahami konsep <strong>Fisika</strong> secara mendalam dengan pendekatan, yaitu menggabungkan pembelajaran nyata dan virtual.</p>
+      <p>Modul ini dirancang untuk membantu siswa memahami konsep <strong>Fisika</strong> secara mendalam dengan pendekatan bifocal modeling, yaitu menggabungkan pembelajaran nyata dan virtual.</p>
       <p>Dengan modul ini, kamu bisa:</p>
       <ul>
         <li>Memahami konsep Fisika secara Teori</li>
-        <li>Melakukan praktikum secara daring melalui bebrapa simulasi</li>
+        <li>Melakukan praktikum secara daring melalui beberapa simulasi</li>
         <li>Melatih keterampilan proses sains melalui asesmen</li>
       </ul>
       <p>Silakan gunakan menu navigasi di atas untuk menjelajahi isi modul ini!</p>
@@ -206,3 +252,4 @@
 
 </body>
 </html>
+
