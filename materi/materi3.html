@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Materi 2 - Hubungan Roda-Roda</title>
+  <title>Materi 3 - Gerak Melingkar Berubah Beraturan</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     body {
@@ -81,6 +81,24 @@
       margin-bottom: 15px;
     }
     p { text-align: justify; }
+    ul { margin-left: 1.5rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #e3f2fd;
+      color: #1976d2;
+    }
 
     /* Tombol ke atas */
     #scrollTopBtn {
@@ -107,11 +125,16 @@
       margin-top: 30px;
     }
   </style>
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <!-- Header + Navbar -->
   <header class="hero-header">
-    <h1>Modul Fisika - Materi 2</h1>
+    <h1>Modul Fisika - Materi 3</h1>
   </header>
   <nav>
     <ul>
@@ -120,11 +143,12 @@
         <a href="#">Materi ▾</a>
         <ul>
           <li><a href="materi1.html">Materi 1: Gerak Melingkar Beraturan</a></li>
+          <li><a href="materi2.html">Materi 2: Hubungan Roda-Roda</a></li>
           <li><a href="materi3.html">Materi 3: Gerak Melingkar Berubah Beraturan</a></li>
         </ul>
       </li>
       <li><a href="../praktikum.html">Praktikum</a></li>
-      <li><a href="../asesmen.html">Asesmen</a></li>
+      <li><a href="../asesmen.html">Asesmen Sumatif</a></li>
       <li><a href="../profil.html">Profil Pengembang</a></li>
     </ul>
   </nav>
@@ -133,30 +157,73 @@
   <div class="container">
 
     <div class="card">
-      <h2>Hubungan Roda Sepusat</h2>
-      <p>Pada roda sepusat, semua roda berada pada satu poros yang sama. Dengan demikian, kecepatan sudutnya sama tetapi jari-jarinya berbeda.</p>
-      <video autoplay loop muted playsinline controls width="100%">
-        <source src="video/roda-sepusat.mp4" type="video/mp4">
-        Browser kamu tidak mendukung video tag.
-      </video>
+      <h2>Gerak Melingkar Berubah Beraturan (GMBB)</h2>
+      <p>Amatilah sebuah pentil pada roda sepeda. Misalnya, pentil sepeda sedang berputar mulai dari 5 putaran/menit menjadi 100 putaran/menit, artinya pentil roda tersebut mengalami perubahan kecepatan sudut \(\omega\). Besarnya perubahan kecepatan sudut pada setiap titik adalah tetap. Sama dengan gerak lurus berubah beraturan, percepatan didefinisikan sebagai perbandingan antara perubahan kecepatan dan selang waktu terjadinya perubahan tersebut.</p>
+      <p style="text-align:center;">$$ a = \frac{\Delta v}{\Delta t} = \frac{dv}{dt} $$</p>
     </div>
 
     <div class="card">
-      <h2>Hubungan Roda Bersinggungan</h2>
-      <p>Pada roda bersinggungan, roda berputar bersentuhan langsung sehingga kecepatan linier di titik singgung sama, tetapi arah putarnya berlawanan.</p>
-      <video autoplay loop muted playsinline controls width="100%">
-        <source src="video/roda-bersinggungan.mp4" type="video/mp4">
-        Browser kamu tidak mendukung video tag.
-      </video>
+      <h2>Percepatan Sudut</h2>
+      <p>Sebab dalam gerak melingkar berubah beraturan kecepatan linear konstan namun kecepatan sudut berubah-ubah dalam selang waktu maka:</p>
+      <p style="text-align:center;">$$ a = \frac{d\omega}{dt} $$</p>
+      <p>Integrasi kedua sisi:</p>
+      <p style="text-align:center;">$$ \int a \, dt = \int \frac{d\omega}{dt} \, dt $$</p>
+      <p>Karena \(a\) konstan:</p>
+      <p style="text-align:center;">$$ a \int dt = \int d\omega $$</p>
+      <p>Sehingga:</p>
+      <p style="text-align:center;">$$ \omega = \omega_0 + at $$</p>
+      <p>Keterangan:</p>
+      <ul>
+        <li>\(\omega_0\) = kecepatan sudut awal (rad/s)</li>
+        <li>\(\omega\) = kecepatan sudut akhir (rad/s)</li>
+        <li>\(a\) = percepatan sudut (rad/s²)</li>
+        <li>\(t\) = waktu (s)</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h2>Hubungan Roda dengan Sabuk</h2>
-      <p>Pada roda yang dihubungkan dengan sabuk, kecepatan linier di sabuk sama, namun arah putarnya bisa searah atau berlawanan tergantung jenis sabuk.</p>
-      <video autoplay loop muted playsinline controls width="100%">
-        <source src="video/roda-sabuk.mp4" type="video/mp4">
-        Browser kamu tidak mendukung video tag.
-      </video>
+      <h2>Sudut yang Ditempuh</h2>
+      <p>Ketika benda melingkar berubah beraturan memutar maka sudut akan selalu berubah terhadap kecepatan dan waktu, dengan demikian:</p>
+      <p style="text-align:center;">$$ \omega = \frac{d\theta}{dt} $$</p>
+      <p>Integrasi kedua sisi:</p>
+      <p style="text-align:center;">$$ \int \omega \, dt = \int \frac{d\theta}{dt} \, dt $$</p>
+      <p>Substitusi \(\omega = \omega_0 + at\):</p>
+      <p style="text-align:center;">$$ \int (\omega_0 + at) \, dt = \int d\theta $$</p>
+      <p style="text-align:center;">$$ \omega_0 t + \tfrac{1}{2} a t^2 + C = \theta $$</p>
+      <p>Dengan demikian:</p>
+      <p style="text-align:center;">$$ \theta - \theta_0 = \omega_0 t + \tfrac{1}{2} a t^2 $$</p>
+      <p>Keterangan:</p>
+      <ul>
+        <li>\(\theta_0\) = sudut awal (rad)</li>
+        <li>\(\theta\) = sudut akhir (rad)</li>
+        <li>\(\omega_0\) = kecepatan sudut awal (rad/s)</li>
+        <li>\(\omega\) = kecepatan sudut akhir (rad/s)</li>
+        <li>\(a\) = percepatan sudut (rad/s²)</li>
+        <li>\(t\) = waktu (s)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Perbandingan dengan GLBB</h2>
+      <p>Persamaan GMBB mirip dengan GLBB:</p>
+      <table>
+        <tr>
+          <th>GLBB (percepatan konstan)</th>
+          <th>GMBB (percepatan sudut konstan)</th>
+        </tr>
+        <tr>
+          <td>\( v = v_0 + at \)</td>
+          <td>\( \omega = \omega_0 + at \)</td>
+        </tr>
+        <tr>
+          <td>\( x - x_0 = v_0 t + \tfrac{1}{2} a t^2 \)</td>
+          <td>\( \theta - \theta_0 = \omega_0 t + \tfrac{1}{2} a t^2 \)</td>
+        </tr>
+        <tr>
+          <td>\( v^2 = v_0^2 + 2a(x - x_0) \)</td>
+          <td>\( \omega^2 = \omega_0^2 + 2a(\theta - \theta_0) \)</td>
+        </tr>
+      </table>
     </div>
 
   </div>
