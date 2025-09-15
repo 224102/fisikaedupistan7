@@ -3,38 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asesmen</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Asesmen - LKPD Gerak Melingkar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
       background-color: #f4f6fa;
       color: #333;
+      line-height: 1.6;
     }
-
     .hero-header {
       background: linear-gradient(135deg, #1976d2, #42a5f5);
       color: white;
-      padding: 30px 20px;
+      padding: 20px;
       text-align: center;
       border-bottom: 4px solid #ffb300;
-      position: relative;
     }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 28px;
-      color: white;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      z-index: 1000;
-    }
-
     nav ul {
       list-style: none;
       display: flex;
@@ -44,158 +29,165 @@
       padding: 10px 0;
       flex-wrap: wrap;
     }
-
     nav ul li {
-      position: relative;
-      margin: 5px 15px;
+      margin: 0 15px;
     }
-
     nav ul li a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95em;
-      padding: 5px 10px;
-      display: inline-block;
     }
-
-    nav ul li a:hover {
-      color: #ffd700;
-    }
-
-    /* Dropdown */
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      background-color: #1976d2;
-      padding: 10px 0;
-      list-style: none;
-      margin: 0;
-      top: 100%;
-      left: 0;
-      min-width: 220px;
-      border-radius: 4px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    nav ul li:hover ul {
-      display: block;
-    }
-
-    nav ul li ul li {
-      margin: 0;
-    }
-
-    nav ul li ul li a {
-      padding: 8px 15px;
-      display: block;
-      font-weight: 500;
-    }
-
-    main {
-      padding: 40px 20px;
+    .container {
       max-width: 900px;
-      margin: 0 auto 100px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-
-    section {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    h2 {
+      color: #1976d2;
+      border-left: 5px solid #1976d2;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 80px;
+      margin-top: 8px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95em;
+      resize: vertical;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 8px;
       text-align: center;
     }
-
-    section ul {
-      text-align: left;
-      max-width: 600px;
-      margin: 20px auto;
+    th {
+      background-color: #e3f2fd;
+      color: #1976d2;
     }
-
     footer {
       text-align: center;
       padding: 20px;
       background-color: #f0f0f0;
       font-size: 0.9em;
       color: #555;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        display: none;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav ul li {
-        margin: 8px 0;
-      }
-
-      nav ul li ul {
-        position: static;
-        box-shadow: none;
-        min-width: 100%;
-      }
-
-      nav ul li ul li a {
-        padding: 8px 10px;
-      }
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-
   <header class="hero-header">
-    <h1>Asesmen</h1>
-    <p>Evaluasi Pemahaman Kamu Disini</p>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <h1>Asesmen - LKPD Gerak Melingkar</h1>
   </header>
-
   <nav>
-    <ul>
-      <li><a href="index.html">Beranda</a></li>
-      <li>
-        <a href="#">Materi ▾</a>
+    <a href="#">Materi ▾</a>
         <ul>
           <li><a href="materi/materi1.html">Materi 1: Gerak Melingkar Beraturan</a></li>
           <li><a href="materi/materi2.html">Materi 2: Hubungan Roda-Roda</a></li>
           <li><a href="materi/materi3.html">Materi 3: Gerak Melingkar Berubah Beraturan</a></li>
         </ul>
-      </li>
+    <ul>
+      <li><a href="index.html">Home</a></li>
       <li><a href="praktikum.html">Praktikum</a></li>
-      <li><a href="asesmen.html">Asesmen Sumatif</a></li>
+      <li><a href="asesmen.html">Asesmen</a></li>
       <li><a href="profil.html">Profil Pengembang</a></li>
     </ul>
   </nav>
 
-  <main>
-    <section>
-      <h2>Halaman Asesmen Dalam Pengembangan</h2>
-      <p>Nantinya, halaman ini akan berisi soal evaluasi untuk mengukur:</p>
-      <ul>
-        <li>Hasil belajar kalian</li>
-      </ul>
-      <p><em>Silakan cek kembali nanti ya 😊</em></p>
-    </section>
-  </main>
+  <div class="container">
+    <h2>Identitas</h2>
+    <p>Nama: <input type="text" style="width:60%"></p>
+    <p>Kelas: <input type="text" style="width:40%"></p>
+
+    <h2>Capaian Pembelajaran</h2>
+    <p>Siswa menganalisis hubungan kecepatan sudut, percepatan sentripetal, dan gaya sentripetal pada gerak melingkar, serta penerapannya dalam fenomena sehari-hari.</p>
+
+    <h2>Tujuan Pembelajaran</h2>
+    <ul>
+      <li>Siswa mampu memahami hubungan gaya, percepatan, dan kecepatan pada gerak melingkar dengan benar.</li>
+      <li>Siswa mampu mengaplikasikan konsep gaya sentripetal untuk menganalisis fenomena alam dan teknologi dengan benar.</li>
+      <li>Siswa mampu mengevaluasi peranan dinamika rotasi dalam kehidupan dan rekayasa teknologi dengan benar.</li>
+    </ul>
+
+    <h2>Petunjuk</h2>
+    <ul>
+      <li>Berdoalah terlebih dahulu sebelum mengerjakan LKPD.</li>
+      <li>Bacalah dengan cermat setiap studi kasus yang diberikan.</li>
+      <li>Diskusikan dengan anggota kelompok untuk mencari solusi.</li>
+      <li>Catat hasil diskusi dan tuliskan dalam tabel yang tersedia.</li>
+      <li>Presentasikan hasil diskusi kelompok di depan kelas.</li>
+    </ul>
+
+    <h2>Uraian Kegiatan</h2>
+    <h3>Orientasi Masalah</h3>
+    <p>Buka tautan berikut: 
+      <a href="https://muizz-afk.github.io/Bifocal-Modeling-GLBB/index.html" target="_blank">
+        Simulasi Gerak Melingkar
+      </a>
+    </p>
+
+    <h3>Investigasi</h3>
+    <p>Percobaan virtual gerak melingkar berubah beraturan</p>
+    <ol>
+      <li>Buka link yang telah diberikan.</li>
+      <li>Amati perubahan percepatan ketika kecepatan sudut dipercepat.</li>
+      <li>Tulis hasil kecepatan sudut dan waktu pada tabel yang tersedia.</li>
+      <li>Buatlah grafik kecepatan sudut terhadap waktu dan percepatan sudut terhadap waktu dengan \( \omega = v/R \) dan \( a_s = v^2/R \).</li>
+    </ol>
+
+    <h2>Tabel Analisis Percobaan</h2>
+    <table>
+      <tr>
+        <th>No</th>
+        <th>Waktu (s)</th>
+        <th>Kecepatan (m/s)</th>
+      </tr>
+      <tr><td>1</td><td></td><td></td></tr>
+      <tr><td>2</td><td></td><td></td></tr>
+      <tr><td>3</td><td></td><td></td></tr>
+      <tr><td>4</td><td></td><td></td></tr>
+      <tr><td>5</td><td></td><td></td></tr>
+    </table>
+
+    <h2>Pertanyaan Diskusi</h2>
+    <p>1. Bagaimana hubungan antara kecepatan sudut terhadap waktu pada gerak melingkar berubah beraturan?</p>
+    <textarea></textarea>
+    <p>2. Bagaimana hubungan antara percepatan sudut terhadap waktu pada gerak melingkar berubah beraturan?</p>
+    <textarea></textarea>
+    <p>3. Fenomena sehari-hari apa yang sering kalian lihat pada gerak melingkar berubah beraturan?</p>
+    <textarea></textarea>
+
+    <h2>Analisis</h2>
+    <p>1. Apakah hipotesis awal kalian sesuai dengan hasil percobaan dan studi kasus? Jelaskan!</p>
+    <textarea></textarea>
+    <p>2. Bandingkan hasil grafik kalian dengan fenomena nyata, misalnya pembalap MotoGp saat menikung, kipas yang berputar, dll!</p>
+    <textarea></textarea>
+
+    <h2>Presentasi</h2>
+    <p>Tuliskan hasil analisis kelompok kalian tentang gerak melingkar berubah beraturan.</p>
+    <textarea style="min-height:200px"></textarea>
+
+    <h2>Kesimpulan</h2>
+    <p>Tuliskan ringkasan pemahaman yang kalian peroleh hari ini tentang gerak melingkar dan gaya sentripetal:</p>
+    <textarea style="min-height:200px"></textarea>
+  </div>
 
   <footer>
     <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      document.querySelector("nav ul").classList.toggle("show");
-    }
-  </script>
-
 </body>
 </html>
