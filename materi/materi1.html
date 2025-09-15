@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Materi - Gerak Melingkar Berubah Beraturan</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
@@ -11,6 +11,7 @@
       margin: 0;
       background-color: #f4f6fa;
       color: #333;
+      line-height: 1.6;
     }
 
     /* Header */
@@ -50,7 +51,6 @@
     nav ul li:hover > ul {
       display: block;
     }
-
     /* Dropdown */
     nav ul ul {
       display: none;
@@ -60,7 +60,7 @@
       left: 0;
       padding: 10px 0;
       border-radius: 4px;
-      min-width: 180px;
+      min-width: 200px;
     }
     nav ul ul li {
       margin: 0;
@@ -82,9 +82,8 @@
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-    .card {
-      margin-bottom: 30px;
-    }
+
+    .card { margin-bottom: 30px; }
     h2 {
       color: #1976d2;
       border-left: 5px solid #1976d2;
@@ -92,6 +91,7 @@
       margin-bottom: 15px;
     }
     p { text-align: justify; }
+    ul { margin-left: 1.5rem; }
 
     /* Tombol ke atas */
     #scrollTopBtn {
@@ -107,9 +107,7 @@
       cursor: pointer;
       font-size: 18px;
     }
-    #scrollTopBtn:hover {
-      background: #004080;
-    }
+    #scrollTopBtn:hover { background: #004080; }
 
     footer {
       text-align: center;
@@ -127,17 +125,17 @@
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
+  <!-- Header + Navbar -->
   <header class="hero-header">
     <h1>Modul Fisika - Materi</h1>
   </header>
-
   <nav>
     <ul>
       <li><a href="../index.html">Home</a></li>
       <li>
         <a href="#">Materi ▾</a>
         <ul>
-          <li><a href="materi1.html">Materi 1: Hubungan Roda-Roda</a></li>
+          <li><a href="materi1.html">Materi 1: Gerak Melingkar Beraturan</a></li>
           <li><a href="materi2.html">Materi 2: Gerak Melingkar Berubah Beraturan</a></li>
         </ul>
       </li>
@@ -147,6 +145,7 @@
     </ul>
   </nav>
 
+  <!-- Konten Asli -->
   <div class="container">
     <div class="card">
       <h2>BAHAN AJAR</h2>
@@ -155,28 +154,61 @@
 
     <div class="card">
       <h2>Gerak Melingkar Beraturan</h2>
-      <p>Benda bergerak dalam suatu lingkaran pada laju tetap \(v\) dikatakan mengalami gerak melingkar beraturan...</p>
+      <p>Benda bergerak dalam suatu lingkaran pada laju tetap \(v\) dikatakan mengalami gerak melingkar beraturan. Dalam hal ini besarnya kecepatan tidak berubah, tetapi arah kecepatan selalu berubah pada saat benda berputar. Jadi, dalam gerak melingkar beraturan, laju linear adalah tetap, tetapi kecepatan linier tidak tetap.</p>
     </div>
 
     <div class="card">
       <h2>Periode dan Frekuensi</h2>
+      <p>Periode (\(T\)) didefinisikan sebagai selang waktu yang diperlukan oleh suatu benda untuk menempuh satu kali putaran (satu kali melingkar). Misalnya, jika untuk menempuh satu kali lintasan suatu benda memerlukan waktu 4 sekon, maka periode benda adalah 4 sekon.</p>
+      <p>Frekuensi (\(f\)) didefinisikan sebagai banyaknya putaran yang dapat dilakukan oleh suatu benda dalam selang waktu satu sekon. Misalnya, jika dalam 1 sekon suatu benda dapat mengitari sebanyak 4 kali, maka frekuensinya adalah 4 putaran/sekon. Satuan putaran/sekon dinamakan Hertz (Hz).</p>
       <p style="text-align:center;">
         $$ T = \frac{1}{n}, \quad f = \frac{1}{T} $$
       </p>
+      <p>Keterangan:</p>
+      <ul>
+        <li>\(T\) = Periode</li>
+        <li>\(n\) = banyaknya putaran</li>
+      </ul>
     </div>
 
     <div class="card">
       <h2>Laju Linear dan Kecepatan Sudut</h2>
+      <p>Laju linear didefinisikan sebagai hasil bagi panjang lintasan yang ditempuh dalam selang waktu tempuhnya. Dalam hal ini gerak melingkar maka lintasannya adalah keliling lingkaran. Keliling 1 lingkaran adalah \(360^\circ\) atau \(\theta = 2\pi R\), dengan \(R\) adalah jari-jari lingkaran.</p>
+      <p>Oleh sebab itu laju linear dapat ditulis sebagai:</p>
       <p style="text-align:center;">
-        $$ v = \frac{2\pi R}{T}, \quad v = \omega R $$
+        $$ v = \frac{2\pi R}{T} $$
       </p>
+      <p>Keterangan:</p>
+      <ul>
+        <li>\(v\) = laju linear</li>
+        <li>\(2\pi R\) = keliling lingkaran</li>
+        <li>\(T\) = periode</li>
+      </ul>
+      <p>Hubungan antara laju linear (\(v\)) terhadap kecepatan sudut (\(\omega\)) adalah:</p>
+      <p style="text-align:center;">
+        $$ v = \omega R $$
+      </p>
+      <p>Keterangan:</p>
+      <ul>
+        <li>\(v\) = laju linear (m/s)</li>
+        <li>\(\omega\) = kecepatan sudut</li>
+        <li>\(T\) = periode</li>
+        <li>\(R\) = jari-jari lingkaran</li>
+      </ul>
     </div>
 
     <div class="card">
       <h2>Percepatan Sentripetal</h2>
+      <p>Sebab benda melingkar memiliki perubahan posisi terus menerus maka perputaran benda tersebut akan menimbulkan percepatan. Dalam gerak melingkar percepatan yang timbul akibat perpindahan posisi adalah percepatan sentripetal. Percepatan ini menimbulkan gaya yang mengarah ke pusat lingkaran. Percepatan sentripetal didefinisikan sebagai:</p>
       <p style="text-align:center;">
         $$ a_s = \frac{v^2}{R} $$
       </p>
+      <p>Keterangan:</p>
+      <ul>
+        <li>\(a_s\) = percepatan sentripetal \((m/s^2)\)</li>
+        <li>\(v\) = laju linear</li>
+        <li>\(R\) = jari-jari lingkaran</li>
+      </ul>
     </div>
   </div>
 
