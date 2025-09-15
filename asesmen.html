@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Asesmen Sumatif</title>
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -47,6 +46,7 @@
     }
 
     nav ul li {
+      position: relative;
       margin: 5px 15px;
     }
 
@@ -55,6 +55,41 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95em;
+      padding: 5px 10px;
+      display: inline-block;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    /* Dropdown */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background-color: #1976d2;
+      padding: 10px 0;
+      list-style: none;
+      margin: 0;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      margin: 0;
+    }
+
+    nav ul li ul li a {
+      padding: 8px 15px;
+      display: block;
+      font-weight: 500;
     }
 
     main {
@@ -103,6 +138,16 @@
       nav ul li {
         margin: 8px 0;
       }
+
+      nav ul li ul {
+        position: static;
+        box-shadow: none;
+        min-width: 100%;
+      }
+
+      nav ul li ul li a {
+        padding: 8px 10px;
+      }
     }
   </style>
 </head>
@@ -116,8 +161,15 @@
 
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="materi/glbb.html">Materi</a></li>
+      <li><a href="index.html">Beranda</a></li>
+      <li>
+        <a href="#">Materi ▾</a>
+        <ul>
+          <li><a href="materi/materi1.html">Materi 1: Gerak Melingkar Beraturan</a></li>
+          <li><a href="materi/materi2.html">Materi 2: Hubungan Roda-Roda</a></li>
+          <li><a href="materi/materi3.html">Materi 3: Gerak Melingkar Berubah Beraturan</a></li>
+        </ul>
+      </li>
       <li><a href="praktikum.html">Praktikum</a></li>
       <li><a href="asesmen.html">Asesmen Sumatif</a></li>
       <li><a href="profil.html">Profil Pengembang</a></li>
