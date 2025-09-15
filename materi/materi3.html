@@ -3,77 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bahan Ajar - Gerak Melingkar Berubah Beraturan</title>
+  <title>Materi 3 - Gerak Melingkar Berubah Beraturan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #f5f7fa;
-      color: #333;
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
+      background-color: #f4f6fa;
+      color: #333;
+      line-height: 1.6;
     }
 
-    header {
-      background: #004080;
-      color: #fff;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    /* Header */
+    .hero-header {
+      background: linear-gradient(135deg, #1976d2, #42a5f5);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px solid #ffb300;
+    }
+    .hero-header h1 { margin: 0; font-size: 1.6em; }
+
+    /* Navbar */
+    nav ul {
+      list-style: none;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
+      background-color: #1976d2;
+      margin: 0;
+      padding: 10px 0;
+      flex-wrap: wrap;
     }
-
-    header h1 {
-      font-size: 1.2rem;
+    nav ul li {
+      margin: 0 15px;
+      position: relative;
     }
-
-    nav a {
+    nav ul li a {
       color: #fff;
-      margin-left: 1rem;
       text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
+      font-weight: 600;
+      font-size: 0.95em;
     }
+    nav ul li:hover > ul { display: block; }
 
-    nav a:hover {
-      color: #ffd700;
+    /* Dropdown */
+    nav ul ul {
+      display: none;
+      position: absolute;
+      background: #1976d2;
+      top: 100%;
+      left: 0;
+      padding: 10px 0;
+      border-radius: 4px;
+      min-width: 220px;
     }
+    nav ul ul li { margin: 0; }
+    nav ul ul li a {
+      display: block;
+      padding: 8px 15px;
+    }
+    nav ul ul li a:hover { background: #1565c0; }
 
+    /* Konten */
     .container {
       max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    .card {
+      margin: 30px auto;
+      padding: 20px;
       background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-
+    .card { margin-bottom: 30px; }
     h2 {
-      color: #004080;
-      margin-bottom: 1rem;
-      border-left: 5px solid #004080;
-      padding-left: 0.5rem;
+      color: #1976d2;
+      border-left: 5px solid #1976d2;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+    p { text-align: justify; }
+    ul { margin-left: 1.5rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #e3f2fd;
+      color: #1976d2;
     }
 
-    p { margin-bottom: 1rem; text-align: justify; }
-    ul { margin: 0.5rem 0 1rem 1.5rem; }
-    li { margin-bottom: 0.5rem; }
-
+    /* Tombol ke atas */
     #scrollTopBtn {
       display: none;
       position: fixed;
       bottom: 20px;
       right: 20px;
-      z-index: 99;
-      background: #004080;
+      background: #1976d2;
       color: white;
       border: none;
       padding: 10px 15px;
@@ -81,42 +114,63 @@
       cursor: pointer;
       font-size: 18px;
     }
-    #scrollTopBtn:hover { background: #002850; }
+    #scrollTopBtn:hover { background: #004080; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 30px;
+    }
   </style>
 
-  <!-- MathJax untuk rumus -->
+  <!-- MathJax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Bahan Ajar Fisika</h1>
-    <nav>
-      <a href="#">Beranda</a>
-      <a href="#">Materi</a>
-      <a href="#">Latihan</a>
-    </nav>
+  <!-- Header + Navbar -->
+  <header class="hero-header">
+    <h1>Modul Fisika - Materi 3</h1>
   </header>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li>
+        <a href="#">Materi ▾</a>
+        <ul>
+          <li><a href="materi1.html">Materi 1: Gerak Melingkar Beraturan</a></li>
+          <li><a href="materi2.html">Materi 2: Hubungan Roda-Roda</a></li>
+        </ul>
+      </li>
+      <li><a href="../praktikum.html">Praktikum</a></li>
+      <li><a href="../asesmen.html">Asesmen Sumatif</a></li>
+      <li><a href="../profil.html">Profil Pengembang</a></li>
+    </ul>
+  </nav>
 
+  <!-- Konten -->
   <div class="container">
 
     <div class="card">
       <h2>Gerak Melingkar Berubah Beraturan (GMBB)</h2>
       <p>Amatilah sebuah pentil pada roda sepeda. Misalnya, pentil sepeda sedang berputar mulai dari 5 putaran/menit menjadi 100 putaran/menit, artinya pentil roda tersebut mengalami perubahan kecepatan sudut \(\omega\). Besarnya perubahan kecepatan sudut pada setiap titik adalah tetap. Sama dengan gerak lurus berubah beraturan, percepatan didefinisikan sebagai perbandingan antara perubahan kecepatan dan selang waktu terjadinya perubahan tersebut.</p>
-      <p>$$ a = \frac{\Delta v}{\Delta t} = \frac{dv}{dt} $$</p>
+      <p style="text-align:center;">$$ a = \frac{\Delta v}{\Delta t} = \frac{dv}{dt} $$</p>
     </div>
 
     <div class="card">
       <h2>Percepatan Sudut</h2>
       <p>Sebab dalam gerak melingkar berubah beraturan kecepatan linear konstan namun kecepatan sudut berubah-ubah dalam selang waktu maka:</p>
-      <p>$$ a = \frac{d\omega}{dt} $$</p>
+      <p style="text-align:center;">$$ a = \frac{d\omega}{dt} $$</p>
       <p>Integrasi kedua sisi:</p>
-      <p>$$ \int a \, dt = \int \frac{d\omega}{dt} \, dt $$</p>
+      <p style="text-align:center;">$$ \int a \, dt = \int \frac{d\omega}{dt} \, dt $$</p>
       <p>Karena \(a\) konstan:</p>
-      <p>$$ a \int dt = \int d\omega $$</p>
+      <p style="text-align:center;">$$ a \int dt = \int d\omega $$</p>
       <p>Sehingga:</p>
-      <p>$$ \omega = \omega_0 + at $$</p>
+      <p style="text-align:center;">$$ \omega = \omega_0 + at $$</p>
       <p>Keterangan:</p>
       <ul>
         <li>\(\omega_0\) = kecepatan sudut awal (rad/s)</li>
@@ -129,14 +183,14 @@
     <div class="card">
       <h2>Sudut yang Ditempuh</h2>
       <p>Ketika benda melingkar berubah beraturan memutar maka sudut akan selalu berubah terhadap kecepatan dan waktu, dengan demikian:</p>
-      <p>$$ \omega = \frac{d\theta}{dt} $$</p>
+      <p style="text-align:center;">$$ \omega = \frac{d\theta}{dt} $$</p>
       <p>Integrasi kedua sisi:</p>
-      <p>$$ \int \omega \, dt = \int \frac{d\theta}{dt} \, dt $$</p>
+      <p style="text-align:center;">$$ \int \omega \, dt = \int \frac{d\theta}{dt} \, dt $$</p>
       <p>Substitusi \(\omega = \omega_0 + at\):</p>
-      <p>$$ \int (\omega_0 + at) \, dt = \int d\theta $$</p>
-      <p>$$ \omega_0 t + \tfrac{1}{2} a t^2 + C = \theta $$</p>
+      <p style="text-align:center;">$$ \int (\omega_0 + at) \, dt = \int d\theta $$</p>
+      <p style="text-align:center;">$$ \omega_0 t + \tfrac{1}{2} a t^2 + C = \theta $$</p>
       <p>Dengan demikian:</p>
-      <p>$$ \theta - \theta_0 = \omega_0 t + \tfrac{1}{2} a t^2 $$</p>
+      <p style="text-align:center;">$$ \theta - \theta_0 = \omega_0 t + \tfrac{1}{2} a t^2 $$</p>
       <p>Keterangan:</p>
       <ul>
         <li>\(\theta_0\) = sudut awal (rad)</li>
@@ -151,7 +205,7 @@
     <div class="card">
       <h2>Perbandingan dengan GLBB</h2>
       <p>Persamaan GMBB mirip dengan GLBB:</p>
-      <table border="1" cellpadding="8" cellspacing="0">
+      <table>
         <tr>
           <th>GLBB (percepatan konstan)</th>
           <th>GMBB (percepatan sudut konstan)</th>
@@ -174,6 +228,10 @@
   </div>
 
   <button id="scrollTopBtn">↑</button>
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
   <script>
     const btn = document.getElementById("scrollTopBtn");
     window.onscroll = () => {
