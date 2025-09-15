@@ -3,62 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bahan Ajar - Hubungan Roda-Roda</title>
+  <title>Materi 2 - Hubungan Roda-Roda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #f5f7fa;
-      color: #333;
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      padding: 0;
+      background-color: #f4f6fa;
+      color: #333;
+      line-height: 1.6;
     }
 
-    header {
-      background: #004080;
-      color: #fff;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    /* Header */
+    .hero-header {
+      background: linear-gradient(135deg, #1976d2, #42a5f5);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px solid #ffb300;
+    }
+    .hero-header h1 { margin: 0; font-size: 1.6em; }
+
+    /* Navbar */
+    nav ul {
+      list-style: none;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
+      background-color: #1976d2;
+      margin: 0;
+      padding: 10px 0;
+      flex-wrap: wrap;
     }
-
-    header h1 { font-size: 1.2rem; }
-    nav a {
-      color: #fff; margin-left: 1rem;
-      text-decoration: none; font-size: 0.95rem;
+    nav ul li {
+      margin: 0 15px;
+      position: relative;
     }
-    nav a:hover { color: #ffd700; }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+    nav ul li:hover > ul { display: block; }
 
+    /* Dropdown */
+    nav ul ul {
+      display: none;
+      position: absolute;
+      background: #1976d2;
+      top: 100%;
+      left: 0;
+      padding: 10px 0;
+      border-radius: 4px;
+      min-width: 220px;
+    }
+    nav ul ul li { margin: 0; }
+    nav ul ul li a {
+      display: block;
+      padding: 8px 15px;
+    }
+    nav ul ul li a:hover { background: #1565c0; }
+
+    /* Konten */
     .container {
-      max-width: 900px; margin: 2rem auto; padding: 0 1rem;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-
-    .card {
-      background: #fff; border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin-bottom: 2rem; padding: 1.5rem;
-    }
-
+    .card { margin-bottom: 30px; }
     h2 {
-      color: #004080; margin-bottom: 1rem;
-      border-left: 5px solid #004080; padding-left: 0.5rem;
+      color: #1976d2;
+      border-left: 5px solid #1976d2;
+      padding-left: 10px;
+      margin-bottom: 15px;
     }
+    p { text-align: justify; }
+    ul { margin-left: 1.5rem; }
 
-    p { margin-bottom: 1rem; text-align: justify; }
-    ul { margin: 0.5rem 0 1rem 1.5rem; }
-    li { margin-bottom: 0.5rem; }
-
+    /* Tombol ke atas */
     #scrollTopBtn {
-      display: none; position: fixed; bottom: 20px; right: 20px;
-      background: #004080; color: white; border: none;
-      padding: 10px 15px; border-radius: 50%; cursor: pointer;
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #1976d2;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
       font-size: 18px;
     }
-    #scrollTopBtn:hover { background: #002850; }
+    #scrollTopBtn:hover { background: #004080; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 30px;
+    }
   </style>
 
   <!-- MathJax -->
@@ -67,15 +115,27 @@
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Bahan Ajar Fisika</h1>
-    <nav>
-      <a href="#">Beranda</a>
-      <a href="#">Materi</a>
-      <a href="#">Latihan</a>
-    </nav>
+  <!-- Header + Navbar -->
+  <header class="hero-header">
+    <h1>Modul Fisika - Materi 2</h1>
   </header>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li>
+        <a href="#">Materi ▾</a>
+        <ul>
+          <li><a href="materi1.html">Gerak Melingkar Beraturan</a></li>
+          <li><a href="materi3.html">Gerak Melingkar Berubah Beraturan</a></li>
+        </ul>
+      </li>
+      <li><a href="../praktikum.html">Praktikum</a></li>
+      <li><a href="../asesmen.html">Asesmen Sumatif</a></li>
+      <li><a href="../profil.html">Profil Pengembang</a></li>
+    </ul>
+  </nav>
 
+  <!-- Konten -->
   <div class="container">
 
     <div class="card">
@@ -133,10 +193,18 @@
   </div>
 
   <button id="scrollTopBtn">↑</button>
+
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
   <script>
     const btn=document.getElementById("scrollTopBtn");
-    window.onscroll=function(){btn.style.display=(document.body.scrollTop>100||document.documentElement.scrollTop>100)?"block":"none";};
+    window.onscroll=function(){
+      btn.style.display=(document.body.scrollTop>100||document.documentElement.scrollTop>100)?"block":"none";
+    };
     btn.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});};
   </script>
 </body>
 </html>
+
