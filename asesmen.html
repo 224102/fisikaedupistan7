@@ -63,7 +63,6 @@
       color: #ffd700;
     }
 
-    /* Dropdown */
     nav ul li ul {
       display: none;
       position: absolute;
@@ -105,9 +104,23 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
 
-    section h2 {
-      margin-top: 0;
+    h2, h3, h4 {
       color: #1976d2;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95em;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
     }
 
     table {
@@ -115,26 +128,21 @@
       border-collapse: collapse;
       margin: 15px 0;
     }
+
     table, th, td {
       border: 1px solid #ccc;
     }
+
     th, td {
       padding: 8px;
       text-align: center;
     }
-    th {
-      background-color: #e3f2fd;
-      color: #1976d2;
-    }
 
-    textarea {
-      width: 100%;
-      min-height: 80px;
-      margin: 10px 0 20px;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-family: 'Inter', sans-serif;
+    video {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 15px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     footer {
@@ -207,8 +215,8 @@
       <h3>GERAK MELINGKAR</h3>
 
       <h4>Identitas</h4>
-      <p>Nama: ..........................................................</p>
-      <p>Kelas: .........................................................</p>
+      <p>Nama: <input type="text" name="nama"></p>
+      <p>Kelas: <input type="text" name="kelas"></p>
 
       <h4>Capaian Pembelajaran</h4>
       <p>Siswa menganalisis hubungan kecepatan sudut, percepatan sentripetal, dan gaya sentripetal pada gerak melingkar, serta penerapannya dalam fenomena sehari-hari.</p>
@@ -231,53 +239,53 @@
 
       <h4>Uraian Kegiatan</h4>
       <h5>Orientasi Masalah</h5>
-      <p>Buka tautan berikut <a href="https://muizz-afk.github.io/Bifocal-Modeling-GLBB/index.html" target="_blank">simulasi GLBB</a></p>
 
       <h5>Investigasi</h5>
       <p>Percobaan virtual gerak melingkar berubah beraturan</p>
 
-      <!-- Video simulasi -->
-      <video autoplay loop muted playsinline controls style="max-width:100%; border-radius:8px; margin:15px 0; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
-        <source src="video/simulasi-gmbb.mp4" type="video/mp4">
+      <video autoplay loop muted playsinline controls>
+        <source src="video/simulasi-glbb.mp4" type="video/mp4">
         Browser kamu tidak mendukung video tag.
       </video>
 
       <ol>
         <li>Amati video diatas!</li>
         <li>Amati perubahan percepatan ketika kecepatan dipercepat.</li>
-        <li>Tulis hasil kecepatan dan waktu pada tabel yang tersedia.</li>
-        <li>Buatlah grafik kecepatan sudut terhadap waktu dan percepatan sudut terhadap waktu dengan \( \omega = \frac{v}{R} \) dan \( a_s = \frac{v^2}{R} \).</li>
+        <li>Tulis hasil kecepatan sudut dan waktu pada tabel yang tersedia.</li>
+        <li>Buatlah grafik kecepatan sudut terhadap waktu dan percepatan sudut terhadap waktu dengan 
+          \( \omega = \frac{v}{R} \) dan \( a_s = \frac{v^2}{R} \).
+        </li>
       </ol>
 
-      <h4>Tabel Analisis Percobaan</h4>
+      <h5>Tabel Analisis Percobaan</h5>
       <table>
         <tr>
           <th>No</th>
           <th>Waktu (s)</th>
           <th>Kecepatan (m/s)</th>
         </tr>
-        <tr><td>1</td><td></td><td></td></tr>
-        <tr><td>2</td><td></td><td></td></tr>
-        <tr><td>3</td><td></td><td></td></tr>
-        <tr><td>4</td><td></td><td></td></tr>
-        <tr><td>5</td><td></td><td></td></tr>
+        <tr><td>1</td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td>2</td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td>3</td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td>4</td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td>5</td><td><input type="text"></td><td><input type="text"></td></tr>
       </table>
 
       <h4>Pertanyaan Diskusi</h4>
-      <p>1. Bagaimana hubungan antara kecepatan sudut terhadap waktu pada gerak melingkar berubah beraturan?</p>
+      <p>1. bagaimana hubungan antara kecepatan sudut terhadap waktu pada gerak melingkar berubah beraturan?</p>
       <textarea></textarea>
 
-      <p>2. Bagaimana hubungan antara percepatan sudut terhadap waktu pada gerak melingkar berubah beraturan?</p>
+      <p>2. bagaimana hubungan antara percepatan sudut terhadap waktu pada gerak melingkar berubah beraturan?</p>
       <textarea></textarea>
 
-      <p>3. Fenomena sehari-hari apa yang sering kalian lihat pada gerak melingkar berubah beraturan?</p>
+      <p>3. fenomena sehari-hari apa yang sering kalian lihat pada gerak melingkar berubah beraturan?</p>
       <textarea></textarea>
 
       <h4>Analisis</h4>
       <p>Apakah hipotesis awal kalian sesuai dengan hasil percobaan dan studi kasus? Jelaskan!</p>
       <textarea></textarea>
 
-      <p>Bandingkan hasil grafik kalian dengan fenomena nyata, misalnya pembalap MotoGP saat menikung, kipas yang berputar dll!</p>
+      <p>Bandingkan hasil grafik kalian dengan fenomena nyata, misalnya pembalap MotoGp saat menikung, kipas yang berputar dll!</p>
       <textarea></textarea>
 
       <h4>Presentasi</h4>
