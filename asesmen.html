@@ -63,6 +63,7 @@
       color: #ffd700;
     }
 
+    /* Dropdown */
     nav ul li ul {
       display: none;
       position: absolute;
@@ -104,9 +105,9 @@
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
 
-    h2 {
-      color: #1976d2;
+    section h2 {
       margin-top: 0;
+      color: #1976d2;
     }
 
     table {
@@ -114,24 +115,26 @@
       border-collapse: collapse;
       margin: 15px 0;
     }
-
     table, th, td {
       border: 1px solid #ccc;
     }
-
     th, td {
       padding: 8px;
       text-align: center;
+    }
+    th {
+      background-color: #e3f2fd;
+      color: #1976d2;
     }
 
     textarea {
       width: 100%;
       min-height: 80px;
-      padding: 8px;
-      margin: 8px 0;
+      margin: 10px 0 20px;
+      padding: 10px;
       border-radius: 6px;
       border: 1px solid #ccc;
-      font-family: inherit;
+      font-family: 'Inter', sans-serif;
     }
 
     footer {
@@ -204,7 +207,8 @@
       <h3>GERAK MELINGKAR</h3>
 
       <h4>Identitas</h4>
-      <p>Nama: ____________ &nbsp;&nbsp; Kelas: ____________</p>
+      <p>Nama: ..........................................................</p>
+      <p>Kelas: .........................................................</p>
 
       <h4>Capaian Pembelajaran</h4>
       <p>Siswa menganalisis hubungan kecepatan sudut, percepatan sentripetal, dan gaya sentripetal pada gerak melingkar, serta penerapannya dalam fenomena sehari-hari.</p>
@@ -227,29 +231,31 @@
 
       <h4>Uraian Kegiatan</h4>
       <h5>Orientasi Masalah</h5>
-      <p>Buka tautan berikut <a href="https://muizz-afk.github.io/Bifocal-Modeling-GLBB/index.html" target="_blank">Simulasi Gerak Melingkar</a></p>
+      <p>Buka tautan berikut <a href="https://muizz-afk.github.io/Bifocal-Modeling-GLBB/index.html" target="_blank">simulasi GLBB</a></p>
 
       <h5>Investigasi</h5>
       <p>Percobaan virtual gerak melingkar berubah beraturan</p>
 
       <!-- Video simulasi -->
-      <video autoplay loop muted playsinline controls 
-             style="max-width:100%; border-radius:8px; margin:15px 0; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+      <video autoplay loop muted playsinline controls style="max-width:100%; border-radius:8px; margin:15px 0; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
         <source src="video/simulasi-gmbb.mp4" type="video/mp4">
         Browser kamu tidak mendukung video tag.
       </video>
 
-      <p>Langkah-langkah percobaan:</p>
       <ol>
-        <li>Amati Video diatas!</li>
+        <li>Amati video diatas!</li>
         <li>Amati perubahan percepatan ketika kecepatan dipercepat.</li>
         <li>Tulis hasil kecepatan dan waktu pada tabel yang tersedia.</li>
-        <li>Buatlah grafik kecepatan sudut terhadap waktu dan percepatan sudut terhadap waktu dengan ω = v/R dan a<sub>s</sub> = v²/R.</li>
+        <li>Buatlah grafik kecepatan sudut terhadap waktu dan percepatan sudut terhadap waktu dengan \( \omega = \frac{v}{R} \) dan \( a_s = \frac{v^2}{R} \).</li>
       </ol>
 
-      <h5>Tabel Analisis Percobaan</h5>
+      <h4>Tabel Analisis Percobaan</h4>
       <table>
-        <tr><th>No</th><th>Waktu (s)</th><th>Kecepatan (m/s)</th></tr>
+        <tr>
+          <th>No</th>
+          <th>Waktu (s)</th>
+          <th>Kecepatan (m/s)</th>
+        </tr>
         <tr><td>1</td><td></td><td></td></tr>
         <tr><td>2</td><td></td><td></td></tr>
         <tr><td>3</td><td></td><td></td></tr>
@@ -271,16 +277,16 @@
       <p>Apakah hipotesis awal kalian sesuai dengan hasil percobaan dan studi kasus? Jelaskan!</p>
       <textarea></textarea>
 
-      <p>Bandingkan hasil grafik kalian dengan fenomena nyata, misalnya pembalap MotoGP saat menikung, kipas yang berputar, dll!</p>
+      <p>Bandingkan hasil grafik kalian dengan fenomena nyata, misalnya pembalap MotoGP saat menikung, kipas yang berputar dll!</p>
       <textarea></textarea>
 
       <h4>Presentasi</h4>
       <p>Tuliskan hasil analisis kelompok kalian tentang gerak melingkar berubah beraturan.</p>
-      <textarea style="min-height:200px;"></textarea>
+      <textarea></textarea>
 
       <h4>Kesimpulan</h4>
       <p>Tuliskan ringkasan pemahaman yang kalian peroleh hari ini tentang gerak melingkar dan gaya sentripetal:</p>
-      <textarea style="min-height:200px;"></textarea>
+      <textarea></textarea>
     </section>
   </main>
 
@@ -293,5 +299,11 @@
       document.querySelector("nav ul").classList.toggle("show");
     }
   </script>
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 </body>
 </html>
