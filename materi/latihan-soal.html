@@ -17,14 +17,21 @@
       color: #333;
     }
 
+    /* Header */
     .hero-header {
       background: linear-gradient(135deg, #1976d2, #42a5f5);
       color: white;
-      padding: 30px 20px;
+      padding: 20px;
       text-align: center;
       border-bottom: 4px solid #ffb300;
     }
 
+    .hero-header h1 {
+      margin: 0;
+      font-size: 1.6em;
+    }
+
+    /* Navbar */
     nav ul {
       list-style: none;
       display: flex;
@@ -34,33 +41,47 @@
       padding: 10px 0;
       flex-wrap: wrap;
     }
-
     nav ul li {
-      margin: 5px 15px;
+      margin: 0 15px;
+      position: relative;
     }
-
     nav ul li a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95em;
-      padding: 5px 10px;
-      display: inline-block;
+    }
+    nav ul li:hover > ul {
+      display: block;
+    }
+    /* Dropdown */
+    nav ul ul {
+      display: none;
+      position: absolute;
+      background: #1976d2;
+      top: 100%;
+      left: 0;
+      padding: 10px 0;
+      border-radius: 4px;
+      min-width: 200px;
+    }
+    nav ul ul li {
+      margin: 0;
+    }
+    nav ul ul li a {
+      display: block;
+      padding: 8px 15px;
+    }
+    nav ul ul li a:hover {
+      background: #1565c0;
     }
 
-    nav ul li a:hover {
-      color: #ffd700;
-    }
-
+    /* Konten */
     main {
       padding: 40px 20px;
       max-width: 900px;
-      margin: 0 auto 100px;
-    }
-
-    section {
-      background-color: #fff;
-      padding: 30px;
+      margin: 30px auto 100px;
+      background: #fff;
       border-radius: 10px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
@@ -107,62 +128,67 @@
   </style>
 </head>
 <body>
+  <!-- Header + Navbar -->
   <header class="hero-header">
     <h1>Latihan Soal</h1>
     <p>Gerak Lurus Vertikal</p>
   </header>
-
   <nav>
     <ul>
-      <li><a href="index.html">Beranda</a></li>
-      <li><a href="materi/materi1.html">Materi</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <a href="#">Materi ▾</a>
+        <ul>
+          <li><a href="materi/materi2.html">Materi 2: Hubungan Roda-Roda</a></li>
+          <li><a href="materi/materi3.html">Materi 3: Gerak Melingkar Berubah Beraturan</a></li>
+        </ul>
+      </li>
       <li><a href="praktikum.html">Praktikum</a></li>
       <li><a href="asesmen.html">Asesmen</a></li>
       <li><a href="profil.html">Profil Pengembang</a></li>
     </ul>
   </nav>
 
+  <!-- Konten -->
   <main>
-    <section>
-      <h2>CONTOH SOAL TKA</h2>
-      <p>
-        Seorang siswa melakukan percobaan gerak lurus vertikal dengan melempar bola ke atas dari permukaan tanah.
-        Bola tersebut dilempar dengan kecepatan awal \( v_0 = 5 \, \text{m/s} \).
-        Percepatan gravitasi dianggap \( g = 10 \, \text{m/s}^2 \). Persamaan ketinggian bola terhadap waktu:
-      </p>
-      <p style="text-align:center;">\( h(t) = v_0 t - \tfrac{1}{2} g t^2 \)</p>
+    <h2>CONTOH SOAL TKA</h2>
+    <p>
+      Seorang siswa melakukan percobaan gerak lurus vertikal dengan melempar bola ke atas dari permukaan tanah.
+      Bola tersebut dilempar dengan kecepatan awal \( v_0 = 5 \, \text{m/s} \).
+      Percepatan gravitasi dianggap \( g = 10 \, \text{m/s}^2 \). Persamaan ketinggian bola terhadap waktu:
+    </p>
+    <p style="text-align:center;">\( h(t) = v_0 t - \tfrac{1}{2} g t^2 \)</p>
 
-      <div id="plot"></div>
+    <div id="plot"></div>
 
-      <div class="table-container">
-        <h3>Berdasarkan informasi tersebut, pernyataan manakah yang benar? (bisa lebih dari satu jawaban)</h3>
-        <ul>
-          <li>Bola mencapai titik tertinggi pada \( t = 0,5 \, s \)</li>
-          <li>Kecepatan bola saat \( t = 1 \, s \) adalah \(-5 \, m/s\)</li>
-          <li>Bola jatuh kembali ke tanah pada \( t = 1 \, s \)</li>
-          <li>Tidak ada opsi yang benar</li>
-        </ul>
-      </div>
+    <div class="table-container">
+      <h3>Berdasarkan informasi tersebut, pernyataan manakah yang benar? (bisa lebih dari satu jawaban)</h3>
+      <ul>
+        <li>Bola mencapai titik tertinggi pada \( t = 0,5 \, s \)</li>
+        <li>Kecepatan bola saat \( t = 1 \, s \) adalah \(-5 \, m/s\)</li>
+        <li>Bola jatuh kembali ke tanah pada \( t = 1 \, s \)</li>
+        <li>Tidak ada opsi yang benar</li>
+      </ul>
+    </div>
 
-      <div class="table-container">
-        <h3>Berdasarkan informasi di atas, tentukan Benar atau Salah untuk setiap pernyataan berikut:</h3>
-        <table>
-          <tr><th>Pernyataan</th><th>Benar</th><th>Salah</th></tr>
-          <tr><td>Ketinggian maksimum bola adalah 1,25 m</td><td></td><td></td></tr>
-          <tr><td>Percepatan bola saat \( t = 0,5 \, s \) adalah 0 \( m/s^2 \)</td><td></td><td></td></tr>
-          <tr><td>Jika \( v_0 \) digandakan jadi 10 m/s, waktu ke puncak juga 2x</td><td></td><td></td></tr>
-        </table>
-      </div>
+    <div class="table-container">
+      <h3>Berdasarkan informasi di atas, tentukan Benar atau Salah untuk setiap pernyataan berikut:</h3>
+      <table>
+        <tr><th>Pernyataan</th><th>Benar</th><th>Salah</th></tr>
+        <tr><td>Ketinggian maksimum bola adalah 1,25 m</td><td></td><td></td></tr>
+        <tr><td>Percepatan bola saat \( t = 0,5 \, s \) adalah 0 \( m/s^2 \)</td><td></td><td></td></tr>
+        <tr><td>Jika \( v_0 \) digandakan jadi 10 m/s, waktu ke puncak juga 2x</td><td></td><td></td></tr>
+      </table>
+    </div>
 
-      <div class="table-container">
-        <h3>Berdasarkan informasi di atas, tentukan Setuju atau Tidak setuju untuk setiap pernyataan berikut:</h3>
-        <table>
-          <tr><th>Pernyataan</th><th>Setuju</th><th>Tidak Setuju</th></tr>
-          <tr><td>Jika \( g \) dikurangi setengah, ketinggian maksimum jadi 2x</td><td></td><td></td></tr>
-          <tr><td>Grafik kecepatan terhadap waktu berbentuk garis lurus menurun</td><td></td><td></td></tr>
-        </table>
-      </div>
-    </section>
+    <div class="table-container">
+      <h3>Berdasarkan informasi di atas, tentukan Setuju atau Tidak setuju untuk setiap pernyataan berikut:</h3>
+      <table>
+        <tr><th>Pernyataan</th><th>Setuju</th><th>Tidak Setuju</th></tr>
+        <tr><td>Jika \( g \) dikurangi setengah, ketinggian maksimum jadi 2x</td><td></td><td></td></tr>
+        <tr><td>Grafik kecepatan terhadap waktu berbentuk garis lurus menurun</td><td></td><td></td></tr>
+      </table>
+    </div>
   </main>
 
   <footer>
