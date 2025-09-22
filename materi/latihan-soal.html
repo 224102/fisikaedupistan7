@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Soal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f4f6fa;
+      color: #333;
+    }
+
+    .hero-header {
+      background: linear-gradient(135deg, #1976d2, #42a5f5);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 4px solid #ffb300;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      background-color: #1976d2;
+      margin: 0;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 5px 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95em;
+      padding: 5px 10px;
+      display: inline-block;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto 100px;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    h2, h3 {
+      color: #1976d2;
+      text-align: center;
+    }
+
+    #plot {
+      width: 100%;
+      max-width: 700px;
+      margin: 30px auto;
+    }
+
+    .table-container {
+      margin: 30px auto;
+      max-width: 750px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background: #eaeaea;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero-header">
+    <h1>Latihan Soal</h1>
+    <p>Gerak Lurus Vertikal</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="materi/materi1.html">Materi</a></li>
+      <li><a href="praktikum.html">Praktikum</a></li>
+      <li><a href="asesmen.html">Asesmen</a></li>
+      <li><a href="profil.html">Profil Pengembang</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>CONTOH SOAL TKA</h2>
+      <p>
+        Seorang siswa melakukan percobaan gerak lurus vertikal dengan melempar bola ke atas dari permukaan tanah.
+        Bola tersebut dilempar dengan kecepatan awal \( v_0 = 5 \, \text{m/s} \).
+        Percepatan gravitasi dianggap \( g = 10 \, \text{m/s}^2 \). Persamaan ketinggian bola terhadap waktu:
+      </p>
+      <p style="text-align:center;">\( h(t) = v_0 t - \tfrac{1}{2} g t^2 \)</p>
+
+      <div id="plot"></div>
+
+      <div class="table-container">
+        <h3>Berdasarkan informasi tersebut, pernyataan manakah yang benar? (bisa lebih dari satu jawaban)</h3>
+        <ul>
+          <li>Bola mencapai titik tertinggi pada \( t = 0,5 \, s \)</li>
+          <li>Kecepatan bola saat \( t = 1 \, s \) adalah \(-5 \, m/s\)</li>
+          <li>Bola jatuh kembali ke tanah pada \( t = 1 \, s \)</li>
+          <li>Tidak ada opsi yang benar</li>
+        </ul>
+      </div>
+
+      <div class="table-container">
+        <h3>Berdasarkan informasi di atas, tentukan Benar atau Salah untuk setiap pernyataan berikut:</h3>
+        <table>
+          <tr><th>Pernyataan</th><th>Benar</th><th>Salah</th></tr>
+          <tr><td>Ketinggian maksimum bola adalah 1,25 m</td><td></td><td></td></tr>
+          <tr><td>Percepatan bola saat \( t = 0,5 \, s \) adalah 0 \( m/s^2 \)</td><td></td><td></td></tr>
+          <tr><td>Jika \( v_0 \) digandakan jadi 10 m/s, waktu ke puncak juga 2x</td><td></td><td></td></tr>
+        </table>
+      </div>
+
+      <div class="table-container">
+        <h3>Berdasarkan informasi di atas, tentukan Setuju atau Tidak setuju untuk setiap pernyataan berikut:</h3>
+        <table>
+          <tr><th>Pernyataan</th><th>Setuju</th><th>Tidak Setuju</th></tr>
+          <tr><td>Jika \( g \) dikurangi setengah, ketinggian maksimum jadi 2x</td><td></td><td></td></tr>
+          <tr><td>Grafik kecepatan terhadap waktu berbentuk garis lurus menurun</td><td></td><td></td></tr>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
+  <script>
+    // Parameter
+    const v0 = 5;
+    const g = 10;
+    const t = [];
+    const h = [];
+
+    for (let i = 0; i <= 100; i++) {
+      const time = i / 100 * 1.0; // total waktu 1s
+      t.push(time);
+      h.push(v0*time - 0.5*g*time*time);
+    }
+
+    const trace = {
+      x: t,
+      y: h,
+      mode: 'lines',
+      name: 'h(t)',
+      line: {color: 'blue'}
+    };
+
+    const layout = {
+      title: "Grafik Ketinggian Bola terhadap Waktu",
+      xaxis: { title: "Waktu (s)" },
+      yaxis: { title: "Ketinggian (m)" },
+      shapes: [
+        {
+          type: 'line',
+          x0: 0.5, x1: 0.5, y0: 0, y1: 1.25,
+          line: {color: 'red', dash: 'dash'}
+        }
+      ]
+    };
+
+    Plotly.newPlot('plot', [trace], layout);
+  </script>
+</body>
+</html>
