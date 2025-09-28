@@ -94,8 +94,13 @@
 
     .cards { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
     .card {
-      background: #f1f5f9; padding: 25px; border-radius: 12px;
-      width: 260px; transition: transform 0.3s; cursor: pointer;
+      background: #374151; /* abu-abu gelap di light mode untuk kontras lebih baik */
+      color: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      width: 260px;
+      transition: transform 0.3s, background 0.3s, color 0.3s;
+      cursor: pointer;
     }
     .card:hover { transform: translateY(-8px); }
 
@@ -109,11 +114,22 @@
     }
     .card:hover h4 { transform: translateY(-3px); filter: brightness(1.2); }
 
-    .card p { font-size: 1rem; line-height: 1.5; color: #374151; transition: color 0.3s; }
-    body.dark-mode .card p { color: #e2e8f0; }
+    .card p { font-size: 1rem; line-height: 1.5; transition: color 0.3s; }
     .card:hover p { color: #6366f1; font-weight: 500; }
 
     .card-link { text-decoration: none; color: inherit; display: block; }
+
+    /* Dark mode card colors */
+    body.dark-mode .card {
+      background: #1e293b; /* abu-abu gelap untuk dark mode */
+      color: #e2e8f0;      /* teks terang */
+    }
+    body.dark-mode .card h4 {
+      color: #60a5fa; /* bisa disesuaikan */
+    }
+    body.dark-mode .card p {
+      color: #cbd5e1;
+    }
 
     footer {
       text-align: center; padding: 20px; font-size: 0.9em; color: #6b7280;
@@ -129,6 +145,7 @@
       <h1>Modul Fisika</h1>
     </div>
     <nav>
+      <a href="index.html">Home</a>
       <a href="profil.html">Profil</a>
       <button class="toggle-btn" id="toggle-dark">🌙</button>
     </nav>
