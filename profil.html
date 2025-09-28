@@ -1,286 +1,111 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Profil Pengembang</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      height: 100%;
+    body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f4f6fa;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
     }
+    body { background: #ffffff; color: #222; }
+    body.dark-mode { background: #0f172a; color: #e2e8f0; }
 
-    .hero-header {
-      background: linear-gradient(135deg, #1976d2, #42a5f5);
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-      border-bottom: 4px solid #ffb300;
-      position: relative;
+    /* Header */
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px; background: transparent;
     }
+    .logo { display: flex; align-items: center; gap: 15px; }
+    .logo img { height: 50px; }
+    header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
 
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 28px;
-      color: white;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      z-index: 1000;
+    nav a { margin-left: 25px; text-decoration: none; font-weight: 500; color: inherit; transition: color 0.3s; }
+    nav a:hover { color: #6366f1; }
+    .toggle-btn { margin-left: 25px; cursor: pointer; border: none; background: none; font-size: 1.5rem; transition: transform 0.3s; }
+    .toggle-btn:hover { transform: scale(1.2); }
+
+    /* Hero Profil */
+    .hero {
+      display: flex; justify-content: center; align-items: center;
+      padding: 80px 100px; flex-wrap: wrap; gap: 40px;
     }
-
-    .header-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    .hero-text { max-width: 500px; }
+    .hero-text h2 {
+      font-size: 2.4rem; font-weight: 800; line-height: 1.3; margin-bottom: 20px;
+      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
+    .hero-text p { font-size: 1.1rem; line-height: 1.6; color: #4b5563; }
+    body.dark-mode .hero-text p { color: #cbd5e1; }
 
-    .header-logo img {
-      height: 60px;
+    .hero img {
+      width: 220px; border-radius: 12px; object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s;
     }
+    .hero img:hover { transform: scale(1.05); }
 
-    .header-text h1 {
-      font-size: 1.5em;
-      margin: 0;
+    /* Social */
+    .social-links { margin-top: 20px; }
+    .social-links p { margin-bottom: 10px; font-weight: 600; }
+    .social-links img {
+      width: 45px; height: 45px; border-radius: 10px; margin-right: 12px;
+      transition: transform 0.3s;
     }
+    .social-links img:hover { transform: scale(1.1); }
 
-    .header-text p {
-      font-size: 1em;
-      margin: 0;
-      opacity: 0.9;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      background-color: #1976d2;
-      margin: 0;
-      padding: 10px 0;
-      flex-wrap: wrap;
-    }
-
-    nav ul li {
-      margin: 5px 15px;
-      position: relative;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95em;
-    }
-
-    /* Dropdown */
-    nav ul li ul.dropdown {
-      display: none;
-      position: absolute;
-      background-color: #1976d2;
-      list-style: none;
-      padding: 10px 0;
-      margin: 0;
-      top: 100%;
-      left: 0;
-      min-width: 220px;
-      z-index: 999;
-    }
-
-    nav ul li ul.dropdown li {
-      margin: 0;
-    }
-
-    nav ul li ul.dropdown li a {
-      display: block;
-      padding: 8px 15px;
-    }
-
-    nav ul li:hover ul.dropdown {
-      display: block;
-    }
-
-    main {
-      padding: 40px 20px 100px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .profile-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-
-    .profile-photo img {
-      width: 200px;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-
-    .profile-text p {
-      font-size: 1.1em;
-      line-height: 1.6em;
-    }
-
-    .quote {
-      font-style: italic;
-      margin-top: 15px;
-      color: #1976d2;
-      font-weight: 600;
-    }
-
-    .social-links {
-      margin-top: 20px;
-    }
-
-    .social-links p {
-      margin-bottom: 8px;
-    }
-
-    .social-links img.icon {
-      width: 40px;
-      height: 40px;
-      margin: 0 10px;
-      border-radius: 8px;
-      transition: transform 0.2s;
-    }
-
-    .social-links img.icon:hover {
-      transform: scale(1.1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #f0f0f0;
-      font-size: 0.9em;
-      color: #555;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        display: none;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav ul li {
-        margin: 8px 0;
-      }
-
-      nav ul li ul.dropdown {
-        position: static;
-        min-width: 100%;
-      }
-
-      .header-logo {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .header-logo img {
-        height: 50px;
-      }
-
-      .header-text h1 {
-        font-size: 1.2em;
-      }
-
-      .profile-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .profile-photo img {
-        width: 140px;
-      }
-    }
+    footer { text-align: center; padding: 20px; font-size: 0.9em; color: #6b7280; border-top: 1px solid #ccc; margin-top: 50px; }
+    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
   </style>
 </head>
 <body>
-
-  <header class="hero-header">
-    <div class="header-logo">
+  <header>
+    <div class="logo">
       <img src="img/um_logo_resized.png" alt="Logo UM">
-      <div class="header-text">
-        <h1>Profil Pengembang Modul</h1>
-        <p>Modul Bifocal Modeling GLBB</p>
-      </div>
+      <h1>Profil Pengembang</h1>
     </div>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <button class="toggle-btn" id="toggle-dark">🌙</button>
+    </nav>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="#">Materi ▾</a>
-        <ul class="dropdown">
-          <li><a href="materi/materi1.html">Gerak Melingkar Beraturan</a></li>
-          <li><a href="materi/materi2.html">Hubungan Roda-Roda</a></li>
-          <li><a href="materi/materi3.html">Gerak Melingkar Berubah Beraturan</a></li>
-        </ul>
-      </li>
-      <li><a href="praktikum.html">Praktikum</a></li>
-      <li><a href="asesmen.html">Asesmen</a></li>
-      <li><a href="profil.html">Profil Pengembang</a></li>
-    </ul>
-  </nav>
+  <section class="hero">
+    <img src="img/muizz_profil.jpg" alt="Foto Muizz">
+    <div class="hero-text">
+      <h2>Halo, Saya Muizz</h2>
+      <p>Saya mahasiswa Fisika Universitas Negeri Malang angkatan 2022. Lahir di Kediri, 27 Mei 2003. 
+         Saya hobi mendaki gunung 🌄 dan tertarik dalam inovasi pembelajaran fisika, komputasi, 
+         serta isu-isu konservasi lingkungan.</p>
+      <p><em>Salam Lestari 🌱<br>Salam Saintis Muda ⚛️</em></p>
 
-  <main>
-    <div class="profile-container">
-      <div class="profile-photo">
-        <img src="img/muizz_profil.jpg" alt="Foto Muizz">
-      </div>
-      <div class="profile-text">
-        <p>Halo! Saya adalah mahasiswa S1 dari Departemen Fisika Universitas Negeri Malang, angkatan 2022. Saya lahir di Kediri, pada tanggal 27 Mei 2003.</p>
-        <p>Saya memiliki hobi mendaki gunung 🌄 dan sangat tertarik dalam pengembangan inovasi pembelajaran fisika, komputasi, serta isu-isu konservasi lingkungan.</p>
-        <p class="quote">Salam Lestari 🌱<br>Salam Saintis Muda ⚛️</p>
-
-        <div class="social-links">
-          <p>📱 Temui saya di media sosial:</p>
-          <a href="https://www.instagram.com/muizz.altianto/" target="_blank">
-            <img src="img/instagram.jpg" alt="Instagram" class="icon">
-          </a>
-          <a href="https://www.tiktok.com/@muizz.altianto?_t=ZS-8xJQlZEbEmb&_r=1" target="_blank">
-            <img src="img/tiktok.jpg" alt="TikTok" class="icon">
-          </a>
-        </div>
+      <div class="social-links">
+        <p>📱 Temui saya di media sosial:</p>
+        <a href="https://www.instagram.com/muizz.altianto/" target="_blank">
+          <img src="img/instagram.jpg" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@muizz.altianto?_t=ZS-8xJQlZEbEmb&_r=1" target="_blank">
+          <img src="img/tiktok.jpg" alt="TikTok">
+        </a>
       </div>
     </div>
-  </main>
+  </section>
 
   <footer>
     <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
   </footer>
 
   <script>
-    function toggleMenu() {
-      document.querySelector("nav ul").classList.toggle("show");
-    }
+    const toggleBtn = document.getElementById("toggle-dark");
+    const body = document.body;
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
   </script>
-
 </body>
 </html>
