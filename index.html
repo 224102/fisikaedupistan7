@@ -69,11 +69,8 @@
       width: 40%;
       max-width: 450px;
       height: auto;
-      transition: transform 0.3s, filter 0.3s, opacity 0.6s;
-      opacity: 0;
-    }
-    .hero img.loaded {
-      opacity: 1;
+      transition: transform 0.3s, filter 0.3s, opacity 1s;
+      opacity: 1; /* langsung muncul */
     }
     .hero img:hover { transform: scale(1.05); filter: brightness(1.1); }
 
@@ -134,6 +131,7 @@
       <p>Website interaktif dengan simulasi, animasi, dan penjelasan singkat untuk memahami konsep fisika dengan menyenangkan.</p>
       <button id="scroll-btn">Mulai Belajar</button>
     </div>
+    <!-- Pastikan path gambar benar -->
     <img src="img/Gambar Kuantum.png" alt="Gambar Kuantum" id="kuantum-img">
   </section>
 
@@ -179,4 +177,18 @@
       toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
     });
 
-    // Smooth scroll k
+    // Smooth scroll ke section Materi
+    scrollBtn.addEventListener("click", () => {
+      const yOffset = -50;
+      const y = materiSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+
+    // Fade-in Gambar Kuantum (opsional, sekarang langsung muncul)
+    window.addEventListener('load', () => {
+      kuantumImg.classList.add('loaded');
+    });
+  </script>
+</body>
+</html>
+
