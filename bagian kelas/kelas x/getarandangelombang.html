@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materi 3: Getaran & Gelombang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
+      background: #ffffff;
+      color: #222;
+    }
+    body.dark-mode { background: #0f172a; color: #e2e8f0; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px; background: transparent;
+    }
+    .logo { display: flex; align-items: center; gap: 15px; }
+    .logo img { height: 50px; }
+    header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
+
+    nav a { margin-left: 25px; text-decoration: none; font-weight: 500; color: inherit; transition: color 0.3s; }
+    nav a:hover { color: #6366f1; }
+    .toggle-btn { margin-left: 25px; cursor: pointer; border: none; background: none; font-size: 1.5rem; transition: transform 0.3s; }
+    .toggle-btn:hover { transform: scale(1.2); }
+
+    .materi-content {
+      padding: 60px 80px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .materi-content h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .materi-content p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+      color: #4b5563;
+      transition: color 0.3s;
+    }
+    body.dark-mode .materi-content p { color: #cbd5e1; }
+
+    footer { text-align: center; padding: 20px; font-size: 0.9em; color: #6b7280; border-top: 1px solid #ccc; margin-top: 50px; }
+    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../img/um_logo_resized.png" alt="Logo UM">
+      <h1>Materi 3: Getaran & Gelombang</h1>
+    </div>
+    <nav>
+      <a href="../kelas x.html">Kembali</a>
+      <a href="../../profil.html">Profil</a>
+      <button class="toggle-btn" id="toggle-dark">🌙</button>
+    </nav>
+  </header>
+
+  <section class="materi-content">
+    <h2>Getaran & Gelombang</h2>
+    <p>Materi ini masih dalam pengembangan. Nantikan rangkuman lengkap tentang getaran, gelombang mekanik, dan contoh soal interaktif untuk mempermudah pemahaman konsep.</p>
+    <p>Sementara ini, halaman ini berfungsi sebagai placeholder. Konten interaktif seperti simulasi atau contoh soal akan segera ditambahkan.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-dark");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>
