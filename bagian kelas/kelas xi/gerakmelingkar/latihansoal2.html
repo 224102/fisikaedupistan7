@@ -15,39 +15,57 @@ body {
 }
 body.dark-mode { background:#0f172a; color:#e2e8f0; }
 
-header { display:flex; justify-content:space-between; align-items:center; padding:15px 40px; background:transparent; }
-.logo { display:flex; align-items:center; gap:15px; }
-.logo img { height:50px; }
-header h1 { margin:0; font-size:1.6rem; font-weight:700; color:#4f46e5; }
-nav a { margin-left:25px; text-decoration:none; font-weight:500; color:inherit; transition:color 0.3s; }
+header { display:flex; justify-content:space-between; align-items:center; padding:15px 20px; background:transparent; flex-wrap:wrap; }
+.logo { display:flex; align-items:center; gap:10px; flex-shrink:1; }
+.logo img { height:45px; }
+header h1 { margin:0; font-size:1.5rem; font-weight:700; color:#4f46e5; }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin-top:5px; }
+nav a { text-decoration:none; font-weight:500; color:inherit; transition:color 0.3s; }
 nav a:hover { color:#6366f1; }
-.toggle-btn { margin-left:25px; cursor:pointer; border:none; background:none; font-size:1.5rem; transition: transform 0.3s; }
+.toggle-btn { cursor:pointer; border:none; background:none; font-size:1.5rem; transition: transform 0.3s; }
 .toggle-btn:hover { transform:scale(1.2); }
 
-section.hero { padding:60px 40px; }
-section.hero h2 { font-size:2.5rem; font-weight:800; text-align:center; margin-bottom:20px;
+section.hero { padding:50px 20px; }
+section.hero h2 { font-size:2rem; font-weight:800; text-align:center; margin-bottom:15px;
   background: linear-gradient(90deg,#a855f7,#f472b6,#fb923c);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-section.hero p { font-size:1.1rem; text-align:center; margin-bottom:30px; color:#4b5563; }
+section.hero p { font-size:1rem; text-align:center; margin-bottom:20px; color:#4b5563; }
 body.dark-mode section.hero p { color:#cbd5e1; }
-.btn { display:inline-block; margin:10px 10px 0 0; padding:12px 28px; font-weight:600; border:none; border-radius:8px; 
+
+.btn { display:inline-block; margin:10px 5px 0 0; padding:10px 20px; font-weight:600; border:none; border-radius:8px; 
   background:#6366f1; color:white; cursor:pointer; transition:0.3s; text-align:center; text-decoration:none; }
 .btn:hover { background:#4f46e5; transform:scale(1.05); }
 
-section.content { max-width:900px; margin:40px auto; padding:30px; background:#f1f5f9; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+section.content { max-width:900px; margin:30px auto; padding:20px; background:#f1f5f9; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
 body.dark-mode section.content { background:#1e293b; color:#e2e8f0; }
-h3 { text-align:center; font-size:1.5rem; margin-bottom:20px; color:#4f46e5; }
+h3 { text-align:center; font-size:1.4rem; margin-bottom:15px; color:#4f46e5; }
 
-.table-container { margin:30px auto; max-width:750px; }
-table { width:100%; border-collapse:collapse; background:#fff; }
-th, td { border:1px solid #ccc; padding:8px; text-align:center; }
+.table-container { margin:20px auto; overflow-x:auto; }
+table { width:100%; border-collapse:collapse; min-width:300px; background:#fff; }
+th, td { border:1px solid #ccc; padding:6px; text-align:center; }
 th { background:#eaeaea; }
 body.dark-mode th, body.dark-mode td { border:1px solid #475569; background:none; }
 
-#plot { width:100%; max-width:700px; margin:30px auto; }
+#plot { width:100%; max-width:700px; margin:20px auto; }
 
-footer { text-align:center; padding:20px; font-size:0.9em; color:#6b7280; border-top:1px solid #ccc; margin-top:50px; }
+footer { text-align:center; padding:15px; font-size:0.85em; color:#6b7280; border-top:1px solid #ccc; margin-top:40px; }
 body.dark-mode footer { border-color:#334155; color:#cbd5e1; }
+
+@media(max-width:768px){
+  header { flex-direction:column; align-items:flex-start; }
+  nav { flex-direction:column; align-items:flex-start; gap:5px; margin-top:10px; }
+  section.hero h2 { font-size:1.6rem; }
+  section.hero p { font-size:0.95rem; }
+  section.content { padding:15px; }
+  h3 { font-size:1.2rem; }
+  .btn { padding:8px 16px; font-size:0.9rem; }
+}
+
+@media(max-width:480px){
+  header h1 { font-size:1.3rem; }
+  .logo img { height:40px; }
+  table, th, td { font-size:0.8rem; }
+}
 </style>
 </head>
 <body>
@@ -94,7 +112,7 @@ body.dark-mode footer { border-color:#334155; color:#cbd5e1; }
     </table>
   </div>
 
-  <div style="text-align:center; margin-top:20px;">
+  <div style="text-align:center; margin-top:15px;">
     <a href="gerakmelingkar1.html" class="btn">Kembali ke Materi</a>
     <button class="btn" onclick="checkPassword()">Buka Kunci Jawaban</button>
   </div>
@@ -122,7 +140,7 @@ shapes:[{type:'line',x0:0.5,x1:0.5,y0:0,y1:1.25,line:{color:'red',dash:'dash'}}]
 // Fungsi password
 function checkPassword() {
   const password = prompt("Masukkan password untuk membuka kunci jawaban:");
-  if(password === "773610") { // ganti dengan password yang diinginkan
+  if(password === "773610") {
     window.location.href = "kuncijawaban1.html";
   } else {
     alert("Password salah! Akses ditolak.");
@@ -131,4 +149,3 @@ function checkPassword() {
 </script>
 </body>
 </html>
-
