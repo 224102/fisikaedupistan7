@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Praktikum GLBB - Modul Fisika</title>
+  <title>Praktikum GLBB</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #ffffff;
-      color: #222;
       transition: background 0.3s, color 0.3s;
+      background: #ffffff; color: #222;
     }
     body.dark-mode { background: #0f172a; color: #e2e8f0; }
 
@@ -34,178 +33,160 @@
       transition: color 0.3s;
     }
     nav a:hover { color: #6366f1; }
+
     .toggle-btn {
       margin-left: 25px; cursor: pointer; border: none;
       background: none; font-size: 1.5rem; transition: transform 0.3s;
     }
     .toggle-btn:hover { transform: scale(1.2); }
 
-    section {
-      padding: 50px 80px;
-      max-width: 1000px;
-      margin: 0 auto 30px auto;
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark-mode section { background-color: #1e293b; color: #cbd5e1; }
-
-    section h3 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-    }
-    section h3 .icon {
-      font-size: 2rem;
-      margin-right: 12px;
-      background: linear-gradient(90deg,#a855f7,#f472b6,#fb923c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    iframe {
-      width: 100%;
-      border: none;
-      border-radius: 8px;
-      min-height: 400px;
-    }
-
-    a.download-btn {
-      display: inline-block;
-      background: #6366f1;
-      color: #fff;
-      font-weight: 600;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s, transform 0.3s;
-    }
-    a.download-btn:hover { background: #4f46e5; transform: scale(1.05); }
-
-    p { font-size: 1.15rem; line-height: 1.7; color: #4b5563; transition: color 0.3s; }
-    body.dark-mode p { color: #cbd5e1; }
-
-    footer {
-      text-align: center; padding: 20px; font-size: 0.9em; color: #6b7280;
-      border-top: 1px solid #ccc; margin-top: 50px;
-    }
-    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
-
-    /* Hero */
     .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 80px 100px;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 80px 100px; flex-wrap: wrap;
     }
     .hero-text { max-width: 55%; }
     .hero-text h2 {
-      background: linear-gradient(90deg,#a855f7,#f472b6,#fb923c);
+      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 3rem; font-weight: 800; line-height: 1.2;
-      margin-bottom: 20px;
+      font-size: 3rem; font-weight: 800; line-height: 1.3; margin-bottom: 20px;
+      transition: transform 0.3s, filter 0.3s;
     }
-    .hero-text p { font-size: 1.2rem; line-height: 1.6; color: #4b5563; }
+    .hero-text h2:hover { transform: scale(1.05); filter: brightness(1.2); }
+    .hero-text p {
+      font-size: 1.2rem; line-height: 1.6; color: #4b5563;
+      transition: color 0.3s;
+    }
     body.dark-mode .hero-text p { color: #cbd5e1; }
+    .hero-text p:hover { color: #f472b6; font-weight: 600; }
     .hero-text button {
       padding: 12px 28px; font-size: 1rem; font-weight: 600;
       background: #6366f1; color: white; border: none; border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
+      cursor: pointer; transition: background 0.3s, transform 0.3s;
     }
     .hero-text button:hover { background: #4f46e5; transform: scale(1.05); }
-
     .hero img {
       width: 40%;
       max-width: 450px;
       height: auto;
+      transition: transform 0.3s, filter 0.3s, opacity 1s;
+      opacity: 1;
     }
+    .hero img:hover { transform: scale(1.05); filter: brightness(1.1); }
 
-    /* Responsive */
-    @media(max-width: 768px){
+    section {
+      padding: 50px 40px;
+      max-width: 1000px;
+      margin: 0 auto 40px auto;
+      background-color: #f1f5f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      transition: background 0.3s;
+    }
+    body.dark-mode section { background: #374151; color: #e2e8f0; }
+    section h3 {
+      color: #4f46e5; margin-bottom: 20px; font-size: 2rem;
+      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    section p { color: #4b5563; font-size: 1.1rem; transition: color 0.3s; }
+    body.dark-mode section p { color: #cbd5e1; }
+
+    iframe { width: 100%; border: none; border-radius: 8px; min-height: 400px; }
+
+    .download-btn {
+      padding: 12px 24px; font-weight: 600;
+      background: #6366f1; color: white; border-radius: 8px; text-decoration: none;
+      display: inline-block; transition: transform 0.3s, background 0.3s;
+    }
+    .download-btn:hover { transform: scale(1.05); background: #4f46e5; }
+
+    footer {
+      text-align: center; padding: 20px; font-size: 0.9em; color: #6b7280;
+      border-top: 1px solid #ccc; margin-top: 50px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
+
+    @media (max-width:768px) {
       .hero { flex-direction: column-reverse; text-align: center; padding: 40px 20px; }
-      .hero-text { max-width: 100%; }
-      .hero img { width: 60%; margin-bottom: 20px; }
-      section { padding: 30px 20px; }
+      .hero img { width: 70%; margin-bottom: 20px; }
+      header { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="img/um_logo_resized.png" alt="Logo UM">
-      <h1>Modul Fisika</h1>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="profil.html">Profil</a>
-      <button class="toggle-btn" id="toggle-dark">🌙</button>
-    </nav>
-  </header>
+<header>
+  <div class="logo">
+    <img src="img/um_logo_resized.png" alt="Logo UM">
+    <h1>Praktikum GLBB</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="profil.html">Profil</a>
+    <button class="toggle-btn" id="toggle-dark">🌙</button>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Praktikum Gerak Melingkar</h2>
-      <p>Gunakan simulasi interaktif dan lembar kerja digital untuk memperdalam pemahaman kalian tentang GLBB.</p>
-      <button id="scroll-btn">Mulai Praktikum</button>
-    </div>
-    <img src="img/ilustrasi-siswa.png" alt="Ilustrasi siswa belajar">
-  </section>
+<section class="hero">
+  <div class="hero-text">
+    <h2>Praktikum Gerak Lurus & Melingkar</h2>
+    <p>Pelajari konsep GLBB melalui simulasi digital interaktif, LKPD, dan prosedur praktikum.</p>
+    <button id="scroll-btn">Mulai Praktikum</button>
+  </div>
+  <img src="img/ilustrasi-siswa.png" alt="Ilustrasi Siswa" id="hero-img">
+</section>
 
-  <section id="praktikum">
-    <h3><span class="icon">🔬</span> Simulasi Gerak Melingkar</h3>
-    <iframe src="https://www.walter-fendt.de/html5/phen/circularmotion_en.htm" height="1000"></iframe>
-  </section>
+<section id="praktikum">
+  <h3>🔬 Simulasi Gerak Melingkar</h3>
+  <iframe src="https://www.walter-fendt.de/html5/phen/circularmotion_en.htm" height="600"></iframe>
+</section>
 
-  <section>
-    <h3><span class="icon">📑</span> Prosedur Praktikum GMBB</h3>
-    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRe_g5shz3gMujsxSthAh-4LQIgkInIdFJv18N0RsscmmJn8r6cst-Ye5WbUbBSVQ/pubembed?start=false&loop=false&delayms=3000"></iframe>
-  </section>
+<section>
+  <h3>📑 Prosedur Praktikum GLBB</h3>
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRe_g5shz3gMujsxSthAh-4LQIgkInIdFJv18N0RsscmmJn8r6cst-Ye5WbUbBSVQ/pubembed?start=false&loop=false&delayms=3000"></iframe>
+</section>
 
-  <section>
-    <h3><span class="icon">📥</span> Unduh LKPD</h3>
-    <a class="download-btn" href="file/LKPD_PHET.pdf" download>⬇️ Download LKPD (PDF)</a>
-  </section>
+<section>
+  <h3>📥 Unduh LKPD</h3>
+  <a class="download-btn" href="file/LKPD_PHET.pdf" download>⬇️ Download LKPD (PDF)</a>
+</section>
 
-  <section>
-    <h3><span class="icon">📤</span> Unggah LKPD Kamu</h3>
-    <p>Silakan klik tombol di bawah ini untuk mengunggah file LKPD kalian (PDF, max 5MB):</p>
-    <a href="https://forms.gle/gcSB4qCNuzJSfVLv7" target="_blank" class="download-btn">📝 Buka Form Unggah</a>
-  </section>
+<section>
+  <h3>📤 Unggah LKPD Kamu</h3>
+  <p>Gunakan tombol di bawah untuk mengunggah file LKPD kalian (PDF, max 5MB).</p>
+  <a class="download-btn" href="https://forms.gle/gcSB4qCNuzJSfVLv7" target="_blank">📝 Buka Form Unggah</a>
+</section>
 
-  <section>
-    <h3><span class="icon">📂</span> Hasil Unggahan Siswa</h3>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQQjVcySTNa4aBFHhApF60WuJVy76hf08tgFRYp2Tp_go4lUjuuozdOxiEN13nW3D8bjXbA_nubPuWO/pubhtml?widget=true&amp;headers=false"></iframe>
-  </section>
+<section>
+  <h3>📂 Hasil Unggahan Siswa</h3>
+  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQQjVcySTNa4aBFHhApF60WuJVy76hf08tgFRYp2Tp_go4lUjuuozdOxiEN13nW3D8bjXbA_nubPuWO/pubhtml?widget=true&amp;headers=false"></iframe>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Muizz - Universitas Negeri Malang | Modul Fisika</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+</footer>
 
-  <script>
-    const toggleBtn = document.getElementById("toggle-dark");
-    const body = document.body;
-    const scrollBtn = document.getElementById("scroll-btn");
-    const praktikumSection = document.getElementById("praktikum");
+<script>
+  const toggleBtn = document.getElementById("toggle-dark");
+  const body = document.body;
+  const scrollBtn = document.getElementById("scroll-btn");
+  const praktikumSection = document.getElementById("praktikum");
 
-    // Dark mode toggle
-    toggleBtn.addEventListener("click", () => {
-      body.classList.toggle("dark-mode");
-      toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
-    });
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+  });
 
-    // Smooth scroll ke section Praktikum
-    scrollBtn.addEventListener("click", () => {
-      const yOffset = -50;
-      const y = praktikumSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    });
-  </script>
+  scrollBtn.addEventListener("click", () => {
+    const yOffset = -50;
+    const y = praktikumSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  });
+
+  // Pastikan halaman selalu load dari atas
+  window.scrollTo(0,0);
+</script>
 </body>
 </html>
