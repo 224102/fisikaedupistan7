@@ -28,6 +28,15 @@
     .logo img { height: 50px; }
     header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
 
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      color: inherit;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #6366f1; }
+
     .toggle-btn {
       margin-left: 25px; cursor: pointer; border: none;
       background: none; font-size: 1.5rem; transition: transform 0.3s;
@@ -64,13 +73,12 @@
     }
     .hero-text button:hover { background: #4f46e5; transform: scale(1.05); }
 
-    /* Gambar Kuantum diperbesar & responsif */
     .hero img {
       width: 40%;
       max-width: 450px;
       height: auto;
       transition: transform 0.3s, filter 0.3s, opacity 1s;
-      opacity: 1; /* langsung muncul */
+      opacity: 1;
     }
     .hero img:hover { transform: scale(1.05); filter: brightness(1.1); }
 
@@ -121,6 +129,7 @@
       <h1>Modul Fisika</h1>
     </div>
     <nav>
+      <a href="profil.html">Profil</a>
       <button class="toggle-btn" id="toggle-dark">🌙</button>
     </nav>
   </header>
@@ -131,7 +140,6 @@
       <p>Website interaktif dengan simulasi, animasi, dan penjelasan singkat untuk memahami konsep fisika dengan menyenangkan.</p>
       <button id="scroll-btn">Mulai Belajar</button>
     </div>
-    <!-- Pastikan path gambar benar -->
     <img src="img/Gambar Kuantum.png" alt="Gambar Kuantum" id="kuantum-img">
   </section>
 
@@ -140,11 +148,11 @@
     <p>Pilih kelas untuk mulai belajar dengan interaktif.</p>
     <div class="cards">
       <a href="bagian kelas/kelas x.html" class="card-link">
-  <div class="card">
-    <h4>Kelas X</h4>
-    <p>Pelajari konsep fisika mencangkup angka penting, energi terbarukan, dll.</p>
-  </div>
-</a>
+        <div class="card">
+          <h4>Kelas X</h4>
+          <p>Pelajari konsep fisika mencangkup angka penting, energi terbarukan, dll.</p>
+        </div>
+      </a>
       <a href="kelas11.html" class="card-link">
         <div class="card">
           <h4>Kelas XI</h4>
@@ -184,11 +192,10 @@
       window.scrollTo({ top: y, behavior: 'smooth' });
     });
 
-    // Fade-in Gambar Kuantum (opsional, sekarang langsung muncul)
+    // Fade-in Gambar Kuantum (opsional)
     window.addEventListener('load', () => {
       kuantumImg.classList.add('loaded');
     });
   </script>
 </body>
 </html>
-
