@@ -36,8 +36,7 @@
     .hero-text h2 {
       font-size: 3rem; font-weight: 800; line-height: 1.3; margin-bottom: 20px;
       background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       transition: transform 0.3s, filter 0.3s;
     }
     .hero-text h2:hover { transform: scale(1.05); filter: brightness(1.2); }
@@ -70,15 +69,27 @@
     .cards { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
     .card {
       background: #f1f5f9; padding: 25px; border-radius: 12px;
-      width: 260px; transition: transform 0.3s; cursor: pointer;
+      width: 260px; transition: transform 0.3s, background 0.3s, color 0.3s;
+      cursor: pointer;
     }
     .card:hover { transform: translateY(-8px); }
     .card h4 { font-weight: 700; font-size: 1.5rem; margin-bottom: 12px; transition: color 0.3s, transform 0.3s; }
     .card:hover h4 { transform: translateY(-3px); filter: brightness(1.2); }
     .card p { font-size: 1rem; line-height: 1.5; color: #374151; transition: color 0.3s; }
-    body.dark-mode .card p { color: #e2e8f0; }
     .card:hover p { color: #6366f1; font-weight: 500; }
     .card-link { text-decoration: none; color: inherit; display: block; }
+
+    /* Dark mode card */
+    body.dark-mode .card {
+      background: #1e293b; /* abu-abu gelap */
+      color: #e2e8f0;      /* teks terang */
+    }
+    body.dark-mode .card h4 {
+      color: #60a5fa; /* judul kartu */
+    }
+    body.dark-mode .card p {
+      color: #cbd5e1; /* isi kartu */
+    }
 
     footer { text-align: center; padding: 20px; font-size: 0.9em; color: #6b7280; border-top: 1px solid #ccc; margin-top: 50px; }
     body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
@@ -87,7 +98,7 @@
 <body>
   <header>
     <div class="logo">
-  <img src="../img/um_logo_resized.png" alt="Logo UM">
+      <img src="../img/um_logo_resized.png" alt="Logo UM">
       <h1>Kelas X - Fisika Dasar</h1>
     </div>
     <nav>
