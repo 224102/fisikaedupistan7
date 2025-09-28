@@ -1,170 +1,166 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kunci Jawaban Latihan Soal 2</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      transition: background 0.3s, color 0.3s;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kunci Jawaban Latihan Soal 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s, color 0.3s;
+    background: #ffffff;
+    color: #222;
+  }
+  body.dark-mode { background: #0f172a; color: #e2e8f0; }
 
-    body { background: #ffffff; color: #222; }
-    body.dark-mode { background: #0f172a; color: #e2e8f0; }
+  header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 40px; background: transparent; flex-wrap: wrap;
+  }
+  .logo { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+  .logo img { height: 50px; }
+  header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background: transparent;
-    }
+  nav { display: flex; align-items: center; flex-wrap: wrap; margin-top: 10px; }
+  nav a { margin-left: 25px; text-decoration: none; font-weight: 500; color: inherit; transition: color 0.3s; margin-top: 5px; }
+  nav a:hover { color: #6366f1; }
+  .toggle-btn { margin-left: 25px; cursor: pointer; border: none; background: none; font-size: 1.5rem; transition: transform 0.3s; margin-top: 5px; }
+  .toggle-btn:hover { transform: scale(1.2); }
 
-    .logo { display: flex; align-items: center; gap: 15px; }
-    .logo img { height: 50px; }
-    header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
+  main {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: 0 auto 100px;
+  }
 
-    nav a {
-      margin-left: 25px;
-      text-decoration: none;
-      font-weight: 500;
-      color: inherit;
-      transition: color 0.3s;
-    }
-    nav a:hover { color: #6366f1; }
+  section {
+    background-color: #f1f5f9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+  }
+  body.dark-mode section { background: #374151; color: #e2e8f0; }
 
-    .toggle-btn {
-      margin-left: 25px; cursor: pointer; border: none;
-      background: none; font-size: 1.5rem; transition: transform 0.3s;
-    }
-    .toggle-btn:hover { transform: scale(1.2); }
+  h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-    main {
-      padding: 50px 20px;
-      max-width: 900px;
-      margin: 0 auto 100px;
-    }
+  h3 { color: #1976d2; margin-top: 30px; }
 
-    section {
-      background-color: #f1f5f9;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      margin-bottom: 40px;
-    }
+  .rumus {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 12px 0;
+    color: #1976d2;
+  }
+  body.dark-mode .rumus { color: #60a5fa; }
 
-    h2 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 30px;
-      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+  .btn-back {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: #6366f1;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .btn-back:hover { background: #4f46e5; transform: scale(1.05); }
 
-    h3 { color: #1976d2; margin-top: 30px; }
+  footer {
+    text-align: center; padding: 20px; font-size: 0.9em; color: #6b7280;
+    border-top: 1px solid #ccc; margin-top: 50px;
+  }
+  body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
 
-    .rumus {
-      text-align: center;
-      font-size: 1.3rem;
-      margin: 12px 0;
-      color: #1976d2;
-    }
-
-    .btn-back {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 25px;
-      background: #6366f1;
-      color: white;
-      font-weight: 600;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .btn-back:hover { background: #4f46e5; transform: scale(1.05); }
-
-    footer {
-      text-align: center; padding: 20px; font-size: 0.9em; color: #6b7280;
-      border-top: 1px solid #ccc; margin-top: 50px;
-    }
-    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
-    body.dark-mode section { background: #374151; color: #e2e8f0; }
-    body.dark-mode .rumus { color: #60a5fa; }
-
-  </style>
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    header { flex-direction: column; padding: 15px 20px; }
+    nav { margin-top: 10px; flex-direction: column; align-items: flex-start; }
+    nav a, .toggle-btn { margin-left: 0; margin-top: 5px; }
+    main { padding: 30px 15px; }
+    h2 { font-size: 2rem; }
+    h3, p, .rumus { font-size: 1rem; }
+    .btn-back { padding: 10px 20px; font-size: 0.95rem; }
+  }
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="../../../img/um_logo_resized.png" alt="Logo UM">
-      <h1>Kunci Jawaban</h1>
-    </div>
-    <nav>
-      <a href="latihansoal2.html">Kembali</a>
-      <a href="../../../profil.html">Profil</a>
-      <button class="toggle-btn" id="toggle-dark">🌙</button>
-    </nav>
-  </header>
+<header>
+  <div class="logo">
+    <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+    <h1>Kunci Jawaban</h1>
+  </div>
+  <nav>
+    <a href="latihansoal2.html">Kembali</a>
+    <a href="../../../profil.html">Profil</a>
+    <button class="toggle-btn" id="toggle-dark">🌙</button>
+  </nav>
+</header>
 
-  <main>
-    <section>
-      <h2>Kunci Jawaban Latihan Soal 2</h2>
+<main>
+  <section>
+    <h2>Kunci Jawaban Latihan Soal 2</h2>
 
-      <h3>Nomor 1</h3>
-      <p>Opsi A: Benar</p>
-      <p class="rumus">$$v = v_0 - g t$$</p>
-      <p class="rumus">$$t = \frac{v_0}{g} = \frac{5}{10} = 0.5 \, \text{s}$$</p>
+    <h3>Nomor 1</h3>
+    <p>Opsi A: Benar</p>
+    <p class="rumus">$$v = v_0 - g t$$</p>
+    <p class="rumus">$$t = \frac{v_0}{g} = \frac{5}{10} = 0.5 \, \text{s}$$</p>
 
-      <p>Opsi B: Benar</p>
-      <p class="rumus">$$v = v_0 - g t = 5 - (10 \cdot 1) = -5 \, \text{m/s}$$</p>
+    <p>Opsi B: Benar</p>
+    <p class="rumus">$$v = v_0 - g t = 5 - (10 \cdot 1) = -5 \, \text{m/s}$$</p>
 
-      <p>Opsi C: Benar</p>
-      <p class="rumus">$$t_\text{tot} = t_\text{naik} + t_\text{turun} = \frac{2 v_0}{g} = \frac{2 \cdot 5}{10} = 1 \, \text{s}$$</p>
+    <p>Opsi C: Benar</p>
+    <p class="rumus">$$t_\text{tot} = t_\text{naik} + t_\text{turun} = \frac{2 v_0}{g} = \frac{2 \cdot 5}{10} = 1 \, \text{s}$$</p>
 
-      <h3>Nomor 2</h3>
-      <p>Pernyataan 1: Benar</p>
-      <p class="rumus">$$h = v_0 t - \frac{1}{2} g t^2$$</p>
-      <p class="rumus">$$v = 0 \text{ di titik tertinggi, } t = \frac{v_0}{g} = 0.5 \, \text{s}$$</p>
-      <p class="rumus">$$h_\text{max} = v_0 \frac{v_0}{g} - \frac{1}{2} g \left(\frac{v_0}{g}\right)^2 = \frac{v_0^2}{2 g} = 1.25 \, \text{m}$$</p>
+    <h3>Nomor 2</h3>
+    <p>Pernyataan 1: Benar</p>
+    <p class="rumus">$$h = v_0 t - \frac{1}{2} g t^2$$</p>
+    <p class="rumus">$$v = 0 \text{ di titik tertinggi, } t = \frac{v_0}{g} = 0.5 \, \text{s}$$</p>
+    <p class="rumus">$$h_\text{max} = v_0 \frac{v_0}{g} - \frac{1}{2} g \left(\frac{v_0}{g}\right)^2 = \frac{v_0^2}{2 g} = 1.25 \, \text{m}$$</p>
 
-      <p>Pernyataan 2: Salah</p>
-      <p>Percepatan gravitasi selalu mengarah ke bawah dengan nilai tetap \( g = 10 \, \text{m/s}^2 \)</p>
+    <p>Pernyataan 2: Salah</p>
+    <p>Percepatan gravitasi selalu mengarah ke bawah dengan nilai tetap \( g = 10 \, \text{m/s}^2 \)</p>
 
-      <p>Pernyataan 3: Benar</p>
-      <p class="rumus">$$t_\text{naik} = \frac{v_0}{g} = 0.5 \, \text{s}, \quad t_\text{turun} = \frac{v_0}{g} = 0.5 \, \text{s}, \quad t_\text{tot} = 1 \, \text{s}$$</p>
+    <p>Pernyataan 3: Benar</p>
+    <p class="rumus">$$t_\text{naik} = \frac{v_0}{g} = 0.5 \, \text{s}, \quad t_\text{turun} = \frac{v_0}{g} = 0.5 \, \text{s}, \quad t_\text{tot} = 1 \, \text{s}$$</p>
 
-      <h3>Nomor 3</h3>
-      <p>Pernyataan 1: Setuju</p>
-      <p class="rumus">$$h_\text{max} = \frac{v_0^2}{2 g} = \frac{5^2}{2 \cdot 10} = 1.25 \, \text{m}$$</p>
-      <p class="rumus">Jika \( g \) dikurangi setengah, maka:</p>
-      <p class="rumus">$$h_\text{max} = \frac{v_0^2}{2 \cdot (0.5 \cdot g)} = 2.5 \, \text{m}$$</p>
+    <h3>Nomor 3</h3>
+    <p>Pernyataan 1: Setuju</p>
+    <p class="rumus">$$h_\text{max} = \frac{v_0^2}{2 g} = \frac{5^2}{2 \cdot 10} = 1.25 \, \text{m}$$</p>
+    <p class="rumus">Jika \( g \) dikurangi setengah, maka:</p>
+    <p class="rumus">$$h_\text{max} = \frac{v_0^2}{2 \cdot (0.5 \cdot g)} = 2.5 \, \text{m}$$</p>
 
-      <p>Pernyataan 2: Setuju</p>
-      <p class="rumus">Grafik kecepatan terhadap waktu: $$v = v_0 - g t$$ menghasilkan garis linear menurun.</p>
+    <p>Pernyataan 2: Setuju</p>
+    <p class="rumus">Grafik kecepatan terhadap waktu: $$v = v_0 - g t$$ menghasilkan garis linear menurun.</p>
 
-      <a href="latihansoal2.html" class="btn-back">← Kembali ke Latihan Soal 2</a>
+    <a href="latihansoal2.html" class="btn-back">← Kembali ke Latihan Soal 2</a>
+  </section>
+</main>
 
-    </section>
-  </main>
+<footer>
+  <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
-  </footer>
-
-  <script>
-    const toggleBtn = document.getElementById("toggle-dark");
-    toggleBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-    });
-  </script>
+<script>
+  const toggleBtn = document.getElementById("toggle-dark");
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+  });
+</script>
 </body>
 </html>
