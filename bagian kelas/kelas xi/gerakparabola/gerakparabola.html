@@ -1,1 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gerak Parabola</title>
+
+<!-- Font & MathJax -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s, color 0.3s;
+    background: #ffffff;
+    color: #222;
+    line-height: 1.7;
+  }
+  body.dark-mode { background: #0f172a; color: #e2e8f0; }
+
+  header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 20px; flex-wrap: wrap;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo img { height: 40px; }
+  header h1 { margin: 0; font-size: 1.4rem; font-weight: 700; color: #4f46e5; }
+
+  nav { display: flex; align-items: center; flex-wrap: wrap; margin-top: 10px; }
+  nav a {
+    margin-left: 15px; text-decoration: none; font-weight: 500; color: inherit;
+    transition: color 0.3s;
+  }
+  nav a:hover { color: #6366f1; }
+  .toggle-btn {
+    margin-left: 15px; cursor: pointer; border: none; background: none;
+    font-size: 1.4rem; transition: transform 0.3s;
+  }
+  .toggle-btn:hover { transform: scale(1.2); }
+
+  section { padding: 40px 20px; max-width: 950px; margin: 0 auto; }
+  h2 {
+    font-size: 1.8rem; font-weight: 700;
+    background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+  }
+
+  /* media: YouTube + video responsif */
+  .video-container {
+    position: relative;
+    width: 100%;
+    margin: 20px auto;
+    aspect-ratio: 16 / 9;
+    max-width: 900px;
+  }
+  .video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  }
+
+  video, img {
+    display: block; margin: 20px auto; max-width: 100%; height: auto; border-radius: 12px;
+  }
+
+  .equation {
+    display:block; text-align:center;
+    font-size: 1.6rem; margin: 18px 0 6px 0;
+    overflow-x: auto;
+  }
+  .eq-label {
+    text-align:center; font-size:0.9rem; color:#555; margin-bottom: 18px;
+  }
+  body.dark-mode .eq-label { color: #aaa; }
+
+  .table-container { width: 100%; overflow-x: auto; }
+  table {
+    width:100%; border-collapse:collapse; margin: 30px 0; min-width: 400px;
+  }
+  table, th, td { border:1px solid #ccc; padding:10px; text-align:center; }
+  body.dark-mode table, body.dark-mode th, body.dark-mode td { border-color:#444; }
+
+  footer {
+    text-align:center; padding:20px; font-size:0.9em; color:#6b7280;
+    border-top:1px solid #ccc; margin-top:50px;
+  }
+  body.dark-mode footer { border-color:#334155; color:#cbd5e1; }
+
+  @media (max-width:768px) {
+    header { flex-direction: column; align-items: flex-start; }
+    nav { margin-top: 10px; }
+    h2 { font-size: 1.5rem; }
+    .equation { font-size:1.2rem; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+    <h1>Materi 4: Gerak Parabola</h1>
+  </div>
+  <nav>
+    <a href="../../kelas xi.html">Kembali</a>
+    <a href="../../../profil.html">Profil</a>
+    <button class="toggle-btn" id="toggle-dark">🌙</button>
+  </nav>
+</header>
+
+<section>
+  <h2>GERAK PARABOLA</h2>
+
+  <p>Gerak parabola adalah gerak dengan lintasan berbentuk parabola, yang terjadi sebab hasil perpadua dua gerakan lurus yaitu gerak lurus beraturan (GLB) pada sumbu horizontal (sumbu X) dan gerak lurus berubah beraturan (GLBB) pada sumbu vertical (sumbu y). 
+  Dengan membahas gerak parabola kita dapat berpeluang mempelajari kembali persamaan GLB dan GLBB sekaligus memprakekan dalam kehidupan sehari hari secara presisi dan tepat.</p>
+
+  <p>Pernahkah kalian menonton pertandingan bola basket? Gerakan yang terjadi ketika sang pemain basket melempar bola basket menuju ring pasti membentuk lintasan melengkung. Mengapa hal tersebut dapat terjaid? Coba kalian amati video dibawah ini </p>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/ZBQFVaJhttM" title="YouTube video" allowfullscreen></iframe>
+  </div>
+
+  <p>Apabila diamati sekilas, benda yang melakukan parabola selalu memiliki lintasan berbentuk kurva lengkungan dan seolah-olah kembali ke tanah ketika mencapai titik tertinggi. Mengapa demikian? Simak penjelasan berikut ini!</p>
+
+  <p><b>Analisis vektor posisi dan kecepatan</b></p>
+  <p>Coba kalian perhatikan animasi dibawah ini! Sebuah benda mula-mula berada di pusat koordinat, dilemparkan ke atas dengan kecepatan awal sebesar \(v_0\) dan sudut elevasi \(\theta\). Ternyata pada sumbu x, benda bergerak dengan kecepatan konstan atau perpindahan sama dengan 0</p>
+
+  <video autoplay loop muted playsinline controls>
+    <source src="video/gerak_parabola.mp4" type="video/mp4">
+    Browser anda tidak mendukung video.
+  </video>
+
+  <div class="equation">\[ v_x = \frac{dx}{dt} = 0 \]</div>
+  <div class="eq-label">Persamaan (1)</div>
+
+  <p>Sebab kecepatan konstan maka percepatan juga akan bernilai 0</p>
+  <div class="equation">\[ a = \frac{dv}{dt} = 0 \]</div>
+  <div class="eq-label">Persamaan (2)</div>
+
+  <p>Coba kita amati perubahan parabola bila ditinjau pada suatu titik</p>
+
+  <p>Untuk mengukur kecepatan pada saat posisi x kita dapat menuliskan</p>
+  <div class="equation">\[ \cos\theta = \frac{\text{sisi samping}}{\text{sisi miring}} = \frac{v_{0x}}{v_0} \]</div>
+  <div class="eq-label">Persamaan (3)</div>
+
+  <p>Oleh karena itu kecepatan pada saat posisi x adalah:</p>
+  <div class="equation">\[ v_{0x} = v_0 \cos\theta \]</div>
+  <div class="eq-label">Persamaan (4)</div>
+
+  <p>Substitusi persamaan (1) ke persamaan (4)</p>
+  <div class="equation">\[ \frac{dx}{dt} = v_0 \cos\theta \]</div>
+  <div class="eq-label">Persamaan (5)</div>
+
+  <p>Sebab kecepatan merupakan perubahan posisi tergantung terhadap waktu, maka kita turunkan kedua variabel berdasarkan waktu</p>
+  <div class="equation">\[ \frac{dx}{dt} dt = v_0 \cos\theta dt \]</div>
+  <div class="eq-label">Persamaan (6)</div>
+
+  <p>Untuk menyelesaikan persamaan (6) kita harus mengintegralkan kedua posisi sehingga persamaan (6) berubah menjadi</p>
+  <div class="equation">\[ \int \frac{dx}{dt} dt = \int v_0 \cos\theta dt \]</div>
+  <div class="eq-label">(integral langkah)</div>
+
+  <div class="equation">\[ \int dx = \int v_0 \cos\theta dt \]</div>
+  <div class="eq-label">(integral langkah)</div>
+
+  <div class="equation">\[ x = v_0 \cos\theta t \]</div>
+  <div class="eq-label">Persamaan (7)</div>
+
+  <p>Jadi dalam gerak parabola kita dapat mengetahui posisi horizontal (x) dengan persamaan (7). Sedangkan untuk mencari waktu yang dibutuhkan ketika benda berada di suatu x dapat menggunakan:</p>
+  <div class="equation">\[ t_x = \frac{x}{v_0 \cos\theta} \]</div>
+  <div class="eq-label">Persamaan (8)</div>
+
+  <p>Kemudian kalian analisis kembali video animasi tersebut ternyata pada saat sumbu y benda tersebut mengalami percepatan dan perlambatan. Hal ini terjadi sebab pada komponen y terdapat percepatan gravitasi yang mengarah kebawah, sehingga \(a \neq 0\), tetapi \(a = \pm g\) tergantung kondisi dipercepat atau diperlambat. Kita tahu bahwa percepatan adalah turunan kecepatan terhadap waktu</p>
+  <div class="equation">\[ a = \frac{dv}{dt} \]</div>
+
+  <p>Sebab \(a = \pm g\) maka</p>
+  <div class="equation">\[ \frac{dv_y}{dt} = \pm g \]</div>
+  <div class="eq-label">Persamaan (9)</div>
+
+  <p>Dan kita tahu bahwa percepatan timbul sebab perubahan kecepatan terhadap waktu, maka persamaan tersebut bisa kita setarakan menjadi</p>
+  <div class="equation">\[ \frac{dv_y}{dt} dt = \pm g dt \]</div>
+  <div class="eq-label">Persamaan (10)</div>
+
+  <p>Selesaikan persamaan tersebut menggunakan integral</p>
+  <div class="equation">\[ \int \frac{dv}{dt} dt = \int \pm g dt \]</div>
+  <div class="eq-label">Persamaan (11)</div>
+
+  <p>Atau kita tulis:</p>
+  <div class="equation">\[ v_y = \pm g t + C \]</div>
+  <div class="eq-label">Persamaan (12)</div>
+
+  <p>Sebab ketika \(t=0\) dan \(y=0\) maka \(C=0\), sehingga persamaan berubah:</p>
+  <div class="equation">\[ v_y = \pm g t \]</div>
+  <div class="eq-label">Persamaan (13)</div>
+
+  <p>Coba kita amati kembali perubahan parabola bila ditinjau pada suatu titik</p>
+
+  <p>Dari gambar tersebut untuk mencari kecepatan pada sumbu y vertical kita bisa tulis</p>
+  <div class="equation">\[ \sin\theta = \frac{v_{0y}}{v_0} \]</div>
+  <div class="eq-label">Persamaan (14)</div>
+
+  <p>Sehingga:</p>
+  <div class="equation">\[ v_{0y} = v_0 \sin\theta \]</div>
+  <div class="eq-label">Persamaan (15)</div>
+
+  <p>Substitusi ke persamaan:</p>
+  <div class="equation">\[ v_y = v_0 \sin\theta \pm g t \]</div>
+  <div class="eq-label">Persamaan (16)</div>
+
+  <p>Sebab \( v_y = \frac{dy}{dt} \) maka bisa kita tulis menjadi</p>
+  <div class="equation">\[ \frac{dy}{dt} = v_0 \sin\theta \pm g t \]</div>
+  <div class="eq-label">Persamaan (17)</div>
+
+  <p>Karena kecepatan adalah perubahan posisi terhadap waktu maka persamana 15 dapat kita tulis kembali menjadi</p>
+  <div class="equation">\[ \frac{dy}{dt} dt = (v_0 \sin\theta \pm g t) dt \]</div>
+  <div class="eq-label">Persamaan (18)</div>
+
+  <p>Kita selesaikan persamaan (18) menggunakan integral</p>
+  <div class="equation">\[ \int \frac{dy}{dt} dt = \int v_0 \sin\theta dt \pm \int g t dt \]</div>
+  <div class="eq-label">(integral langkah)</div>
+
+  <p>Sehingga,</p>
+  <div class="equation">\[ y = v_0 \sin\theta t + C \pm \frac{1}{2} g t^2 \]</div>
+  <div class="eq-label">(hasil integral)</div>
+
+  <p>Pada saat \(t=0\), posisi y juga 0 maka \(C=0\), maka persamaan tersebut dapat ditulis kembali menjadi</p>
+  <div class="equation">\[ y = v_0 \sin\theta t \pm \frac{1}{2} g t^2 \]</div>
+  <div class="eq-label">Persamaan (19)</div>
+
+  <p>Untuk mencari waktu pada saat posisi y kita tinjau grafik parabola. Ketika \(y_{max}\), maka \(v_{0y}=0\):</p>
+  <div class="equation">\[ 0 = v_0 \sin\theta \pm g t \]</div>
+  <div class="eq-label">Persamaan (20)</div>
+
+  <p>Sehingga:</p>
+  <div class="equation">\[ t_y = \frac{v_0 \sin\theta}{g} \]</div>
+  <div class="eq-label">Persamaan (21)</div>
+
+  <h3>Ringkasan Persamaan</h3>
+  <div class="table-container">
+    <table>
+      <tr><th>Besaran</th><th>Sumbu X (GLB)</th><th>Sumbu Y (GLBB)</th></tr>
+      <tr><td>Kecepatan awal (m/s)</td><td>\(v_{0x}=v_0\cos\theta\)</td><td>\(v_{0y}=v_0\sin\theta\)</td></tr>
+      <tr><td>Kecepatan tertentu (m/s)</td><td>\(v_{0x}=v_0\cos\theta\)</td><td>\(v_y=v_0\sin\theta\pm gt\)</td></tr>
+      <tr><td>Posisi (m)</td><td>\(x=v_0\cos\theta t\)</td><td>\(y=v_0\sin\theta t\pm \tfrac{1}{2}gt^2\)</td></tr>
+      <tr><td>Waktu (s)</td><td>\(t_x=\tfrac{x}{v_0\cos\theta}\)</td><td>\(t_y=\tfrac{v_0\sin\theta}{g}\)</td></tr>
+    </table>
+  </div>
+</section>
+
+<div style="max-width:950px; margin: 30px auto; display:flex; justify-content: space-between; flex-wrap: wrap;">
+  </a>
+  <a href="gerakparabola2.html" 
+     style="text-decoration:none; background:#10b981; color:#fff; padding:10px 20px; border-radius:8px; font-weight:500; text-align:center; flex:1; margin-left:10px; margin-bottom:10px; display:inline-block;">
+     Pembahasan Selanjutnya!
+  </a>
+</div>
+
+<footer>
+  <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+</footer>
+
+<script>
+const toggleBtn = document.getElementById("toggle-dark");
+const body = document.body;
+toggleBtn.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+  toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+});
+</script>
+</body>
+</html>
 
