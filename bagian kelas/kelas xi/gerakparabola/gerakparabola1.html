@@ -182,58 +182,58 @@
 
   <p>Sebab \(a = \pm g\) maka</p>
   <div class="equation">\[ \frac{dv_y}{dt} = \pm g \]</div>
-  <div class="eq-label">Persamaan (9)</div>
 
   <p>Dan kita tahu bahwa percepatan timbul sebab perubahan kecepatan terhadap waktu, maka persamaan tersebut bisa kita setarakan menjadi</p>
   <div class="equation">\[ \frac{dv_y}{dt} dt = \pm g dt \]</div>
-  <div class="eq-label">Persamaan (10)</div>
+  <div class="eq-label">Persamaan (9)</div>
 
   <p>Selesaikan persamaan tersebut menggunakan integral</p>
   <div class="equation">\[ \int \frac{dv}{dt} dt = \int \pm g dt \]</div>
-  <div class="eq-label">Persamaan (11)</div>
+  <div class="eq-label">Persamaan (10)</div>
 
   <p>Atau kita tulis:</p>
   <div class="equation">\[ v_y = \pm g t + C \]</div>
-  <div class="eq-label">Persamaan (12)</div>
+  <div class="eq-label">Persamaan (11)</div>
 
   <p>Sebab ketika \(t=0\) dan \(y=0\) maka \(C=0\), sehingga persamaan berubah:</p>
   <div class="equation">\[ v_y = \pm g t \]</div>
-  <div class="eq-label">Persamaan (13)</div>
+  <div class="eq-label">Persamaan (12)</div>
 
   <p>Coba kita amati kembali perubahan parabola bila ditinjau pada suatu titik</p>
   <img src="foto/vektoor.png" alt="Perubahan parabola pada titik tertentu" style="display:block; margin:20px auto; max-width:100%; height:auto; border-radius:12px;">
 
   <p>Dari gambar tersebut untuk mencari kecepatan pada sumbu y vertical kita bisa tulis</p>
   <div class="equation">\[ \sin\theta = \frac{v_{0y}}{v_0} \]</div>
-  <div class="eq-label">Persamaan (14)</div>
+  <div class="eq-label">Persamaan (13)</div>
 
-  <p>Sehingga:</p>
-  <div class="equation">\[ v_{0y} = v_0 \sin\theta \]</div>
-  <div class="eq-label">Persamaan (15)</div>
+ <p>Atau untuk mencari kecepatan saat y:</p>
+<div class="equation">\[ v_{0y} = v_0 \sin\theta \]</div>
+<div class="eq-label">Persamaan (14)</div>
 
-  <p>Substitusi ke persamaan:</p>
-  <div class="equation">\[ v_y = v_0 \sin\theta \pm g t \]</div>
-  <div class="eq-label">Persamaan (16)</div>
+<p>Sebab kita ingin mencari posisi y pada suatu waktu, maka substitusi persamaan 11 ke persamaan 13:</p>
+<div class="equation">\[ v_y = v_0 \sin\theta - g t \]</div>
+<div class="eq-label">Persamaan (15)</div>
 
-  <p>Sebab \( v_y = \frac{dy}{dt} \) maka bisa kita tulis menjadi</p>
-  <div class="equation">\[ \frac{dy}{dt} = v_0 \sin\theta \pm g t \]</div>
-  <div class="eq-label">Persamaan (17)</div>
+<p>Karena \(v_y = \frac{dy}{dt}\) maka bisa kita tulis menjadi:</p>
+<div class="equation">\[ \frac{dy}{dt} = v_0 \sin\theta - g t \]</div>
+<div class="eq-label">Persamaan (16)</div>
 
-  <p>Karena kecepatan adalah perubahan posisi terhadap waktu maka persamana 15 dapat kita tulis kembali menjadi</p>
-  <div class="equation">\[ \frac{dy}{dt} dt = (v_0 \sin\theta \pm g t) dt \]</div>
-  <div class="eq-label">Persamaan (18)</div>
+<p>Kita selesaikan persamaan (16) menggunakan integral:</p>
+<div class="equation">
+\[
+\int \frac{dy}{dt} dt = \int v_0 \sin\theta \, dt - \int g t \, dt
+\]
+</div>
+<div class="eq-label">Persamaan (17)</div>
 
-  <p>Kita selesaikan persamaan (18) menggunakan integral</p>
-  <div class="equation">\[ \int \frac{dy}{dt} dt = \int v_0 \sin\theta dt \pm \int g t dt \]</div>
-  <div class="eq-label">(integral langkah)</div>
+<p>Sehingga:</p>
+<div class="equation">\[ y = v_0 \sin\theta \, t - \frac{1}{2} g t^2 + C \]</div>
+<div class="eq-label">Persamaan (18)</div>
 
-  <p>Sehingga,</p>
-  <div class="equation">\[ y = v_0 \sin\theta t + C \pm \frac{1}{2} g t^2 \]</div>
-  <div class="eq-label">(hasil integral)</div>
+<p>Pada saat t = 0, posisi y juga 0 maka C = 0, sehingga persamaan akhir menjadi:</p>
+<div class="equation">\[ y = v_0 \sin\theta \, t - \frac{1}{2} g t^2 \]</div>
+<div class="eq-label">Persamaan (19)</div>
 
-  <p>Pada saat \(t=0\), posisi y juga 0 maka \(C=0\), maka persamaan tersebut dapat ditulis kembali menjadi</p>
-  <div class="equation">\[ y = v_0 \sin\theta t \pm \frac{1}{2} g t^2 \]</div>
-  <div class="eq-label">Persamaan (19)</div>
 
   <p>Untuk mencari waktu pada saat posisi y kita tinjau grafik parabola. Ketika \(y_{max}\), maka \(v_{0y}=0\):</p>
   <div class="equation">\[ 0 = v_0 \sin\theta \pm g t \]</div>
