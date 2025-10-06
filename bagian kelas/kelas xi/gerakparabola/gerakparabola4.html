@@ -61,16 +61,44 @@
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .soal p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 10px; }
 
+  table { border-collapse: collapse; width: 100%; margin-top: 15px; }
+  th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+  th { background-color: #4f46e5; color: #fff; }
+
   footer {
     text-align: center; padding: 20px; font-size: 0.9em; color: #6b7280;
     border-top: 1px solid #ccc; margin-top: 50px;
   }
   body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
 
+  /* Kontainer iframe responsif (16:9) */
+  .iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   @media (max-width: 768px) {
     header { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
     nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
     nav a, .toggle-btn { margin-left: 0; }
+    .soal h3 { font-size: 1.5rem; }
+    .soal p { font-size: 1rem; }
   }
 </style>
 </head>
@@ -79,7 +107,7 @@
 <header>
   <div class="logo">
     <img src="../../../img/um_logo_resized.png" alt="Logo UM">
-    <h1>Latihan Soal ke-2 Gerak Parabola </h1>
+    <h1>Latihan Soal ke-2 Materi Gerak Parabola</h1>
   </div>
   <nav>
     <a href="gerakparabola3.html">Kembali</a>
@@ -109,7 +137,7 @@
     <p>Dua benda dilempar dengan kecepatan awal sama \(v_0 = 25\,\text{m/s}\) namun sudut elevasi berbeda:</p>
     <ul>
       <li>Benda A: \(\theta_A = 30^\circ\)</li>
-      <li>Benda B: \(\theta_B = 60^\circ\)</li>
+      <li>Benda B: \(\theta_B = 60^\circ</li>
     </ul>
     <p>Bandingkan jarak total (range) kedua benda tersebut.</p>
     <p>Gunakan Persamaan:</p>
@@ -119,9 +147,36 @@
   <div class="soal">
     <h3>Soal 4</h3>
     <p>Sebuah peluru ditembakkan dengan \(v_0 = 50\,\text{m/s}\) dan sudut elevasi \(\theta = 37^\circ\). Tentukan waktu total dan jarak horizontal maksimum (range) yang ditempuh benda dengan \(g = 9,8\,\text{m/s}^2\).</p>
-    <p>Gunakan simulasi PhET: Projectile Motion pada modul ini, atur \(v_0 = 15\,\text{m/s}\) dan variasikan sudut dari \(\theta = 15^\circ, 30^\circ, 45^\circ, 60^\circ, 75^\circ\). Catat hasil pengamatan jarak horizontal maksimum untuk setiap sudut, buat tabel hubungan antara sudut dan range hasil simulasi, dan bandingkan dengan perhitungan teoritis:</p>
-    <p>\[ x_R = \frac{v_0^2 \sin 2\theta}{g} \]</p>
-    <p>Jelaskan pada sudut berapa range maksimum terjadi dan alasannya.</p>
+  </div>
+
+  <div class="soal">
+    <h3>Soal 5</h3>
+    <p>Gunakan simulasi PhET: Projectile Motion pada modul ini, atur \(v_0 = 15\,\text{m/s}\) dan variasikan sudut dari \(\theta = 15^\circ, 30^\circ, 45^\circ, 60^\circ, 75^\circ\). Catat hasil pengamatan jarak horizontal maksimum (range) untuk setiap sudut, kemudian isi tabel berikut:</p>
+
+    <!-- Kontainer iframe responsif -->
+    <div class="iframe-container">
+      <iframe src="https://phet.colorado.edu/sims/html/projectile-motion/latest/projectile-motion_all.html?locale=in"
+              scrolling="no" allowfullscreen></iframe>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Sudut θ (°)</th>
+          <th>Range Simulasi (m)</th>
+          <th>Range Teoritis (m)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>15</td><td></td><td>\(x_R = \frac{v_0^2 \sin 2\theta}{g}=...(m/s)\)</td></tr>
+        <tr><td>30</td><td></td><td>\(x_R = \frac{v_0^2 \sin 2\theta}{g}=...(m/s)\)</td></tr>
+        <tr><td>45</td><td></td><td>\(x_R = \frac{v_0^2 \sin 2\theta}{g}=...(m/s)\)</td></tr>
+        <tr><td>60</td><td></td><td>\(x_R = \frac{v_0^2 \sin 2\theta}{g}=...(m/s)\)</td></tr>
+        <tr><td>75</td><td></td><td>\(x_R = \frac{v_0^2 \sin 2\theta}{g}=...(m/s)\)</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:15px;">Berdasarkan tabel, tentukan sudut yang menghasilkan range maksimum dan jelaskan mengapa hal tersebut terjadi.</p>
   </div>
 
 </div>
