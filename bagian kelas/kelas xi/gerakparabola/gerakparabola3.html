@@ -61,7 +61,6 @@
       padding-left: 12px;
     }
 
-    /* Tambahan untuk konsistensi heading level 4 */
     .materi-content h4 {
       font-size: 1.4rem;
       margin-top: 35px;
@@ -122,7 +121,6 @@
       border-radius: 12px;
     }
 
-    /* Kalkulator Range */
     .calc-container {
       background: #f1f5f9;
       border-radius: 12px;
@@ -179,77 +177,78 @@
   <header>
     <div class="logo">
       <img src="../../../img/um_logo_resized.png" alt="Logo UM">
-      <h1>Materi 4: Gerak Parabola sub topik Waktu Total dan Jarak Parabola</h1>
+      <h1>Materi 5: Gerak Parabola sub topik Waktu Total dan Jarak Parabola</h1>
     </div>
     <nav>
-      <a href="gerakparabola1.html">Kembali</a>
+      <a href="gerakparabola1.html">&larr; Kembali</a>
       <a href="../../../profil.html">Profil</a>
       <button class="toggle-btn" id="toggle-dark">🌙</button>
     </nav>
   </header>
 
   <section class="materi-content">
-    <h2>Waktu Total dan Jarak Parabola</h2>
-    <p>Sekarang ini kalian telah, mengetahui persamaan untuk mencari koordinat sumbu tertentu hingga waktu yang diprediksi ketika pada waktu tertentu. Sekarang kita akan mempelajari bagaimana untuk mencari waktu total yang dibutuhkan benda untuk melambung serta jarak panjang lintasan minimum agar benda dapat melambung sempurna!</p>
+  <h2>Waktu Total dan Jarak Parabola</h2>
+  <p>Sekarang ini kalian telah, mengetahui persamaan untuk mencari koordinat sumbu tertentu hingga waktu yang diprediksi ketika pada waktu tertentu. Sekarang kita akan mempelajari bagaimana untuk mencari waktu total yang dibutuhkan benda untuk melambung serta jarak panjang lintasan minimum agar benda dapat melambung sempurna!</p>
 
-    <h3>Mengukur waktu total benda untuk melambung</h3>
-    <p>Bila kita ingin meninjau waktu yang dibutuhkan benda ketika melambung, kita dapat menganalisis menggunakan hubungan komponen arah y mengapa? Sebab pada komponen y benda mampu mengalami tinggi tertinggi dimana ketika titik tertinggi energi kinetik benda cenderung lebih rendah dan energi potensial akan berada dipuncaknya. Hubungan ini biasa kita sebut sebagai hukum kekekalan energi dimana</p>
-    <div class="equation">\(E_m=E_K+E_P\)</div>
-    <p>Dimana:<br>
-    \(E_m\) = Energi mekanik<br>
-    \(E_K\) = Energi kinetik<br>
-    \(E_P\) = Energi potensial</p>
-    <p>Pada saat titik tertinggi E_P berada pada keaadaan tertinggi dimana kita tulis</p>
-    <div class="equation">\(E_P=m.g.h\)</div>
-    <p>Dan energi kinetik</p>
-    <div class="equation">\(E_K=\frac{1}{2}mv^2\)</div>
-    <p>Oleh karena itu ketika benda berada pada ketinggian paling tinggi benda tersebut mengalami perlambatan sehingga kecepatan pada saat titik tertinggi adalah 0 \(v=0\), maka kita ambil kembali persamaan sumbu y</p>
-    <div class="equation">\(y=v_0 \sin\theta t\pm\frac{1}{2}gt^2\)</div>
-    <p>Sebab bila kita anggap titik y tertinggi kecepatan adalah 0, maka persamaan tersebut bisa di tulis</p>
-    <div class="equation">\(0=v_0 \sin\theta t\pm\frac{1}{2}gt^2\)</div>
-    <p>Atau</p>
-    <div class="equation">\(0=t(\sin\theta\pm\frac{1}{2}gt)\)</div>
-    <p>Di matematika ada aturan sebagai berikut:</p>
-    <div class="equation">\(A.B=0\)</div>
-    <p>Jadi bisa saja A=0 atau B=0</p>
-    <p>Kita tinjau ketika A=0 ternyata apabila t=0 maka benda tersebut tidak bergerak/ berada pada posisi diam/tidak ada perubahan, maka kita tinjau ketika B=0</p>
-    <div class="equation">\(\sin\theta\pm\frac{1}{2}gt=0\)</div>
-    <p>Kita bisa tulis kembali persamaan tersebut:</p>
-    <div class="equation">\(\sin\theta=\frac{1}{2}gt\)</div>
-    <p>Kemudian kita kalikan kedua ruas dengan \(2/g\) maka</p>
-    <div class="equation">\((\sin\theta=\frac{1}{2}gt)\times\frac{2}{g}\)</div>
-    <p>Maka kita mendapatkan hubungan waktu total dengan meninjau sumbu y</p>
-    <div class="equation">\(\frac{2}{g}\sin\theta=\frac{2g}{2g}t\)</div>
-    <p>Atau</p>
-    <div class="equation">\(t=\frac{2\sin\theta}{g}\)</div>
+  <h3>Mengukur waktu total benda untuk melambung</h3>
+  <p>Bila kita ingin meninjau waktu yang dibutuhkan benda ketika melambung, kita dapat menganalisis menggunakan hubungan komponen arah y mengapa? Sebab pada komponen y benda mampu mengalami tinggi tertinggi dimana ketika titik tertinggi energi kinetik benda cenderung lebih rendah dan energi potensial akan berada dipuncaknya. Hubungan ini biasa kita sebut sebagai hukum kekekalan energi dimana</p>
+  <div class="equation">\(E_m = E_K + E_P\)</div>
+  <p>Dimana:<br>
+  \(E_m\) = Energi mekanik<br>
+  \(E_K\) = Energi kinetik<br>
+  \(E_P\) = Energi potensial</p>
 
-    <h3>Mengukur total lintasan yang dibutuhkan</h3>
-    <p>Untuk mengukur total panjang lintasan yang dibutuhkan pada gerak parabola kita bisa meninjau pada komponen sumbu x mengapa? Sebab total panjang lintasan itu merupakan jarak antara posisi awal benda dan posisi akhir benda pada saat keaadan horizontal pada GLBB turunan posisi terhadap waktu kita sebut sebagai perpindahan atau S sedangkan pada gerak parabola perpindahan antara titik awal dan titik akhir kita bisa sebut sebagai <i>Range</i> \(x_R\). Kita tinjau persamaan pada komponen x</p>
-    <div class="equation">\(x=v_0\cos\theta t\)</div>
-    <p>Sebab kita akan menghitung Range dan posisi keduanya juga komponen yang tergantung terhadap variabel waktu maka kita menganggap bahwa <i>Range</i> dan posisi x merupakan komponen yang sama</p>
-    <div class="equation">\(x_R=x_t\)</div>
-    <p>Oleh sebab persamaan komponen x bisa kita tulis menjadi</p>
-    <div class="equation">\(x_R=v_0\cos\theta t\)</div>
-    <p>Pada saat gerakan melambung ternyata benda tersebut juga tergantung terhadap waktu, namun waktu yang dibutuhkan merupakan waktu pada saat benda tersebut melambung dan total waktu ketika benda melambung kita sudah mendapatkan persamaanya sebagai berikut:</p>
-    <div class="equation">\(t=\frac{2\sin\theta}{g}\)</div>
-    <p>Sehingga persamaan \(x_R\) dapat kita tulis menjadi</p>
-    <div class="equation">\(x_R=v_0\cos\theta(\frac{2\sin\theta}{g})\)</div>
-    <p>Di trigonometri ada hubungan sebagai berikut:</p>
-    <div class="equation">\(\cos\theta\times2\sin\theta=\sin2\theta\)</div>
-    <p>Maka \(x_R\) dapat kita tulis kembali menjadi</p>
-    <div class="equation">\(x_R=\frac{v_0\sin2\theta}{g}\)</div>
+  <p>Pada saat titik tertinggi \(E_P\) berada pada keadaan tertinggi dimana kita tulis</p>
+  <div class="equation">\(E_P = m \cdot g \cdot h\)</div>
+  <p>Dan energi kinetik</p>
+  <div class="equation">\(E_K = \frac{1}{2} m v^2\)</div>
 
-    <p>Berikut ringkasan dari semua persamaan</p>
-    <table>
-      <tr><th>Besaran</th><th>Sumbu X (GLB)</th><th>Sumbu Y (GLBB)</th></tr>
-      <tr><td>Kecepatan awal (m/s)</td><td>\(v_{0x}=v_0\cos\theta\)</td><td>\(v_{0y}=v_0\sin\theta\)</td></tr>
-      <tr><td>Kecepatan tertentu (m/s)</td><td>\(v_{0x}=v_0\cos\theta\)</td><td>\(v_y=v_0\sin\theta\pm gt\)</td></tr>
-      <tr><td>Posisi (m)</td><td>\(x=v_0\cos\theta t\)</td><td>\(y=v_0\sin\theta t\pm\frac{1}{2}gt^2\)</td></tr>
-      <tr><td>Waktu (s)</td><td>\(t_x=\frac{x}{v_0\cos\theta}\)</td><td>\(t_y=\frac{v_0\sin\theta}{g}\)</td></tr>
-      <tr><td>Waktu total (s)</td><td colspan="2">\(t=\frac{2\sin\theta}{g}\)</td></tr>
-      <tr><td><i>Range</i> \(x_R\) (m)</td><td colspan="2">\(x_R=\frac{v_0\sin2\theta}{g}\)</td></tr>
-    </table>
+  <p>Oleh karena itu ketika benda berada pada ketinggian paling tinggi benda tersebut mengalami perlambatan sehingga kecepatan pada saat titik tertinggi adalah 0 (\(v=0\)), maka kita ambil kembali persamaan sumbu y</p>
+  <div class="equation">\(y = v_0 \sin\theta \, t \pm \frac{1}{2} g t^2\)</div>
+  <p>Sebab bila kita anggap titik y tertinggi kecepatan adalah 0, maka persamaan tersebut bisa ditulis</p>
+  <div class="equation">\(0 = v_0 \sin\theta \, t \pm \frac{1}{2} g t^2\)</div>
+  <p>Atau</p>
+  <div class="equation">\(0 = t \left( v_0 \sin\theta \pm \frac{1}{2} g t \right)\)</div>
+  <p>Di matematika ada aturan sebagai berikut:</p>
+  <div class="equation">\(A \cdot B = 0\)</div>
+  <p>Jadi bisa saja \(A=0\) atau \(B=0\). Kita tinjau ketika \(A=0\) ternyata apabila \(t=0\) maka benda tersebut tidak bergerak/ berada pada posisi diam/tidak ada perubahan, maka kita tinjau ketika \(B=0\)</p>
+  <div class="equation">\((v_0 \sin\theta \pm \frac{1}{2} g t^2) = 0\)</div>
+  <p>Kita bisa tulis kembali persamaan tersebut:</p>
+  <div class="equation">\(v_0 \sin\theta = \frac{1}{2} g t^2\)</div>
+  <p>Kemudian kita kalikan kedua ruas dengan \(\frac{2}{g}\) maka</p>
+  <div class="equation">\(\left(v_0 \sin\theta = \frac{1}{2} g t^2\right) \times \frac{2}{g}\)</div>
+  <p>Maka kita mendapatkan hubungan waktu total dengan meninjau sumbu y</p>
+  <div class="equation">\(\frac{2}{g} v_0 \sin\theta = \frac{2g}{2g} t\)</div>
+  <p>Atau</p>
+  <div class="equation">\(t = \frac{2 v_0 \sin\theta}{g}\)</div>
 
+  <h3>Mengukur total lintasan yang dibutuhkan</h3>
+  <p>Untuk mengukur total panjang lintasan yang dibutuhkan pada gerak parabola kita bisa meninjau pada komponen sumbu x mengapa? Sebab total panjang lintasan itu merupakan jarak antara posisi awal benda dan posisi akhir benda pada saat keaadan horizontal pada GLBB turunan posisi terhadap waktu kita sebut sebagai perpindahan atau S sedangkan pada gerak parabola perpindahan antara titik awal dan titik akhir kita bisa sebut sebagai Range \(x_R\). Kita tinjau persamaan pada komponen x</p>
+  <div class="equation">\(x = v_0 \cos\theta \, t\)</div>
+  <p>Sebab kita akan menghitung Range dan posisi keduanya juga komponen yang tergantung terhadap variabel waktu maka kita menganggap bahwa Range dan posisi x merupakan komponen yang sama</p>
+  <div class="equation">\(x_R = x_t\)</div>
+  <p>Oleh sebab persamaan komponen x bisa kita tulis menjadi</p>
+  <div class="equation">\(x_R = v_0 \cos\theta \, t\)</div>
+  <p>Pada saat gerakan melambung ternyata benda tersebut juga tergantung terhadap waktu, namun waktu yang dibutuhkan merupakan waktu pada saat benda tersebut melambung dan total waktu ketika benda melambung kita sudah mendapatkan persamaanya sebagai berikut:</p>
+  <div class="equation">\(t = \frac{2 v_0 \sin\theta}{g}\)</div>
+  <p>Sehingga persamaan \(x_R\) dapat kita tulis menjadi</p>
+  <div class="equation">\(x_R = v_0 \cos\theta \left(\frac{2 v_0 \sin\theta}{g}\right)\)</div>
+  <p>Di trigonometri ada hubungan sebagai berikut:</p>
+  <div class="equation">\(\cos\theta \times 2 \sin\theta = \sin 2\theta\)</div>
+  <p>Maka \(x_R\) dapat kita tulis kembali menjadi</p>
+  <div class="equation">\(x_R = \frac{v_0^2 \sin 2\theta}{g}\)</div>
+
+  <p>Berikut ringkasan dari semua persamaan:</p>
+  <table>
+    <tr><th>Besaran</th><th>Sumbu X (GLB)</th><th>Sumbu Y (GLBB)</th></tr>
+    <tr><td>Kecepatan awal (m/s)</td><td>\(v_{0x} = v_0 \cos\theta\)</td><td>\(v_{0y} = v_0 \sin\theta\)</td></tr>
+    <tr><td>Kecepatan tertentu (m/s)</td><td>\(v_{0x} = v_0 \cos\theta\)</td><td>\(v_y = v_0 \sin\theta \pm g t\)</td></tr>
+    <tr><td>Posisi (m)</td><td>\(x = v_0 \cos\theta \, t\)</td><td>\(y = v_0 \sin\theta \, t \pm \frac{1}{2} g t^2\)</td></tr>
+    <tr><td>Waktu (s)</td><td>\(t_x = \frac{x}{v_0 \cos\theta}\)</td><td>\(t_y = \frac{v_0 \sin\theta}{g}\)</td></tr>
+    <tr><td>Waktu total (s)</td><td colspan="2">\(t = \frac{2 v_0 \sin\theta}{g}\)</td></tr>
+    <tr><td>Range (x_R) (m)</td><td colspan="2">\(x_R = \frac{v_0^2 \sin 2\theta}{g}\)</td></tr>
+  </table>
+    
     <h4>Simulasi Gerak Parabola</h4>
     <p>Tinjau simulasi di bawah ini, coba kalian analisis berapa <i>Range</i> minimal yang dibutuhkan sebuah benda untuk bergerak melambung. Coba kalian hitung menggunakan kalkulator di bawah ini!</p>
 
@@ -258,7 +257,6 @@
       <p><small>Simulasi “Projectile Motion” dari PhET. Jika tidak muncul, buka <a href="https://phet.colorado.edu/sims/html/projectile-motion/latest/projectile-motion_all.html?locale=in" target="_blank">di sini</a>.</small></p>
     </section>
 
-    <!-- Kalkulator Interaktif -->
     <div class="calc-container">
       <h4>Kalkulator Interaktif - Menghitung Range (x<sub>R</sub>)</h4>
       <p>Masukkan nilai kecepatan awal \(v_0\), sudut \(\theta\), dan percepatan gravitasi \(g\) untuk menghitung jangkauan parabola:</p>
