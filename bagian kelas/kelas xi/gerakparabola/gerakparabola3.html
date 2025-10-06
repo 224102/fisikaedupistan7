@@ -8,7 +8,333 @@
   <style>
     body {
       margin: 0;
+      font-family: 'Poppins', sans-serif;<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materi 5: Waktu Total dan Jarak Parabola</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
+      background: #ffffff;
+      color: #222;
+    }
+    body.dark-mode { background: #0f172a; color: #e2e8f0; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px; background: transparent; flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: center; gap: 15px; }
+    .logo img { height: 50px; }
+    header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
+
+    nav a {
+      margin-left: 25px; text-decoration: none; font-weight: 500;
+      color: inherit; transition: color 0.3s;
+    }
+    nav a:hover { color: #6366f1; }
+    .toggle-btn {
+      margin-left: 25px; cursor: pointer; border: none; background: none;
+      font-size: 1.5rem; transition: transform 0.3s;
+    }
+    .toggle-btn:hover { transform: scale(1.2); }
+
+    .materi-content {
+      padding: 60px 80px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .materi-content h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .materi-content h3 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      color: #4f46e5;
+      border-left: 5px solid #a855f7;
+      padding-left: 12px;
+    }
+
+    /* Tambahan untuk konsistensi heading level 4 */
+    .materi-content h4 {
+      font-size: 1.4rem;
+      margin-top: 35px;
+      color: #6366f1;
+      border-left: 4px solid #f472b6;
+      padding-left: 10px;
+    }
+
+    .materi-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #374151;
+      text-align: justify;
+      transition: color 0.3s;
+    }
+    body.dark-mode .materi-content p { color: #cbd5e1; }
+
+    .equation {
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 25px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+      font-size: 1rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #e0e7ff;
+      color: #111827;
+    }
+    body.dark-mode th { background-color: #374151; color: #f3f4f6; }
+    body.dark-mode td { border-color: #475569; }
+
+    footer {
+      text-align: center; padding: 20px; font-size: 0.9em;
+      color: #6b7280; border-top: 1px solid #ccc; margin-top: 50px;
+    }
+    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
+
+    .simulasi-phet {
+      text-align: center;
+      margin: 50px auto;
+      max-width: 900px;
+    }
+    .simulasi-phet iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    /* Kalkulator Range */
+    .calc-container {
+      background: #f1f5f9;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .calc-container input {
+      width: 90%;
+      max-width: 300px;
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .calc-container button {
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .calc-container button:hover {
+      background-color: #4338ca;
+    }
+
+    #hasil {
+      font-weight: 600;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .materi-content { padding: 30px 20px; }
+      .materi-content h2 { font-size: 2rem; }
+      .materi-content p { font-size: 1rem; }
+      .equation { font-size: 1.3rem; }
+      header { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
+      nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
+      nav a, .toggle-btn { margin-left: 0; }
+      .simulasi-phet iframe { height: 400px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+      <h1>Materi 5: Waktu Total & Jarak Parabola</h1>
+    </div>
+    <nav>
+      <a href="gerakparabola1.html">&larr; Kembali</a>
+      <a href="../../../profil.html">Profil</a>
+      <button class="toggle-btn" id="toggle-dark">🌙</button>
+    </nav>
+  </header>
+
+  <section class="materi-content">
+    <h2>Waktu Total dan Jarak Parabola</h2>
+    <p>Sekarang ini kalian telah, mengetahui persamaan untuk mencari koordinat sumbu tertentu hingga waktu yang diprediksi ketika pada waktu tertentu. Sekarang kita akan mempelajari bagaimana untuk mencari waktu total yang dibutuhkan benda untuk melambung serta jarak panjang lintasan minimum agar benda dapat melambung sempurna!</p>
+
+    <h3>Mengukur waktu total benda untuk melambung</h3>
+    <p>Bila kita ingin meninjau waktu yang dibutuhkan benda ketika melambung, kita dapat menganalisis menggunakan hubungan komponen arah y mengapa? Sebab pada komponen y benda mampu mengalami tinggi tertinggi dimana ketika titik tertinggi energi kinetik benda cenderung lebih rendah dan energi potensial akan berada dipuncaknya. Hubungan ini biasa kita sebut sebagai hukum kekekalan energi dimana</p>
+    <div class="equation">\(E_m=E_K+E_P\)</div>
+    <p>Dimana:<br>
+    \(E_m\) = Energi mekanik<br>
+    \(E_K\) = Energi kinetik<br>
+    \(E_P\) = Energi potensial</p>
+    <p>Pada saat titik tertinggi E_P berada pada keaadaan tertinggi dimana kita tulis</p>
+    <div class="equation">\(E_P=m.g.h\)</div>
+    <p>Dan energi kinetik</p>
+    <div class="equation">\(E_K=\frac{1}{2}mv^2\)</div>
+    <p>Oleh karena itu ketika benda berada pada ketinggian paling tinggi benda tersebut mengalami perlambatan sehingga kecepatan pada saat titik tertinggi adalah 0 \(v=0\), maka kita ambil kembali persamaan sumbu y</p>
+    <div class="equation">\(y=v_0 \sin\theta t\pm\frac{1}{2}gt^2\)</div>
+    <p>Sebab bila kita anggap titik y tertinggi kecepatan adalah 0, maka persamaan tersebut bisa di tulis</p>
+    <div class="equation">\(0=v_0 \sin\theta t\pm\frac{1}{2}gt^2\)</div>
+    <p>Atau</p>
+    <div class="equation">\(0=t(\sin\theta\pm\frac{1}{2}gt)\)</div>
+    <p>Di matematika ada aturan sebagai berikut:</p>
+    <div class="equation">\(A.B=0\)</div>
+    <p>Jadi bisa saja A=0 atau B=0</p>
+    <p>Kita tinjau ketika A=0 ternyata apabila t=0 maka benda tersebut tidak bergerak/ berada pada posisi diam/tidak ada perubahan, maka kita tinjau ketika B=0</p>
+    <div class="equation">\(\sin\theta\pm\frac{1}{2}gt=0\)</div>
+    <p>Kita bisa tulis kembali persamaan tersebut:</p>
+    <div class="equation">\(\sin\theta=\frac{1}{2}gt\)</div>
+    <p>Kemudian kita kalikan kedua ruas dengan \(2/g\) maka</p>
+    <div class="equation">\((\sin\theta=\frac{1}{2}gt)\times\frac{2}{g}\)</div>
+    <p>Maka kita mendapatkan hubungan waktu total dengan meninjau sumbu y</p>
+    <div class="equation">\(\frac{2}{g}\sin\theta=\frac{2g}{2g}t\)</div>
+    <p>Atau</p>
+    <div class="equation">\(t=\frac{2\sin\theta}{g}\)</div>
+
+    <h3>Mengukur total lintasan yang dibutuhkan</h3>
+    <p>Untuk mengukur total panjang lintasan yang dibutuhkan pada gerak parabola kita bisa meninjau pada komponen sumbu x mengapa? Sebab total panjang lintasan itu merupakan jarak antara posisi awal benda dan posisi akhir benda pada saat keaadan horizontal pada GLBB turunan posisi terhadap waktu kita sebut sebagai perpindahan atau S sedangkan pada gerak parabola perpindahan antara titik awal dan titik akhir kita bisa sebut sebagai <i>Range</i> \(x_R\). Kita tinjau persamaan pada komponen x</p>
+    <div class="equation">\(x=v_0\cos\theta t\)</div>
+    <p>Sebab kita akan menghitung Range dan posisi keduanya juga komponen yang tergantung terhadap variabel waktu maka kita menganggap bahwa <i>Range</i> dan posisi x merupakan komponen yang sama</p>
+    <div class="equation">\(x_R=x_t\)</div>
+    <p>Oleh sebab persamaan komponen x bisa kita tulis menjadi</p>
+    <div class="equation">\(x_R=v_0\cos\theta t\)</div>
+    <p>Pada saat gerakan melambung ternyata benda tersebut juga tergantung terhadap waktu, namun waktu yang dibutuhkan merupakan waktu pada saat benda tersebut melambung dan total waktu ketika benda melambung kita sudah mendapatkan persamaanya sebagai berikut:</p>
+    <div class="equation">\(t=\frac{2\sin\theta}{g}\)</div>
+    <p>Sehingga persamaan \(x_R\) dapat kita tulis menjadi</p>
+    <div class="equation">\(x_R=v_0\cos\theta(\frac{2\sin\theta}{g})\)</div>
+    <p>Di trigonometri ada hubungan sebagai berikut:</p>
+    <div class="equation">\(\cos\theta\times2\sin\theta=\sin2\theta\)</div>
+    <p>Maka \(x_R\) dapat kita tulis kembali menjadi</p>
+    <div class="equation">\(x_R=\frac{v_0\sin2\theta}{g}\)</div>
+
+    <p>Berikut ringkasan dari semua persamaan</p>
+    <table>
+      <tr><th>Besaran</th><th>Sumbu X (GLB)</th><th>Sumbu Y (GLBB)</th></tr>
+      <tr><td>Kecepatan awal (m/s)</td><td>\(v_{0x}=v_0\cos\theta\)</td><td>\(v_{0y}=v_0\sin\theta\)</td></tr>
+      <tr><td>Kecepatan tertentu (m/s)</td><td>\(v_{0x}=v_0\cos\theta\)</td><td>\(v_y=v_0\sin\theta\pm gt\)</td></tr>
+      <tr><td>Posisi (m)</td><td>\(x=v_0\cos\theta t\)</td><td>\(y=v_0\sin\theta t\pm\frac{1}{2}gt^2\)</td></tr>
+      <tr><td>Waktu (s)</td><td>\(t_x=\frac{x}{v_0\cos\theta}\)</td><td>\(t_y=\frac{v_0\sin\theta}{g}\)</td></tr>
+      <tr><td>Waktu total (s)</td><td colspan="2">\(t=\frac{2\sin\theta}{g}\)</td></tr>
+      <tr><td><i>Range</i> \(x_R\) (m)</td><td colspan="2">\(x_R=\frac{v_0\sin2\theta}{g}\)</td></tr>
+    </table>
+
+    <h4>Simulasi Gerak Parabola</h4>
+    <p>Tinjau simulasi di bawah ini, coba kalian analisis berapa <i>Range</i> minimal yang dibutuhkan sebuah benda untuk bergerak melambung. Coba kalian hitung menggunakan kalkulator di bawah ini!</p>
+
+    <section class="simulasi-phet">
+      <iframe src="https://phet.colorado.edu/sims/html/projectile-motion/latest/projectile-motion_all.html?locale=in"></iframe>
+      <p><small>Simulasi “Projectile Motion” dari PhET. Jika tidak muncul, buka <a href="https://phet.colorado.edu/sims/html/projectile-motion/latest/projectile-motion_all.html?locale=in" target="_blank">di sini</a>.</small></p>
+    </section>
+
+    <!-- Kalkulator Interaktif -->
+    <div class="calc-container">
+      <h4>Kalkulator Interaktif - Menghitung Range (x<sub>R</sub>)</h4>
+      <p>Masukkan nilai kecepatan awal \(v_0\), sudut \(\theta\), dan percepatan gravitasi \(g\) untuk menghitung jangkauan parabola:</p>
+
+      <label>Kecepatan awal (v₀) [m/s]</label><br>
+      <input type="number" id="v0" placeholder="misal 20"><br>
+
+      <label>Sudut (θ) [derajat]</label><br>
+      <input type="number" id="theta" placeholder="misal 45"><br>
+
+      <label>Gravitasi (g) [m/s²]</label><br>
+      <input type="number" id="g" value="9.8"><br>
+
+      <button onclick="hitungRange()">Hitung Range</button>
+      <p id="hasil"></p>
+    </div>
+<div style="text-align:center; margin-top:40px;">
+  <a href="gerakparabola4.html" 
+     style="
+       display:inline-block;
+       background: linear-gradient(90deg, #6366f1, #a855f7, #f472b6);
+       color:white;
+       padding:12px 28px;
+       border-radius:30px;
+       text-decoration:none;
+       font-weight:600;
+       font-size:1.1rem;
+       transition: all 0.3s ease;">
+    Lanjut ke Latihan Soal
+  </a>
+</div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-dark");
+    const body = document.body;
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+
+    function hitungRange() {
+      const v0 = parseFloat(document.getElementById('v0').value);
+      const theta = parseFloat(document.getElementById('theta').value);
+      const g = parseFloat(document.getElementById('g').value);
+
+      if (isNaN(v0) || isNaN(theta) || isNaN(g) || g === 0) {
+        document.getElementById('hasil').innerText = "Masukkan semua nilai dengan benar!";
+        return;
+      }
+
+      const rad = (theta * Math.PI) / 180;
+      const range = (Math.pow(v0, 2) * Math.sin(2 * rad)) / g;
+
+      document.getElementById('hasil').innerHTML =
+        `Jarak horizontal maksimum (Range) adalah <b>${range.toFixed(2)} meter</b>.`;
+    }
+  </script>
+</body>
+</html>
+
       transition: background 0.3s, color 0.3s;
       background: #ffffff;
       color: #222;
