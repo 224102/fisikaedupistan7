@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latihan Soal - Gerak Parabola</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+body {
+  margin:0; font-family:'Poppins',sans-serif;
+  transition: background 0.3s, color 0.3s;
+  background:#ffffff; color:#222;
+}
+body.dark-mode { background:#0f172a; color:#e2e8f0; }
+
+header { display:flex; justify-content:space-between; align-items:center; padding:15px 20px; flex-wrap:wrap; }
+.logo { display:flex; align-items:center; gap:10px; }
+.logo img { height:45px; }
+header h1 { margin:0; font-size:1.5rem; font-weight:700; color:#4f46e5; }
+nav { display:flex; flex-wrap:wrap; gap:10px; margin-top:5px; }
+nav a { text-decoration:none; font-weight:500; color:inherit; transition:color 0.3s; }
+nav a:hover { color:#6366f1; }
+.toggle-btn { cursor:pointer; border:none; background:none; font-size:1.5rem; transition: transform 0.3s; }
+.toggle-btn:hover { transform:scale(1.2); }
+
+section.hero { padding:50px 20px; text-align:center; }
+section.hero h2 {
+  font-size:2rem; font-weight:800;
+  background:linear-gradient(90deg,#a855f7,#f472b6,#fb923c);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+section.hero p { font-size:1rem; margin-bottom:20px; color:#4b5563; }
+body.dark-mode section.hero p { color:#cbd5e1; }
+
+section.content {
+  max-width:900px; margin:30px auto; padding:20px;
+  background:#f1f5f9; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+body.dark-mode section.content { background:#1e293b; color:#e2e8f0; }
+
+h3 { text-align:center; font-size:1.4rem; margin-bottom:15px; color:#4f46e5; }
+label { font-weight:600; color:#4f46e5; }
+
+textarea {
+  width:100%; min-height:60px; margin-top:8px; margin-bottom:18px;
+  padding:10px; font-family:'Poppins',sans-serif; border-radius:8px; border:1px solid #ccc;
+  resize:vertical; font-size:0.95rem;
+}
+body.dark-mode textarea { background:#0f172a; color:#e2e8f0; border:1px solid #475569; }
+
+.btn {
+  display:inline-block; margin:10px 8px; padding:10px 20px; font-weight:600;
+  border:none; border-radius:8px; background:#6366f1; color:white;
+  cursor:pointer; transition:0.3s; text-align:center; text-decoration:none;
+}
+.btn:hover { background:#4f46e5; transform:scale(1.05); }
+
+footer { text-align:center; padding:15px; font-size:0.85em; color:#6b7280; border-top:1px solid #ccc; margin-top:40px; }
+body.dark-mode footer { border-color:#334155; color:#cbd5e1; }
+
+.option-group { margin-top:8px; margin-bottom:10px; }
+.option-group label { display:block; margin-bottom:5px; cursor:pointer; }
+input[type="radio"] { margin-right:8px; accent-color:#4f46e5; }
+
+@media(max-width:768px){
+  header { flex-direction:column; align-items:flex-start; }
+  nav { flex-direction:column; align-items:flex-start; gap:5px; margin-top:10px; }
+  section.hero h2 { font-size:1.6rem; }
+  section.hero p { font-size:0.95rem; }
+  section.content { padding:15px; }
+  h3 { font-size:1.2rem; }
+  .btn { padding:8px 16px; font-size:0.9rem; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="logo">
+    <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+    <h1>Quiz Gerak Parabola</h1>
+  </div>
+  <nav>
+    <a href="latihansoal.html">Kembali</a>
+    <a href="../../../profil.html">Profil</a>
+    <button class="toggle-btn" id="toggle-dark">🌙</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Gerak Parabola</h2>
+  <p>Quiz untuk memahami konsep lintasan parabola melalui analisis dan perhitungan.</p>
+</section>
+
+<section class="content" id="soal">
+  <h3>Latihan Soal</h3>
+
+  <label>Nama / Presensi:</label>
+  <textarea id="nama" placeholder="Tulis nama lengkapmu di sini..."></textarea>
+
+  <!-- Soal 1 -->
+  <p><b>1.</b> Seorang siswa ingin membuktikan ketinggian tebing yang ditaksir memiliki ketinggian lebih dari 15 m dari permukaan tanah. 
+  Ia melempar sebuah batu dari dasar tebing dengan kecepatan awal 20 m/s dan pada sudut θ=60° terhadap sumbu horizontal. 
+  Berdasarkan hasil perhitungan, apakah batu mencapai ketinggian lebih dari 15 meter? Gunakan g=9,8 m/s².</p>
+  
+  <div class="option-group">
+    <label><input type="radio" name="soal1" value="A"> Tidak, karena ketinggian maksimum batu hanya sekitar 10,2 m</label>
+    <label><input type="radio" name="soal1" value="B"> Ya, karena ketinggian maksimum batu mencapai 15,3 m</label>
+    <label><input type="radio" name="soal1" value="C"> Tidak, karena ketinggian maksimum batu hanya sekitar 12,8 m</label>
+    <label><input type="radio" name="soal1" value="D"> Ya, karena ketinggian maksimum batu mencapai 18,9 m</label>
+  </div>
+  <textarea id="alasan1" placeholder="Tuliskan alasanmu memilih jawaban di atas..."></textarea>
+
+  <!-- Soal 2 -->
+  <p><b>2.</b> Seorang pemain basket melempar bola dengan kecepatan awal 10 m/s pada sudut θ=50° ke dalam ring 
+  yang berjarak 6 m dengan ketinggian 2,5 m dari titik pemain. Berdasarkan analisis gerak parabola, apakah bola akan masuk ke ring? Gunakan g=9,8 m/s².</p>
+  
+  <div class="option-group">
+    <label><input type="radio" name="soal2" value="A"> Ya, karena lintasan bola mencapai tinggi 2,5 m di jarak 6 m</label>
+    <label><input type="radio" name="soal2" value="B"> Tidak, karena bola jatuh sebelum ring</label>
+    <label><input type="radio" name="soal2" value="C"> Tidak, karena bola terlalu tinggi di atas ring</label>
+    <label><input type="radio" name="soal2" value="D"> Tidak, karena waktu lintasan terlalu lama</label>
+  </div>
+  <textarea id="alasan2" placeholder="Tuliskan alasanmu memilih jawaban di atas..."></textarea>
+
+  <!-- Soal 3 -->
+  <p><b>3.</b> Seorang pemain sepak bola menendang bola bermassa 250 g dengan kecepatan awal \(v_0\) dan sudut θ=50°. 
+  Pada ketinggian maksimum energi kinetik bola 36 joule. Tentukan:</p>
+  <ol type="a">
+    <li>Kecepatan awal bola terhadap sumbu horizontal</li>
+    <li>Waktu yang dibutuhkan bola untuk mencapai ketinggian maksimum</li>
+    <li>Jarak horizontal maksimum (range) bola</li>
+    <li>Kecepatan sumbu vertikal pada saat t = 10 s</li>
+  </ol>
+  <p>Gunakan g=9,8 m/s².</p>
+  <textarea id="jawaban3" placeholder="Tuliskan langkah-langkah dan hasil perhitunganmu di sini..."></textarea>
+
+  <div style="text-align:center; margin-top:15px;">
+    <button class="btn" onclick="downloadPDF()">Download Jawaban (PDF)</button>
+    <button class="btn" onclick="checkPassword()">Buka Kunci Jawaban</button>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+</footer>
+
+<script>
+const toggleBtn = document.getElementById("toggle-dark");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+});
+
+// Fungsi Download PDF
+function downloadPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  
+  const nama = document.getElementById("nama").value.trim() || "(Belum diisi)";
+  const soal1 = document.querySelector('input[name="soal1"]:checked')?.nextSibling.textContent.trim() || "(Belum dipilih)";
+  const alasan1 = document.getElementById("alasan1").value.trim() || "-";
+  const soal2 = document.querySelector('input[name="soal2"]:checked')?.nextSibling.textContent.trim() || "(Belum dipilih)";
+  const alasan2 = document.getElementById("alasan2").value.trim() || "-";
+  const jawaban3 = document.getElementById("jawaban3").value.trim() || "-";
+
+  let y = 20;
+  doc.setFont("helvetica","bold");
+  doc.setFontSize(16);
+  doc.text("Latihan Soal Gerak Parabola", 105, y, {align:"center"});
+  y += 10;
+
+  doc.setFontSize(12);
+  doc.text("Nama / Presensi: " + nama, 20, y); y += 10;
+
+  doc.setFont("helvetica","normal");
+  doc.text("1. Pilihan: " + soal1, 20, y); y += 7;
+  doc.text("Alasan: " + alasan1, 25, y, {maxWidth:160}); y += 25;
+
+  doc.text("2. Pilihan: " + soal2, 20, y); y += 7;
+  doc.text("Alasan: " + alasan2, 25, y, {maxWidth:160}); y += 25;
+
+  doc.text("3. Jawaban Uraian:", 20, y); y += 7;
+  doc.text(jawaban3, 25, y, {maxWidth:160});
+
+  doc.save("Jawaban_Latihan_Gerak_Parabola.pdf");
+}
+
+// Password buka kunci
+function checkPassword() {
+  const password = prompt("Masukkan password untuk membuka kunci jawaban:");
+  if (password === "773610") {
+    window.location.href = "kuncijawaban_parabola.html";
+  } else {
+    alert("Password salah! Akses ditolak.");
+  }
+}
+</script>
+</body>
+</html>
