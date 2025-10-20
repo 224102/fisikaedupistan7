@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materi 5: Hukum Newton</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
+      background: #ffffff;
+      color: #222;
+    }
+    body.dark-mode { background: #0f172a; color: #e2e8f0; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px; background: transparent; flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: center; gap: 15px; }
+    .logo img { height: 50px; }
+    header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
+
+    nav a {
+      margin-left: 25px; text-decoration: none; font-weight: 500;
+      color: inherit; transition: color 0.3s;
+    }
+    nav a:hover { color: #6366f1; }
+    .toggle-btn {
+      margin-left: 25px; cursor: pointer; border: none; background: none;
+      font-size: 1.5rem; transition: transform 0.3s;
+    }
+    .toggle-btn:hover { transform: scale(1.2); }
+
+    .materi-content {
+      padding: 60px 80px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .materi-content h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .materi-content h3 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      color: #4f46e5;
+      border-left: 5px solid #a855f7;
+      padding-left: 12px;
+    }
+
+    .materi-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #374151;
+      text-align: justify;
+      transition: color 0.3s;
+    }
+    body.dark-mode .materi-content p { color: #cbd5e1; }
+
+    .equation {
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 25px 0;
+    }
+
+    .video-placeholder {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0;
+    }
+    .video-placeholder img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      text-align: center; padding: 20px; font-size: 0.9em;
+      color: #6b7280; border-top: 1px solid #ccc; margin-top: 50px;
+    }
+    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
+
+    @media (max-width: 768px) {
+      .materi-content { padding: 30px 20px; }
+      .materi-content h2 { font-size: 2rem; }
+      .materi-content p { font-size: 1rem; }
+      .equation { font-size: 1.3rem; }
+      header { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
+      nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
+      nav a, .toggle-btn { margin-left: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+      <h1>Materi 5: Hukum Newton</h1>
+    </div>
+    <nav>
+      <a href="../../kelas xi.html">Kembali</a>
+      <a href="../../../profil.html">Profil</a>
+      <button class="toggle-btn" id="toggle-dark">🌙</button>
+    </nav>
+  </header>
+
+  <section class="materi-content">
+    <h2>Gaya Berat</h2>
+
+    <p>Setelah kalian mempelajari Hukum fundamental yaitu Hukum Newton sekarang kita akan mempelajari sebab akibat dari hukum Newton bila ditinjau dari Hukum ketiga. Kita tahu hukum ketiga Newton adalah</p>
+ 
+<div class="equation">
+      \( \sum F_{\text{aksi}} = - \sum F_{\text{reaksi}} \)
+    </div>
+<p>Sekarang kita tinjau hukum ketiga newton pada masing-masing balok dibawah ini:</p>
+<img src="foto/gayaberat.png" alt="Gaya Berat" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+
+
+<p>Ternyata hukum aksi reaksi juga menimbulkan sebuah gaya, gaya berat adalah besaran yang muncul sebab pengaruh medan percepatan gravitasi bumi oleh sebab itu gaya berat selalu mengarah ke pusat massa dalam hal ini bumi. Ketika benda itu diam kita tahu percepatan a=0 atau benda berubah kedudukannya sehingga kita tinjau dari hukum Newton 1</p>
+<div class="equation">
+      \( \sum F = 0 \)
+    </div>
+<p>Namun kita belum tahu ternyata yang menyebabkan benda itu tetap diam atau tetap bergerak adalah gaya berat yang disebabkan oleh gravitasi. Jika kita tinjau pada benda yang bergerak dan memiliki massa maka</p>
+<div class="equation">
+      \( \sum F = m.a \)
+    </div>
+
+<p>Dalam hal ini percepatan yang timbul adalah percepatan gravitasi sehingga \(a=g\) maka</p>
+<div class="equation">
+      \( \sum F = m.g \)
+    </div>
+<p>Dan</p>
+<div class="equation">
+      \( \sum F = w \)
+    </div>
+<p>maka</p>
+<div class="equation">
+      \( w = m.g \)
+    </div>
+<p>Jadi walaupun benda tersebut diam, ternyata bila kita tinjau secara mikroskopis benda tersebut sedang jatuh kebawah dengan percepatan gravitasi. Nah gaya yang tetap menjaga agar benda tetap berada dalam posisinya itu yang dinamakan sebagai Gaya Normal.</p>
+
+    <h3>Gaya Normal</h3>
+    <p>Gaya Normal adalah gaya yang mempertahankan benda agar tetap berada dalam posisinya dan tegak lurus terhadap bidangnya mari kita tinjau ketiga posisi benda dibawah ini:</p>
+<img src="foto/VEKTORNORMAL.png" alt="Vektor Normal" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+
+    <p>Pada gambar tersebut dapat dilihat bahwa gaya normal selalu tegak lurus terhadap bidangnya yang disebabkan oleh hukum ketiga newton</p>
+<div class="equation">
+      \( \sum F_{\text{aksi}} = - \sum F_{\text{reaksi}} \)
+    </div>
+<p>Mari kita tinjau satu persatu gambar tersebut!</p>
+ <h3>Benda Ketika Berada Posisi Horizonatal</h3>
+<img src="foto/gayanormal1.gif" alt="Gaya Normal Horizontal" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+
+<p>Pada gambar tersebut, sebab benda tidak mengalami perpindahan alis x=0 maka benda tidak mengalami percepatan atau a=0. Oleh sebab itu gaya yang bekerja hanya gaya berat yang mengarah ke pusat massa w=mg. Sehingga gaya normal yang berlaku akibat benda yang tidak mengalami perpindahan adalah</p>
+<div class="equation">
+      \( w = N \)
+    </div>
+<div class="equation">
+      \( N = m.g \)
+    </div>
+<h3>Benda Ketika Berada Posisi Vertikal</h3>
+<img src="foto/gayanormal4.gif" alt="Gaya Normal Vertikal" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+
+<p>Pada kondisi ini kita ibaratkan sebuah benda kita tempelkan pada dinding yang memiliki permukaan kasar yang menyebabkan benda tersebut tertempel pada permukaan dinding. Namun demikian benda tersebut diam maka resultan gaya yang bekerja adalah 0 dan gaya yang bekerja hanya gaya berat yang arahnya menuju pusat massa</p>
+<p>Sebab permukaan benda adalah kasar maka dinding yang ditempeli benda tersebut memiliki gaya gesek yang kita definisikan sebagai</p>
+<div class="equation">
+      \( f=μ_s.N \)
+    </div>
+
+<p>dengan:</p>
+
+<p>\( f = \text{gaya gesek} \)</p>
+<p>\( \mu_s = \text{koefisien gesek statis} \)</p>
+<p>\( N = \text{gaya normal} \)</p>
+
+<p>Sebab gaya merupakan vektor yang memiliki arah dan besaran maka kita dapat mencari gaya normal dengan melihat resultan sebab hubungan aksi reaksi gaya gesek benda terhadap permukaan dinding terhadap gaya normal<p/>
+<div class="equation">
+  \[ \sum F = w - f = 0 \]
+</div>
+<div class="equation">
+  \[ w = f \]
+</div>
+<div class="equation">
+  \[ mg = \mu N \]
+</div>
+<div class="equation">
+  \[ N = \frac{mg}{\mu} \]
+</div>
+
+<p>
+  Nah jadi gaya normal yang bekerja pada benda vertikal berfungsi untuk melihat seberapa besar benda tersebut menempel pada suatu bidang vertikal, sehingga kita mendapatkan hubungan:
+</p>
+
+<div class="equation">\[ N > w \]</div>
+<p>maka benda tersebut akan masuk ke dalam dinding</p>
+
+<div class="equation">\[ N = w \]</div>
+<p>maka benda tersebut akan diam di dinding</p>
+
+<div class="equation">\[ N < w \]</div>
+<p>maka benda tersebut akan jatuh sebab gaya gravitasi</p>
+
+
+<h3>Benda Ketika Berada Posisi Bidang Miring</h3>
+<img src="foto/gayanormal6.gif" alt="Gaya Normal Bidang Miring" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+
+<p>Ketika pada posisi bidang miring untuk mempertahankan posisi benda agar tidak terjatuh ke bawah maka akan ada yang namanya gaya gesek yang mengarah terbalik terhadap arah gerak benda kita definisikan sebagai </p>
+<div class="equation">
+      \( f=μ_s.N \)
+    </div>
+
+<p>dengan:</p>
+
+<p>\( f = \text{gaya gesek} \)</p>
+<p>\( \mu_s = \text{koefisien gesek statis} \)</p>
+<p>\( N = \text{gaya normal} \)</p>
+
+<p>Sebab benda ketika meluncur selalu mengarah ke sumbu x, maka kita dapat meninjau benda di bidang miring menggunakan analisis gambar pertama maka</p>
+<div class="equation">
+      \( N=w_⊥ \)
+    </div>
+
+<p>
+  Oleh sebab itu \( w_{\perp} \) dapat dicari melalui:
+</p>
+
+<div class="equation">
+  \[
+  \cos\theta = \frac{w_{\perp}}{w}
+  \]
+  \[
+  w_{\perp} = w\cos\theta
+  \]
+  \[
+  w_{\perp} = mg\cos\theta
+  \]
+</div>
+
+<p>
+  Sebab \( N = w_{\perp} \) maka:
+</p>
+
+<div class="equation">
+  \[
+  N = mg\cos\theta
+  \]
+</div>
+
+
+<p>Untuk menghitung percepatan benda kita dapat meninjau dari kedua sisi yaitu ketika lintasan benda licin dimana tidak ada gaya gesek dan ketika lintasan benda kasar dimana memiliki gaya gesek:p/>
+<p><b>Ketika Benda Tidak Memiliki Gaya Gesek</b><br></p>
+<p>Ketika benda bergerak maka benda memiliki percepatan oleh sebab itu kita bisa tinjau percepatan benda pada bidang miring menggunakan hukum kedua newton:</p>
+<div class="equation">
+      \( \sum F = m.a \)
+    </div>
+<p>
+  Pada saat benda meluncur terdapat gaya berat yang menyebabkan benda tersebut bergerak mengikuti lintasan miring. 
+  Gaya berat tersebut adalah \( w_{\parallel} \) karena searah dengan arah gerak benda ketika meluncur. 
+  Untuk menentukan \( w_{\parallel} \) dapat ditinjau melalui:
+</p>
+
+<div class="equation">
+  \[
+  \sin\theta = \frac{w_{\parallel}}{w}
+  \]
+  \[
+  w_{\parallel} = w\sin\theta
+  \]
+  \[
+  w_{\parallel} = mg\sin\theta
+  \]
+</div>
+
+<p>
+  Sebab benda memiliki massa dan percepatan yang menyebabkan dia bergerak, maka:
+</p>
+
+<div class="equation">
+  \[
+  \sum F = w_{\parallel}
+  \]
+  \[
+  ma = mg\sin\theta
+  \]
+  \[
+  a = g\sin\theta
+  \]
+</div>
+
+<p><b>Ketika Benda Memiliki Gaya Gesek</b><br></p>
+<p>Apabila benda tersebut memiliki gaya gesek maka memiliki koefisien gesek yang besarnya</p>
+<div class="equation">
+\( f = μ N \)
+</div>
+
+<p>
+  Dan kita tahu besarnya \( N \):
+</p>
+
+<div class="equation">
+  \[
+  N = mg\cos\theta
+  \]
+  \[
+  f = \mu mg\cos\theta
+  \]
+</div>
+
+<p>
+  Oleh sebab itu, untuk menghitung percepatan yang timbul akibat gaya gesek, kita dapat meninjau dari Hukum II Newton:
+</p>
+
+<div class="equation">
+  \[
+  \sum F = w_{\parallel} - f
+  \]
+  \[
+  ma = (mg\sin\theta) - (\mu mg\cos\theta)
+  \]
+  \[
+  ma = m \big( g\sin\theta - \mu g\cos\theta \big)
+  \]
+  \[
+  a = g(\sin\theta - \mu\cos\theta)
+  \]
+</div>
+
+
+   <a href="hukumnewton3.html" 
+     style="
+       display:inline-block;
+       background: linear-gradient(90deg, #6366f1, #a855f7, #f472b6);
+       color:white;
+       padding:12px 28px;
+       border-radius:30px;
+       text-decoration:none;
+       font-weight:600;
+       font-size:1.1rem;
+       transition: all 0.3s ease;">
+    Lanjut Materi Lift dan Katrol
+  </a>
+  </div>
+ 
+ </section>
+
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-dark");
+    const body = document.body;
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>
