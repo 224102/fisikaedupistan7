@@ -1,1 +1,309 @@
-1
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materi 5: Hukum Newton</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
+      background: #ffffff;
+      color: #222;
+    }
+    body.dark-mode { background: #0f172a; color: #e2e8f0; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px; background: transparent; flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: center; gap: 15px; }
+    .logo img { height: 50px; }
+    header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
+
+    nav a {
+      margin-left: 25px; text-decoration: none; font-weight: 500;
+      color: inherit; transition: color 0.3s;
+    }
+    nav a:hover { color: #6366f1; }
+    .toggle-btn {
+      margin-left: 25px; cursor: pointer; border: none; background: none;
+      font-size: 1.5rem; transition: transform 0.3s;
+    }
+    .toggle-btn:hover { transform: scale(1.2); }
+
+    .materi-content {
+      padding: 60px 80px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .materi-content h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .materi-content h3 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      color: #4f46e5;
+      border-left: 5px solid #a855f7;
+      padding-left: 12px;
+    }
+
+    .materi-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #374151;
+      text-align: justify;
+      transition: color 0.3s;
+    }
+    body.dark-mode .materi-content p { color: #cbd5e1; }
+
+    .equation {
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 25px 0;
+    }
+
+    .video-placeholder {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0;
+    }
+    .video-placeholder img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      text-align: center; padding: 20px; font-size: 0.9em;
+      color: #6b7280; border-top: 1px solid #ccc; margin-top: 50px;
+    }
+    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
+
+    @media (max-width: 768px) {
+      .materi-content { padding: 30px 20px; }
+      .materi-content h2 { font-size: 2rem; }
+      .materi-content p { font-size: 1rem; }
+      .equation { font-size: 1.3rem; }
+      header { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
+      nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
+      nav a, .toggle-btn { margin-left: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+      <h1>Materi 5: Hukum Newton</h1>
+    </div>
+    <nav>
+      <a href="../../../kelasxi.html">Kembali</a>
+      <a href="../../../profil.html">Profil</a>
+      <button class="toggle-btn" id="toggle-dark">🌙</button>
+    </nav>
+  </header>
+
+  <section class="materi-content">
+    <h2>HUKUM NEWTON</h2>
+
+    <p>Gaya didefinisikan sebagai dorongan atau tarikan yang dapat mengubah arah gerak benda. Dalam kehidupan sehari-hari haya sering dijumpai sperti gaya berat, gaya sentripetal, gaya pegas dan lainnya. Sehingga gaya merupakan besaran vektor yang memiliki arah, besaran vektor ini apabila dijumlahkan akan menghasilkan resultan gaya.</p>
+ <img src="foto/resultan.png" alt="Gambar Resultan Gaya" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+
+
+    <h3>Hukum pertama Newton</h3>
+    <p>Newton mengungkapkan dalam percobaanya benda yang diam akan tetap diam, dan benda yang bergerak akan terus bergerak kecuali ada gaya eksternal yang mempengaruhinya. Pernyataan ini membuktikan 1 hal bahwa ada sifat kelembaman di yang mempertahankan posisi benda. Ketiadaan gaya yang menyebabkan benda itu bergerak akan menghasilkan resultan gaya yang besarnya sama dengan nol \(∑F=0\). Oleh sebab itu Hukum pertama Newton dapat diungkapkan melalui persamaan:</p>
+
+    <div class="equation">\( \sum F = 0 \)</div>
+
+    <p>Hukum ini yang menjelaskan kenapa sebilah pisau yang tidak kuat menancap pada gagangnya kemudian gagangnya dibenturkan ke permukaan keras menjadikan pisau tersebut malah semakin menancap kepada gagangnya.</p>
+
+    <p><b>Contoh soal:</b><br>
+    Perhatikan gambar di bawah ini</p>
+
+    <img src="foto/hukumnewton1.png" alt="Hukum Newton 1" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+
+    <p>Lia, Adi dan Ari mendorong sebuah mobil. Lia dan Adi mendorong dari arah belakang dan Ari mendorong dari depan. Ternyata mobil tetap diam. Jika gaya yang diberikan Lia dan Ari masing-masing adalah 100 N dan 400 N, berapakah besar gaya yang diberikan oleh Adi?</p>
+
+ <p><em>Penyelesaian</em></p>
+  <p><strong>Diketahui:</strong><br>
+  \( F_{\text{Lia}} = 100\,\text{N} \)<br>
+  \( F_{\text{Ari}} = 400\,\text{N} \)
+  </p>
+
+  <p><strong>Ditanya:</strong><br>
+  \( F_{\text{Adi}} \)
+  </p>
+
+  <p><strong>Jawab:</strong><br>
+  Sebab mereka mendorong secara berlawanan dan ternyata mobil tidak bergerak, 
+  maka kita dapat menyelesaikan permasalahan menggunakan hukum pertama Newton:  
+  \( \sum F = 0 \)
+  </p>
+    <div class="equation">
+      \( \sum F = 0 \)<br>
+      \( F_{\text{Lia}} + F_{\text{Adi}} - F_{\text{Ari}} = 0 \)<br>
+      \( 100 + F_{\text{Adi}} - 400 = 0 \)<br>
+      \( F_{\text{Adi}} = 400 - 100 = 300\,N \)
+    </div>
+
+    <h3>Hukum Kedua Newton</h3>
+    <p>Hukum pertama newton muncul sebab suatu benda akan tetap diam akan diam dan akan bergerak akan terus bergerak. Sebab itu percepatan akan sama dengan nol. Kita tahu percepatan adalah turunan kecepatan terhadap waktu</p>
+	<div class="equation">
+      \( a = \frac{dv}{dt} \)<br>
+    	</div>
+<p>Dan kecepatan ada turunan perpindahan posisi terhadap waktu</p>
+
+    <div class="equation">
+      \( v = \frac{dx}{dt} \)
+    </div>
+
+    <p>Apabila benda diam maka tidak ada perpindahan posisi maka /(x=0/), sebab tidak ada perpindahan maka tidak ada kecepatan v=0 oleh sebab itu percepatan /(a=0/). Namun bagaimana jika benda tersebut mengalami percepatan? Coba kita tinjau video dibawah ini</p>
+
+    <div class="video-placeholder">
+      <img src="video-placeholder.gif" alt="Video ilustrasi hukum kedua Newton">
+    </div>
+
+    <p>Video tersebut menampilkan keadaan partikel bila diletakkan dalam keadaan ruang vakum yang memiliki tekanan. Ternyata ketika partikel tersebut ditekan maka partikel tersebut akan bergerak dan saling bertumbukan. Tumbukan ini kita sebut sebagai momentum.</p>
+
+    <div class="equation">
+      \( p = m \cdot v \)
+    </div>
+
+    <p>
+      Keterangan:<br>
+      \( p \) = momentum (kg·m/s)<br>
+      \( m \) = massa (kg)<br>
+      \( v \) = kecepatan (m/s)
+    </p>
+
+	<p>Momentum sendiri merupakan besaran yang menyatakan seberapa sulit partikel dapat dihentikan. Kita bayangkan sebuah motor dengan massa 100 kg melaju dengan kecepatan 10m/s dan sebuah mobil dengan massa 1000kg melaju dengan kecepatan /(10m/s/).</p>
+
+    <div class="equation">
+      \( p_{\text{motor}} = 100 \times 10 = 1000\,\text{kg·m/s} \)<br>
+      \( p_{\text{mobil}} = 1000 \times 10 = 10000\,\text{kg·m/s} \)
+    </div>
+
+    <p>Dari hasil tersebut menunjukkan bahwa mobil lebih susah dihentikan walaupun memiliki kecepatan yang sama dengan motor. Hukum Newton kedua menjelaskan perilaku partikel ketika diberikan tekanan oleh sebab itu untuk menghitung total gaya partikel yang bekerja suatu waktu adalah sebagai berikut</p>
+
+    <div class="equation">
+      \( \sum F = \frac{dp}{dt} \)
+    </div>
+
+    <p>Dengan \(p=m.v\) merupakan turunan terhadap waktu maka gunakan aturan hasil kali. Dalam kalkulus diferensial terdapat aturan hasil kali sebagai turunan diferensial terhadap vektor</p>
+
+    <div class="equation">
+      \( \frac{d}{dt}(u \cdot v) = v \frac{du}{dt} + u \frac{dv}{dt} \)
+    </div>
+
+    <p>Kita misalkan</p>
+ <div class="equation"> 
+\( u = m \), \( v = v \)
+<\div>
+<p>Maka substitusi persamaan:</p>
+
+    <div class="equation">
+      \( \frac{dp}{dt} = v \frac{dm}{dt} + m \frac{dv}{dt} \)
+    </div>
+
+    <p>Sebab nilai massa selalu konstan dan cenderung tidak berubah maka kita bisa mengganggap bahwa m=0. Sehingga persamaan tersebut berubah menjadi</p>
+
+
+ <div class="equation">
+    \[
+    \frac{dp}{dt} = v \frac{dm}{dt} = 0 + m \frac{dv}{dt}
+    \]
+    <br>
+    \[
+    \frac{dp}{dt} = m \frac{dv}{dt}
+    \]
+  </div>
+
+<p>Kita tahu perubahan kecepatan terhadap waktu merupakan pengertian dari percepatan</p>
+<div class="equation">
+      \( a = \frac{dv}{dt} \)<br>
+    	</div>
+<p>Maka persamaan tersebut berubah menjadi</p>
+<div class="equation">
+    \[
+    \frac{dp}{dt} = m a
+    \]
+    \[
+    \sum F = \frac{dp}{dt}
+    \]
+    \[
+    \sum F = m a
+    \]
+  </div>
+<p>Ini merupakan ekspresi dari hukum kedua newton apabila benda bergerak memiliki sebuah percepatan dengan massa bernilai konstan</p>
+
+    <p><b>Contoh Soal</b><br>
+Sebuah benda bermassa \( 3\,\text{kg} \) ditarik oleh gaya \( F_1 = 30\,\text{N} \) ke arah kanan 
+dan juga gaya \( F_2 = 21\,\text{N} \) ke arah kiri. 
+Pertanyaannya, seberapa besar percepatan yang dialami oleh benda?</p>
+
+<img src="foto/hukumnewton2.png" alt="Hukum Newton 2" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+
+<p><em>Penyelesaian</em></p>
+  <p><strong>Diketahui:</strong><br>
+  \( m = 3 \,\text{kg} \)<br>
+  \( F_1 = 30 \,\text{N} \)
+  </p>
+
+  <p><strong>Ditanya:</strong><br>
+  \( a \)
+  </p>
+
+  <p><strong>Jawab:</strong><br>
+  Sebab mereka mendorong secara berlawanan dan ternyata mobil tidak bergerak, 
+  maka kita dapat menyelesaikan permasalahan menggunakan hukum pertama Newton:  
+  \( \sum F = 0 \)
+  </p>
+
+    <div class="equation">
+      \( \sum F = m \cdot a \)<br>
+      \( F_1 - F_2 = m \cdot a \)<br>
+      \( 30 - 21 = 3a \)<br>
+      \( a = \frac{9}{3} = 3\,m/s^2 \)
+    </div>
+
+    <h3>Hukum Ketiga Newton</h3>
+    <p>Setelah kalian mempelajari hukum kedua Newton yaitu gaya timbul akibat interaksi massa dengan percepatan. Sekarang kita tinjau hukum pertama Newton terkait kelembaman. Kelembahan merupakan penolakan alami benda untuk mengubah posisinya. Jadi benda tersebut berada pada posisi malas bergerak, tapi bagaimana ketika benda tersebut kita paksa untuk bergerak? Ternyata benda tersebut bergerak namun tetap memberikan reaksi atau penolakan untuk benda agar berada pada posisi zona nyamannya atau diam. Hukum ini yang kita sebut sebagai hukum Aksi-Reaksi dari hukum ke-3 Newton!</p>
+
+    <div class="equation">
+      \( \sum F_{\text{aksi}} = - \sum F_{\text{reaksi}} \)
+    </div>
+
+    <p>Simbol negatif ini menunjukkan bahwa setiap perubahan selalu disertai dengan reaksi yang berarah berlawanan terhadap aksi yang diberikan.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-dark");
+    const body = document.body;
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>
