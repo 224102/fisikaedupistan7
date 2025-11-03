@@ -133,10 +133,19 @@
 <p>Apa artinya?:</p>
 <p>Hukum ini menjelaskan bahwa garis khayal yang menghubungkan antara matahari dengan planet sebanding dengan luas arsiran dalam selang waktu yang sama. Coba kalian perhatikan video dibawah ini:</p>
 
-<video autoplay loop muted playsinline controls>
+<div style="display:flex; justify-content:center; align-items:center; margin:20px 0;">
+  <video 
+    autoplay 
+    loop 
+    muted 
+    playsinline 
+    controls 
+    style="width:100%; max-width:800px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
     <source src="video/luas juring sebanding dengan waktu.mp4" type="video/mp4">
     Browser kamu tidak mendukung video tag.
   </video>
+</div>
+
 
 <p>Kuis!</p>
 <img src="foto/Screenshot 2025-11-03 164900.png" alt="Kuis Hukum Kepler" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
@@ -187,10 +196,16 @@
 
 <p>Setelah Hukum Luas dikemukakan oleh Kepler, sebenarnya Nicolaus Copernicus juga telah berhipotesis atau menduga bahwa gerakan planet mengelilingi matahari adalah melingkar sempurna. Dan sebenarnya hipotesis ini masih sebanding dengan Hukum Luas milik Kepler. Namun ternyata data yang diperoleh Kepler dari pengamatan jarak matahari terhadap planet selalu berubah-ubah. Data yang dicheck setiap waktu selalu berubah-ubah setiap waktu. Kepler mengamati jarak planet Mars dengan Bumi yang selalu berubah-ubah. Coba kita amati data yang dibuat oleh Kepler melalui pengamatan dari data Tycho Brahe</p>
 
-<video autoplay loop muted playsinline controls>
-    <source src="video/jarak mars terhadap bumi.mp4" type="video/mp4">
-    Browser kamu tidak mendukung video tag.
-  </video>
+<video 
+  autoplay 
+  loop 
+  muted 
+  playsinline 
+  controls 
+  style="width:100%; height:auto; display:block;">
+  <source src="video/jarak mars terhadap bumi.mp4" type="video/mp4">
+  Browser kamu tidak mendukung video tag.
+</video>
 
 <p>Ternyata Elips merupakan bentuk yang cocok digunakan untuk menggambarkan lintasan sebuah planet. Kesimpulan dari pengamatan ini menjadi cikal bakal Hukum Pertama Kepler yakni</p>
 <p style="text-align:center; font-style:italic; font-weight:bold; margin:30px 0;">
@@ -330,6 +345,127 @@ Garis khayal yang menghubungkan matahari dengan planet memiliki luas yang sama d
   \( r \) = Jarak pusat bumi ke satelit (m)<br>
   \( v \) = Kecepatan orbit satelit (m/s)
 </p>
+
+
+<div style="margin-top:30px; background-color:#f8f9fa; padding:20px; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); font-family:'Poppins',sans-serif;">
+  <h3 style="text-align:center; color:#333;">Latihan Soal</h3>
+
+  <ol style="line-height:1.8;">
+    <li>
+      Dua buah planet berada di orbitnya yang sedang mengitari matahari. Planet pertama memiliki orbit dengan jari-jari 
+      \( 8 \times 10^7 \, \text{m} \) dengan periode orbit 8 tahun. 
+      Jika planet kedua memiliki orbit dengan jari-jari \( 2 \times 10^7 \, \text{m} \), 
+      berapakah periode planet kedua?
+    </li>
+    <li>
+      Waktu yang dibutuhkan planet X mengelilingi matahari adalah 1 tahun dan jarak rata-rata antara planet X dengan matahari yaitu 
+      \( 4 \times 10^8 \, \text{m} \). 
+      Jika diketahui periode orbit planet Y adalah \( 2\sqrt{2} \) tahun, 
+      berapa jarak rata-rata antara planet Y dengan matahari?
+    </li>
+  </ol>
+</div>
+
+<div style="text-align:center; margin-top:20px;">
+  <button onclick="showAnswer()" style="background-color:#007BFF; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; font-size:16px;">
+    🔐 Lihat Kunci Jawaban
+  </button>
+</div>
+
+<!-- BAGIAN KUNCI JAWABAN -->
+<div id="answer" style="display:none; margin-top:30px; background-color:#fff; padding:25px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-family:'Poppins',sans-serif;">
+  <h3 style="text-align:center; color:#007BFF;">🔑 Kunci Jawaban</h3>
+
+  <!-- Nomor 1 -->
+  <h4>Nomor 1</h4>
+  <p><b>Diketahui:</b><br>
+  \( r_1 = 8 \times 10^7 \, \text{m} \)<br>
+  \( r_2 = 2 \times 10^7 \, \text{m} \)<br>
+  \( T_1 = 8 \, \text{tahun} \)</p>
+
+  <p><b>Ditanya:</b><br>
+  \( T_2 \, ? \)</p>
+
+  <p><b>Jawab:</b></p>
+  <div class="equation">
+    \[
+    \frac{T_1^2}{r_1^3} = \frac{T_2^2}{r_2^3}
+    \]
+    \[
+    \frac{T_1^2}{T_2^2} = \frac{r_1^3}{r_2^3}
+    \]
+    \[
+    \frac{8^2}{T_2^2} = \frac{(8\times10^7)^3}{(2\times10^7)^3}
+    \]
+    \[
+    \frac{64}{T_2^2} = \frac{512\times10^{21}}{8\times10^{21}}
+    \]
+    \[
+    \frac{64}{T_2^2} = 64
+    \]
+    \[
+    T_2^2 = \sqrt{\frac{64}{64}}
+    \]
+    \[
+    T_2 = 1 \, \text{tahun}
+    \]
+  </div>
+
+  <!-- Nomor 2 -->
+  <h4>Nomor 2</h4>
+  <p><b>Diketahui:</b><br>
+  \( r_x = 4\times10^8 \, \text{m} \)<br>
+  \( T_x = 1 \, \text{tahun} \)<br>
+  \( T_y = 2\sqrt{2} \, \text{tahun} \)</p>
+
+  <p><b>Ditanya:</b><br>
+  \( r_y \, ? \)</p>
+
+  <p><b>Jawab:</b></p>
+  <div class="equation">
+    \[
+    \frac{T_x^2}{r_x^3} = \frac{T_y^2}{r_y^3}
+    \]
+    \[
+    \frac{T_x^2}{T_y^2} = \frac{r_x^3}{r_y^3}
+    \]
+    \[
+    \frac{1^2}{(2\sqrt{2})^2} = \frac{(4\times10^8)^3}{r_y^3}
+    \]
+    \[
+    \frac{1}{8} = \frac{(4\times10^8)^3}{r_y^3}
+    \]
+    \[
+    r_y^3 = 8 \times (4\times10^8)^3
+    \]
+    \[
+    r_y^3 = 8 \times (64\times10^{24})
+    \]
+    \[
+    r_y^3 = 512\times10^{24}
+    \]
+    \[
+    r_y = \sqrt[3]{512\times10^{24}}
+    \]
+    \[
+    r_y = 8\times10^8 \, \text{m}
+    \]
+  </div>
+</div>
+
+<script>
+function showAnswer() {
+  const password = prompt("Masukkan password untuk melihat kunci jawaban:");
+  if (password === "fisikaasyik") {
+    document.getElementById("answer").style.display = "block";
+  } else if (password === null) {
+    alert("Akses dibatalkan.");
+  } else {
+    alert("❌ Password salah. Coba lagi!");
+  }
+}
+</script>
+
    <a href="hukumnewton4.html" 
      style="
        display:inline-block;
