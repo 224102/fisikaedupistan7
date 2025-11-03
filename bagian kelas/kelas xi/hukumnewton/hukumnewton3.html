@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materi 5: Hukum Newton</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
+      background: #ffffff;
+      color: #222;
+    }
+    body.dark-mode { background: #0f172a; color: #e2e8f0; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px; background: transparent; flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: center; gap: 15px; }
+    .logo img { height: 50px; }
+    header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
+
+    nav a {
+      margin-left: 25px; text-decoration: none; font-weight: 500;
+      color: inherit; transition: color 0.3s;
+    }
+    nav a:hover { color: #6366f1; }
+    .toggle-btn {
+      margin-left: 25px; cursor: pointer; border: none; background: none;
+      font-size: 1.5rem; transition: transform 0.3s;
+    }
+    .toggle-btn:hover { transform: scale(1.2); }
+
+    .materi-content {
+      padding: 60px 80px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .materi-content h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .materi-content h3 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      color: #4f46e5;
+      border-left: 5px solid #a855f7;
+      padding-left: 12px;
+    }
+
+    .materi-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #374151;
+      text-align: justify;
+      transition: color 0.3s;
+    }
+    body.dark-mode .materi-content p { color: #cbd5e1; }
+
+    .equation {
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 25px 0;
+    }
+
+    .video-placeholder {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0;
+    }
+    .video-placeholder img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      text-align: center; padding: 20px; font-size: 0.9em;
+      color: #6b7280; border-top: 1px solid #ccc; margin-top: 50px;
+    }
+    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
+
+    @media (max-width: 768px) {
+      .materi-content { padding: 30px 20px; }
+      .materi-content h2 { font-size: 2rem; }
+      .materi-content p { font-size: 1rem; }
+      .equation { font-size: 1.3rem; }
+      header { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
+      nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
+      nav a, .toggle-btn { margin-left: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+      <h1>Materi 5: Hukum Newton</h1>
+    </div>
+    <nav>
+      <a href="../../../hukumnewton2.html">Kembali</a>
+      <a href="../../../profil.html">Profil</a>
+      <button class="toggle-btn" id="toggle-dark">🌙</button>
+    </nav>
+  </header>
+
+  <section class="materi-content">
+    <h2>Hukum Kepler</h2>
+
+    <p>Bagaimana Kepler menemukan hukumnya? Apakah dia tiba-tiba langsung mendapatkan hukumnya atau bahkan cuman menebak? Ternyata tidak, Johannes Kepler merupakan anak didik dari Tycho Brahe seorang Astronom yang berpuluh-puluh tahun mencatat fenomena gerak planet di tata surya. Kemudian dari situ Kepler menemukan suatu pola pada pengamatan yang dilakukan oleh Tycho Brahe. Pola ini yang kita sebut sebagai Hukum Luas atau Hukum Kedua Kepler yang dinyatakan sebagai berikut:</p>
+ 
+<div class="equation">
+  \[
+  \frac{dA}{dt} \sim \text{konstan}
+  \]
+</div>
+<p>Apa artinya?:</p>
+<p>Hukum ini menjelaskan bahwa garis khayal yang menghubungkan antara matahari dengan planet sebanding dengan luas arsiran dalam selang waktu yang sama. Coba kalian perhatikan video dibawah ini:</p>
+
+<video autoplay muted loop style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+  <source src="video/luas juring sebanding dengan waktu.mp4" type="video/mp4">
+  Browser kamu tidak mendukung video HTML5.
+</video>
+
+<p>Kuis!</p>
+<img src="foto/Screenshot 2025-11-03 164900.png" alt="Kuis Hukum Kepler" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+
+<div class="question-card" style="max-width:600px; margin:30px auto; padding:20px; border-radius:12px; background:#f8f8f8; box-shadow:0 2px 10px rgba(0,0,0,0.1); font-family:'Poppins', sans-serif;">
+  <p style="font-weight:600;">Jika setiap luas juring adalah sama besar dan selang waktu antara planet B ke C adalah 2 bulan. Maka berapa lama waktu yang dibutuhkan planet untuk menempuh dari titik E ke H?</p>
+  
+  <form id="quizForm">
+    <label style="display:block; margin-top:10px;">
+      <input type="radio" name="q1" value="A"> A. 2 bulan
+    </label>
+    <label style="display:block; margin-top:8px;">
+      <input type="radio" name="q1" value="B"> B. 4 bulan
+    </label>
+    <label style="display:block; margin-top:8px;">
+      <input type="radio" name="q1" value="C"> C. 6 bulan
+    </label>
+    <label style="display:block; margin-top:8px;">
+      <input type="radio" name="q1" value="D"> D. 8 bulan
+    </label>
+
+    <button type="button" onclick="checkAnswer()" style="margin-top:15px; padding:8px 16px; border:none; border-radius:8px; background-color:#007bff; color:white; cursor:pointer;">Cek Jawaban</button>
+  </form>
+
+  <p id="result" style="margin-top:15px; font-weight:600;"></p>
+</div>
+
+<script>
+  function checkAnswer() {
+    const answer = document.querySelector('input[name="q1"]:checked');
+    const result = document.getElementById("result");
+
+    if (!answer) {
+      result.textContent = "Silakan pilih salah satu jawaban.";
+      result.style.color = "orange";
+      return;
+    }
+
+    if (answer.value === "C") {
+      result.textContent = "Benar! Waktu dari E ke H adalah 6 bulan.";
+      result.style.color = "green";
+    } else {
+      result.textContent = "Salah, coba lagi!";
+      result.style.color = "red";
+    }
+  }
+</script>
+
+<p>Setelah Hukum Luas dikemukakan oleh Kepler, sebenarnya Nicolaus Copernicus juga telah berhipotesis atau menduga bahwa gerakan planet mengelilingi matahari adalah melingkar sempurna. Dan sebenarnya hipotesis ini masih sebanding dengan Hukum Luas milik Kepler. Namun ternyata data yang diperoleh Kepler dari pengamatan jarak matahari terhadap planet selalu berubah-ubah. Data yang dicheck setiap waktu selalu berubah-ubah setiap waktu. Kepler mengamati jarak planet Mars dengan Bumi yang selalu berubah-ubah. Coba kita amati data yang dibuat oleh Kepler melalui pengamatan dari data Tycho Brahe</p>
+<video autoplay muted loop style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+  <source src="video/jarak mars terhadap bumi.mp4" type="video/mp4">
+  Browser kamu tidak mendukung video HTML5.
+</video>
+<p>Ternyata Elips merupakan bentuk yang cocok digunakan untuk menggambarkan lintasan sebuah planet. Kesimpulan dari pengamatan ini menjadi cikal bakal Hukum Pertama Kepler yakni</p>
+<p style="text-align:center; font-style:italic; font-weight:bold; margin:30px 0;">
+  “Semua planet yang bergerak pada lintasan elips mengitari matahari, dengan matahari berada pada salah satu fokus elips”</p>
+<p>Sekarang coba amati gambar di bawah ini:</p>
+<img src="foto/Screenshot 2025-11-03 172146.png" alt="Gerak Planet" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+<p>Sekarang kita gabung kedua hukum ini</p>
+<p><b>Hukum Kepler 1</b><br>
+Semua planet bergerak elips dengan matahari berada di salah satu titik fokus.</p>
+
+<p><b>Hukum Kepler 2</b><br>
+Garis khayal yang menghubungkan matahari dengan planet memiliki luas yang sama dengan selang waktu yang sama.</p>
+<div class="equation">
+  \[
+  \frac{dA}{dt} \sim \text{konstan}
+  \]
+</div>
+<p>Nah sebab planet bergerak secara elips yang berarti mendekati lingkaran. Maka hukum gerak melingkar juga berlaku dong?</p>
+<p>Coba kita ulas kembali hukum gerak melingkar, perhatikan gambar berikut!</p>
+<img src="foto/Gambar WhatsApp 2025-11-03 pukul 20.20.15_35590910.jpg" alt="Hukum kesebandingan" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+<p>Dari gambar tersebut kita mendapatkan hubungan kesebandingan</p>
+<div class="equation">
+  \[
+  \frac{OA}{AB} = \frac{v}{\Delta v}
+  \]
+</div>
+<p>
+  Dimana \( OA \) adalah \( R \) dan \( AB \) merupakan bagian kecil dari \( \frac{dv}{dt} \).
+</p>
+<div class="equation">
+  \[
+  \frac{R}{v \Delta t} = \frac{v}{\Delta v}
+  \]
+  \[
+  \frac{\Delta v}{\Delta t} = \frac{v^2}{R}
+  \]
+</div>
+<p>
+  Dan \( \frac{\Delta v}{\Delta t} \) adalah turunan dari percepatan, maka...
+</p>
+<div class="equation">
+  \[
+  a = \frac{v^2}{R}
+  \]
+</div>
+<p>Dari persamaan ini diketahui bila suatu planet memiliki rata-rata jari-jari lebih kecil dari biasanya maka konsekuensinya adalah percepatan yang dihasilkan akan semakin tinggi. Teori ini sebanding dengan pengamatan Kepler yang menunjukkan bahwa planet yang memiliki jarak dekat dengan matahari memiliki percepatan yang lebih cepat dari pada planet yang memiliki jarak jauh. Kita lihat gambar dibawah ini</p>
+<img src="foto/Screenshot 2025-11-03 174944.png" alt="Hukum Luas" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
+<p>Hukum III kepler atau biasa disebut hukum harmonik bunyi hukum ketiga kepler adalah</p>
+<p style="text-align:center; font-style:italic; font-weight:bold; margin:30px 0;">
+  “perbandingan kuadrat periode terhadap pangkat tiga dari setengah sumbu panjang elips adalah sama untuk semua planet”</p>
+<p>Atau kita bisa tulis</p>
+<div class="equation">
+  \[
+  \frac{T^2}{R^3} \sim \text{konstan}
+  \]
+</div>
+<p>
+  Dimana:<br>
+  \( T \) = Periode revolusi planet (waktu satu kali mengelilingi matahari)<br>
+  \( R \) = Jarak rata-rata planet ke matahari (setengah sumbu panjang elipsnya)
+</p>
+<p>Hubungan ini muncul bukan dari turunan rumus tetapi dari data observasi yang telah dilakukan oleh Tycho Brahe gurunnya. Dari pengamatan dan datanya kemudian kepler membuat hipotesisnya. Coba kita amati data yang diperoleh oleh Tycho Brahe</p>
+<table style="width:80%; margin:20px auto; border-collapse:collapse; text-align:center; font-family:'Poppins', sans-serif;">
+  <thead style="background-color:#f0f0f0;">
+    <tr>
+      <th style="border:1px solid #999; padding:8px;">Planet</th>
+      <th style="border:1px solid #999; padding:8px;">r (SA)</th>
+      <th style="border:1px solid #999; padding:8px;">T (tahun)</th>
+      <th style="border:1px solid #999; padding:8px;">T² / r³</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border:1px solid #999; padding:8px;">Bumi</td>
+      <td style="border:1px solid #999; padding:8px;">1</td>
+      <td style="border:1px solid #999; padding:8px;">1</td>
+      <td style="border:1px solid #999; padding:8px;">1</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #999; padding:8px;">Mars</td>
+      <td style="border:1px solid #999; padding:8px;">1,52</td>
+      <td style="border:1px solid #999; padding:8px;">1,88</td>
+      <td style="border:1px solid #999; padding:8px;">≈ 1</td>
+    </tr>
+    <tr>
+      <td style="border:1px solid #999; padding:8px;">Jupiter</td>
+      <td style="border:1px solid #999; padding:8px;">5,20</td>
+      <td style="border:1px solid #999; padding:8px;">11,86</td>
+      <td style="border:1px solid #999; padding:8px;">≈ 1</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  Dimana:<br>
+  \( SA \) = satuan astronomi<br>
+</p>
+<p>Jadi apa kesimpulan dari hubungan ini?</p>
+<p>Hubungan ini menjelaskan bahwa sekali panjang jarak antara planet dengan matahari, maka akan semakin lama pula masa edarnya mengelilingi matahari.</p>
+<p>Sekarang kalian telah tahu Hukum Newton diperoleh melalui Hukum Kepler sekarang bagaimana mana kita untuk mendapatkan hubungan kecepatan orbit satelit?</p>
+<p>Kita tinjau hukum kedua Newton</p>
+<div class="equation">
+  \[
+  F = m a
+  \]
+</div>
+<p>
+  Dimana:<br>
+  \( F \) = Hukum Gravitasi Universal Newton<br> maka:
+</p>
+<div class="equation">
+  \[
+  G \frac{M m}{r^2} = m a_{sp}
+  \]
+  \[
+  G \frac{M m}{r^2} = m \frac{v^2}{r}
+  \]
+  \[
+  G \frac{M}{r^2} = \frac{v^2}{r}
+  \]
+  \[
+  G \frac{M}{r} = v^2
+  \]
+  \[
+  v = \sqrt{\frac{G M}{r}}
+  \]
+</div>
+
+<p style="text-align:center; font-style:italic; margin-top:-10px;">
+  (Kecepatan orbit satelit mengelilingi Bumi)
+</p>
+
+<p>
+  Dimana:<br>
+  \( G \) = Tetapan gravitasi universal \( (6,67 \times 10^{-11}\, \text{N·m}^2/\text{kg}^2) \)<br>
+  \( M \) = Massa bumi (kg)<br>
+  \( m \) = Massa satelit (kg)<br>
+  \( r \) = Jarak pusat bumi ke satelit (m)<br>
+  \( v \) = Kecepatan orbit satelit (m/s)
+</p>
+   <a href="hukumnewton4.html" 
+     style="
+       display:inline-block;
+       background: linear-gradient(90deg, #6366f1, #a855f7, #f472b6);
+       color:white;
+       padding:12px 28px;
+       border-radius:30px;
+       text-decoration:none;
+       font-weight:600;
+       font-size:1.1rem;
+       transition: all 0.3s ease;">
+    Lanjut Gaya Gravitasi
+  </a>
+  </div>
+ 
+ </section>
+
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-dark");
+    const body = document.body;
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>
