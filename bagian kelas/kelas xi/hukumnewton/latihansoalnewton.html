@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materi 5: Hukum Newton</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
+      background: #ffffff;
+      color: #222;
+    }
+    body.dark-mode { background: #0f172a; color: #e2e8f0; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px; background: transparent; flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: center; gap: 15px; }
+    .logo img { height: 50px; }
+    header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
+
+    nav a {
+      margin-left: 25px; text-decoration: none; font-weight: 500;
+      color: inherit; transition: color 0.3s;
+    }
+    nav a:hover { color: #6366f1; }
+    .toggle-btn {
+      margin-left: 25px; cursor: pointer; border: none; background: none;
+      font-size: 1.5rem; transition: transform 0.3s;
+    }
+    .toggle-btn:hover { transform: scale(1.2); }
+
+    .materi-content {
+      padding: 60px 80px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .materi-content h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .materi-content h3 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      color: #4f46e5;
+      border-left: 5px solid #a855f7;
+      padding-left: 12px;
+    }
+
+    .materi-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #374151;
+      text-align: justify;
+      transition: color 0.3s;
+    }
+    body.dark-mode .materi-content p { color: #cbd5e1; }
+
+    .equation {
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 25px 0;
+    }
+
+    .video-placeholder {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0;
+    }
+    .video-placeholder img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      text-align: center; padding: 20px; font-size: 0.9em;
+      color: #6b7280; border-top: 1px solid #ccc; margin-top: 50px;
+    }
+    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
+
+    @media (max-width: 768px) {
+      .materi-content { padding: 30px 20px; }
+      .materi-content h2 { font-size: 2rem; }
+      .materi-content p { font-size: 1rem; }
+      .equation { font-size: 1.3rem; }
+      header { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
+      nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
+      nav a, .toggle-btn { margin-left: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+      <h1>Materi 5: Hukum Newton</h1>
+    </div>
+    <nav>
+      <a href="../../../hukumnewton4.html">Kembali</a>
+      <a href="../../../profil.html">Profil</a>
+      <button class="toggle-btn" id="toggle-dark">🌙</button>
+    </nav>
+  </header>
+
+  <section class="materi-content">
+    <h2>TUGAS 5 November 2025</h2>
+<!-- LATIHAN SOAL -->
+<div style="margin-top:30px; background-color:#f8f9fa; padding:20px; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); font-family:'Poppins',sans-serif;">
+  <h3 style="text-align:center; color:#333;">Latihan Soal</h3>
+
+  <ol style="line-height:1.8;">
+    <li>
+      Sebuah satelit buatan mengorbit Bumi pada ketinggian 600 km dari permukaan Bumi. 
+      Jika jari-jari Bumi \( R_B = 6{,}46 \times 10^6 \, \text{m} \) dan massa Bumi \( M_B = 5{,}97 \times 10^{24} \, \text{kg} \), maka tentukan:
+      <br>
+      a. Kecepatan orbit satelit mengelilingi Bumi. <br>
+      b. Periode orbit satelit (waktu satu putaran penuh).
+      <br><br>
+      Tips: Gunakan konstanta gravitasi \( G = 6{,}67 \times 10^{-11} \, \text{Nm}^2/\text{kg}^2 \).<br>
+      Petunjuk: \( v = \sqrt{\dfrac{GM}{r}} \), dan \( T = \dfrac{2\pi r}{v} \).
+    </li>
+
+    <li style="margin-top:20px;">
+      Planet A mengorbit Matahari pada jarak rata-rata 1 satuan astronomi (SA), sedangkan Planet B mengorbit pada jarak 4 SA. 
+      Jika planet A membutuhkan 1 tahun untuk mengelilingi Matahari, maka berapa lama waktu revolusi Planet B?
+      <br><br>
+      Petunjuk: Gunakan Hukum Kepler III: \(T^2 \propto R^3\).
+    </li>
+
+    <li style="margin-top:20px;">
+      Dua planet kecil, masing-masing bermassa \( M_1 = 4 \times 10^{24} \, \text{kg} \) dan \( M_2 = 2 \times 10^{24} \, \text{kg} \), saling berjarak \( r = 2 \times 10^7 \, \text{m} \). Maka:
+      <br>
+      a. Hitung besar gaya gravitasi antara keduanya. <br>
+      b. Jelaskan bagaimana gaya ini akan berubah jika jarak keduanya menjadi dua kali lebih jauh.
+      <br><br>
+      Petunjuk: Gunakan hukum gravitasi Newton \( F = G \dfrac{M_1 M_2}{r^2} \).
+    </li>
+  </ol>
+</div>
+
+<div style="text-align:center; margin-top:20px;">
+  <button onclick="showAnswer()" style="background-color:#007BFF; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; font-size:16px;">
+    🔐 Lihat Kunci Jawaban
+  </button>
+</div>
+
+<!-- KUNCI JAWABAN -->
+<div id="answer" style="display:none; margin-top:30px; background-color:#fff; padding:25px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-family:'Poppins',sans-serif;">
+  <h3 style="text-align:center; color:#007BFF;">🔑 Kunci Jawaban</h3>
+
+  <!-- Nomor 1 -->
+  <h4>Nomor 1</h4>
+  <p><b>Data dan konstanta:</b></p>
+  <p>
+    \( R_B = 6{,}46 \times 10^6 \, \text{m} \)<br>
+    Ketinggian satelit \( h = 600 \, \text{km} = 600{,}000 \, \text{m} \)<br>
+    Jadi jari-jari orbit: \( r = R_B + h = 6{,}46 \times 10^6 + 6{,}00 \times 10^5 = 7{,}06 \times 10^6 \, \text{m} \).<br>
+    \( M_B = 5{,}97 \times 10^{24} \, \text{kg} \)<br>
+    \( G = 6{,}67 \times 10^{-11} \, \text{Nm}^2/\text{kg}^2 \)
+  </p>
+
+  <p><b>Penyelesaian (a) — Kecepatan orbit:</b></p>
+  <div class="equation">
+    \[
+      v = \sqrt{\frac{G M_B}{r}}
+    \]
+    \[
+      v = \sqrt{\frac{6{,}67\times10^{-11} \times 5{,}97\times10^{24}}{7{,}06\times10^{6}}}
+    \]
+    \[
+      v \approx 7{,}510{,}13 \, \text{m/s}
+    \]
+  </div>
+  <p>Jadi kecepatan orbit adalah sekitar <b>\( \boxed{7{,}51 \times 10^3 \, \text{m/s}} \)</b> (≈ 7.51 km/s).</p>
+
+  <p><b>Penyelesaian (b) — Periode orbit:</b></p>
+  <div class="equation">
+    \[
+      T = \frac{2\pi r}{v}
+    \]
+    \[
+      T = \frac{2\pi \times 7{,}06\times10^{6}}{7{,}510{,}13}
+    \]
+    \[
+      T \approx 5{,}906{,}59 \, \text{s}
+    \]
+  </div>
+  <p>Ubah ke menit dan detik: \( 5{,}906{,}59 \, \text{s} \approx 98{,}44 \, \text{menit} \) ≈ <b>1 jam 38 menit 27 detik</b> (dibulatkan).</p>
+
+  <p><b>Jadi:</b> Kecepatan ≈ <b>7.51 × 10³ m/s</b>, Periode ≈ <b>5.906,6 s</b> ≈ <b>1 jam 38 menit 27 detik</b>. ✅</p>
+
+  <!-- Nomor 2 -->
+  <h4>Nomor 2</h4>
+  <p><b>Data:</b> Planet A: \( R_A = 1 \, \text{SA}, \; T_A = 1 \, \text{tahun} \). Planet B: \( R_B = 4 \, \text{SA} \).</p>
+
+  <p><b>Penyelesaian:</b></p>
+  <div class="equation">
+    \[
+      \frac{T^2}{R^3} = \text{konstan} \Rightarrow \frac{T_A^2}{R_A^3} = \frac{T_B^2}{R_B^3}
+    \]
+    \[
+      T_B = T_A \sqrt{\frac{R_B^3}{R_A^3}} = 1 \times \sqrt{4^3} = \sqrt{64} = 8
+    \]
+  </div>
+  <p><b>Jadi:</b> Waktu revolusi Planet B adalah <b>8 tahun</b>. ✅</p>
+
+  <!-- Nomor 3 -->
+  <h4>Nomor 3</h4>
+  <p><b>Data:</b></p>
+  <p>
+    \( M_1 = 4 \times 10^{24} \, \text{kg} \)<br>
+    \( M_2 = 2 \times 10^{24} \, \text{kg} \)<br>
+    \( r = 2 \times 10^{7} \, \text{m} \)<br>
+    \( G = 6{,}67 \times 10^{-11} \, \text{Nm}^2/\text{kg}^2 \)
+  </p>
+
+  <p><b>Penyelesaian (a) — Gaya gravitasi:</b></p>
+  <div class="equation">
+    \[
+      F = G \frac{M_1 M_2}{r^2}
+    \]
+    \[
+      F = 6{,}67\times10^{-11} \times \frac{(4\times10^{24})(2\times10^{24})}{(2\times10^{7})^2}
+    \]
+    \[
+      F = 1{,}334\times10^{24} \, \text{N}
+    \]
+  </div>
+  <p><b>Jadi:</b> Gaya gravitasi antara keduanya adalah sekitar <b>\( \boxed{1{,}334 \times 10^{24} \, \text{N}} \)</b>. ✅</p>
+
+  <p><b>Penyelesaian (b) — Jika jarak menjadi dua kali lebih jauh:</b></p>
+  <p>Gaya gravitasi berbanding terbalik dengan kuadrat jarak. Jika \( r' = 2r \), maka:</p>
+  <div class="equation">
+    \[
+      F' = G \frac{M_1 M_2}{(2r)^2} = G \frac{M_1 M_2}{4 r^2} = \frac{1}{4} F
+    \]
+  </div>
+  <p>Jadi gaya menjadi <b>seperempat</b> nilai semula: \( F' = \dfrac{1{,}334\times10^{24}}{4} \approx 3{,}335\times10^{23} \, \text{N} \).</p>
+
+  <p><b>Kesimpulan:</b> Gaya awal ≈ <b>1,334 × 10²⁴ N</b>; jika jarak dua kali lipat → gaya ≈ <b>3,335 × 10²³ N</b> (¼ dari semula). ✅</p>
+</div>
+
+<script>
+function showAnswer() {
+  const password = prompt("Menurut Kepler III, T² sebanding dengan apa?");
+  if (password === "R^3") {
+    document.getElementById("answer").style.display = "block";
+  } else if (password === null) {
+    alert("Akses dibatalkan.");
+  } else {
+    alert("❌ Password salah. Coba lagi!");
+  }
+}
+</script>
+
+ </section>
+
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-dark");
+    const body = document.body;
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>
