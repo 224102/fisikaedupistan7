@@ -121,247 +121,101 @@
   </header>
 
   <section class="materi-content">
-    <h2>Hukum Kepler</h2>
+    <h2>Gaya Angkat Pada Lift</h2>
 
-    <p>Bagaimana Kepler menemukan hukumnya? Apakah dia tiba-tiba langsung mendapatkan hukumnya atau bahkan cuman menebak? Ternyata tidak, Johannes Kepler merupakan anak didik dari Tycho Brahe seorang Astronom yang berpuluh-puluh tahun mencatat fenomena gerak planet di tata surya. Kemudian dari situ Kepler menemukan suatu pola pada pengamatan yang dilakukan oleh Tycho Brahe. Pola ini yang kita sebut sebagai Hukum Luas atau Hukum Kedua Kepler yang dinyatakan sebagai berikut:</p>
- 
+<p>Ketika kalian naik lift apakah kalian merasa ada sesuatu yang mendorong kita naik keatas. Itu yang biasa disebut sebagai Gaya. Gaya didefinisikan sebagai tarikan atau dorongan yang memiliki arah. Pada kasus lift gaya yang seakan mendorong ke atas adalah interaksi pada sistem lift itu sendiri akibat bumi dan tegangan tali. Kita tinjau gambar dibawah ini</p>
+	<img src="foto/lift.png" alt="Gerak Lift" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;"> 
+<p><b>Sistem Pertama</b><br>
+<p>Bayangan kamu sedang berdiri di lift diam tanpa bergerak maka gaya yang bekerja pada lift dapat ditunjukkan pada gambar berikut:</p>
+	<img src="foto/gayanormal1.gif" alt="Gaya Normal" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;"> 
+<p>Sebab kalian diam maka hanya akan ada 2 gaya yang bekerja pada sistem yaitu gaya Normal dan gaya Berat. Gaya ini sama besar namun arahnya berbeda. Hal ini muncul sebab hukum pertama newton yang menyebabkan</p>
+	<div class="equation">\[N = W = m \cdot g\] </div>
+<p>Jadi gaya normal dan gaya berat memiliki nilai yang sama.</p>
+<p><b>Sistem kedua</b><br>
+<p>Sekarang kamu memencet tombol menuju lantai selanjutnya. Jadi kalian mengalami perpindahan yang kita ambil nilainya positif sebab menuju keatas. Sebab kalian mengalami perpindahan, maka kalian juga akan mengalami percepatan. Sehingga hukum kedua Newton dalam lift akan berlaku</p>
 <div class="equation">
   \[
-  \frac{dA}{dt} \sim \text{konstan}
+  \sum F = m \cdot a
   \]
 </div>
-<p>Apa artinya?:</p>
-<p>Hukum ini menjelaskan bahwa garis khayal yang menghubungkan antara matahari dengan planet sebanding dengan luas arsiran dalam selang waktu yang sama. Coba kalian perhatikan video dibawah ini:</p>
-
-<div style="display:flex; justify-content:center; align-items:center; margin:20px 0;">
-  <video 
-    autoplay 
-    loop 
-    muted 
-    playsinline 
-    controls 
-    style="width:100%; max-width:800px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
-    <source src="video/luas juring sebanding dengan waktu.mp4" type="video/mp4">
-    Browser kamu tidak mendukung video tag.
-  </video>
+<p>Sebab hanya ada 2 gaya yang berlaku yaitu gaya bera</p>
+	<div class="equation">\[N - W = m \cdot a\] </div>
+<p>Sekarang kita tinjau bila sistem yang ada di lift membuat kecepatan kalian konstan. Karena kecepatan kalian konstan, maka percepatan juga konstan a=0 maka hanya akan ada gaya gravitasi yang menarik kalian ke pusat massa</p>
+	<div class="equation">
+  \[
+  N - W = 0
+  \]
 </div>
 
-
-<p>Kuis!</p>
-<img src="foto/Screenshot 2025-11-03 164900.png" alt="Kuis Hukum Kepler" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
-
-<div class="question-card" style="max-width:600px; margin:30px auto; padding:20px; border-radius:12px; background:#f8f8f8; box-shadow:0 2px 10px rgba(0,0,0,0.1); font-family:'Poppins', sans-serif;">
-  <p style="font-weight:600;">Jika setiap luas juring adalah sama besar dan selang waktu antara planet B ke C adalah 2 bulan. Maka berapa lama waktu yang dibutuhkan planet untuk menempuh dari titik E ke H?</p>
-  
-  <form id="quizForm">
-    <label style="display:block; margin-top:10px;">
-      <input type="radio" name="q1" value="A"> A. 2 bulan
-    </label>
-    <label style="display:block; margin-top:8px;">
-      <input type="radio" name="q1" value="B"> B. 4 bulan
-    </label>
-    <label style="display:block; margin-top:8px;">
-      <input type="radio" name="q1" value="C"> C. 6 bulan
-    </label>
-    <label style="display:block; margin-top:8px;">
-      <input type="radio" name="q1" value="D"> D. 8 bulan
-    </label>
-
-    <button type="button" onclick="checkAnswer()" style="margin-top:15px; padding:8px 16px; border:none; border-radius:8px; background-color:#007bff; color:white; cursor:pointer;">Cek Jawaban</button>
-  </form>
-
-  <p id="result" style="margin-top:15px; font-weight:600;"></p>
-</div>
-
-<script>
-  function checkAnswer() {
-    const answer = document.querySelector('input[name="q1"]:checked');
-    const result = document.getElementById("result");
-
-    if (!answer) {
-      result.textContent = "Silakan pilih salah satu jawaban.";
-      result.style.color = "orange";
-      return;
-    }
-
-    if (answer.value === "C") {
-      result.textContent = "Benar! Waktu dari E ke H adalah 6 bulan.";
-      result.style.color = "green";
-    } else {
-      result.textContent = "Salah, coba lagi!";
-      result.style.color = "red";
-    }
-  }
-</script>
-
-<p>Setelah Hukum Luas dikemukakan oleh Kepler, sebenarnya Nicolaus Copernicus juga telah berhipotesis atau menduga bahwa gerakan planet mengelilingi matahari adalah melingkar sempurna. Dan sebenarnya hipotesis ini masih sebanding dengan Hukum Luas milik Kepler. Namun ternyata data yang diperoleh Kepler dari pengamatan jarak matahari terhadap planet selalu berubah-ubah. Data yang dicheck setiap waktu selalu berubah-ubah setiap waktu. Kepler mengamati jarak planet Mars dengan Bumi yang selalu berubah-ubah. Coba kita amati data yang dibuat oleh Kepler melalui pengamatan dari data Tycho Brahe</p>
-
-<video 
-  autoplay 
-  loop 
-  muted 
-  playsinline 
-  controls 
-  style="width:100%; height:auto; display:block;">
-  <source src="video/jarak mars terhadap bumi.mp4" type="video/mp4">
-  Browser kamu tidak mendukung video tag.
-</video>
-
-<p>Ternyata Elips merupakan bentuk yang cocok digunakan untuk menggambarkan lintasan sebuah planet. Kesimpulan dari pengamatan ini menjadi cikal bakal Hukum Pertama Kepler yakni</p>
-<p style="text-align:center; font-style:italic; font-weight:bold; margin:30px 0;">
-  “Semua planet yang bergerak pada lintasan elips mengitari matahari, dengan matahari berada pada salah satu fokus elips”</p>
-<p>Sekarang coba amati gambar di bawah ini:</p>
-<img src="foto/Screenshot 2025-11-03 172146.png" alt="Gerak Planet" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
-<p>Sekarang kita gabung kedua hukum ini</p>
-<p><b>Hukum Kepler 1</b><br>
-Semua planet bergerak elips dengan matahari berada di salah satu titik fokus.</p>
-
-<p><b>Hukum Kepler 2</b><br>
-Garis khayal yang menghubungkan matahari dengan planet memiliki luas yang sama dengan selang waktu yang sama.</p>
 <div class="equation">
   \[
-  \frac{dA}{dt} \sim \text{konstan}
-  \]
-</div>
-<p>Nah sebab planet bergerak secara elips yang berarti mendekati lingkaran. Maka hukum gerak melingkar juga berlaku dong?</p>
-<p>Coba kita ulas kembali hukum gerak melingkar, perhatikan gambar berikut!</p>
-<img src="foto/Gambar WhatsApp 2025-11-03 pukul 20.20.15_35590910.jpg" alt="Hukum kesebandingan" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
-<p>Dari gambar tersebut kita mendapatkan hubungan kesebandingan</p>
-<div class="equation">
-  \[
-  \frac{OA}{AB} = \frac{v}{\Delta v}
-  \]
-</div>
-<p>
-  Dimana \( OA \) adalah \( R \) dan \( AB \) merupakan bagian kecil dari \( \frac{dv}{dt} \).
-</p>
-<div class="equation">
-  \[
-  \frac{R}{v \Delta t} = \frac{v}{\Delta v}
-  \]
-  \[
-  \frac{\Delta v}{\Delta t} = \frac{v^2}{R}
-  \]
-</div>
-<p>
-  Dan \( \frac{\Delta v}{\Delta t} \) adalah turunan dari percepatan, maka...
-</p>
-<div class="equation">
-  \[
-  a = \frac{v^2}{R}
-  \]
-</div>
-<p>Dari persamaan ini diketahui bila suatu planet memiliki rata-rata jari-jari lebih kecil dari biasanya maka konsekuensinya adalah percepatan yang dihasilkan akan semakin tinggi. Teori ini sebanding dengan pengamatan Kepler yang menunjukkan bahwa planet yang memiliki jarak dekat dengan matahari memiliki percepatan yang lebih cepat dari pada planet yang memiliki jarak jauh. Kita lihat gambar dibawah ini</p>
-<img src="foto/Screenshot 2025-11-03 174944.png" alt="Hukum Luas" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;">
-<p>Hukum III kepler atau biasa disebut hukum harmonik bunyi hukum ketiga kepler adalah</p>
-<p style="text-align:center; font-style:italic; font-weight:bold; margin:30px 0;">
-  “perbandingan kuadrat periode terhadap pangkat tiga dari setengah sumbu panjang elips adalah sama untuk semua planet”</p>
-<p>Atau kita bisa tulis</p>
-<div class="equation">
-  \[
-  \frac{T^2}{R^3} \sim \text{konstan}
-  \]
-</div>
-<p>
-  Dimana:<br>
-  \( T \) = Periode revolusi planet (waktu satu kali mengelilingi matahari)<br>
-  \( R \) = Jarak rata-rata planet ke matahari (setengah sumbu panjang elipsnya)
-</p>
-<p>Hubungan ini muncul bukan dari turunan rumus tetapi dari data observasi yang telah dilakukan oleh Tycho Brahe gurunnya. Dari pengamatan dan datanya kemudian kepler membuat hipotesisnya. Coba kita amati data yang diperoleh oleh Tycho Brahe</p>
-<table style="width:80%; margin:20px auto; border-collapse:collapse; text-align:center; font-family:'Poppins', sans-serif;">
-  <thead style="background-color:#f0f0f0;">
-    <tr>
-      <th style="border:1px solid #999; padding:8px;">Planet</th>
-      <th style="border:1px solid #999; padding:8px;">r (SA)</th>
-      <th style="border:1px solid #999; padding:8px;">T (tahun)</th>
-      <th style="border:1px solid #999; padding:8px;">T² / r³</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="border:1px solid #999; padding:8px;">Bumi</td>
-      <td style="border:1px solid #999; padding:8px;">1</td>
-      <td style="border:1px solid #999; padding:8px;">1</td>
-      <td style="border:1px solid #999; padding:8px;">1</td>
-    </tr>
-    <tr>
-      <td style="border:1px solid #999; padding:8px;">Mars</td>
-      <td style="border:1px solid #999; padding:8px;">1,52</td>
-      <td style="border:1px solid #999; padding:8px;">1,88</td>
-      <td style="border:1px solid #999; padding:8px;">≈ 1</td>
-    </tr>
-    <tr>
-      <td style="border:1px solid #999; padding:8px;">Jupiter</td>
-      <td style="border:1px solid #999; padding:8px;">5,20</td>
-      <td style="border:1px solid #999; padding:8px;">11,86</td>
-      <td style="border:1px solid #999; padding:8px;">≈ 1</td>
-    </tr>
-  </tbody>
-</table>
-<p>
-  Dimana:<br>
-  \( SA \) = satuan astronomi<br>
-</p>
-<p>Jadi apa kesimpulan dari hubungan ini?</p>
-<p>Hubungan ini menjelaskan bahwa semakin panjang jarak rata-rata antara planet dengan matahari, maka akan semakin lama pula masa edarnya mengelilingi matahari.</p>
-<p>Sekarang kalian telah tahu Hukum Newton diperoleh melalui Hukum Kepler sekarang bagaimana mana kita untuk mendapatkan hubungan kecepatan orbit satelit?</p>
-<p>Kita tinjau hukum kedua Newton</p>
-<div class="equation">
-  \[
-  F = m a
-  \]
-</div>
-<p>
-  Dimana:<br>
-  \( F \) = Hukum Gravitasi Universal Newton<br> maka:
-</p>
-<div class="equation">
-  \[
-  G \frac{M m}{r^2} = m a_{sp}
-  \]
-  \[
-  G \frac{M m}{r^2} = m \frac{v^2}{r}
-  \]
-  \[
-  G \frac{M}{r^2} = \frac{v^2}{r}
-  \]
-  \[
-  G \frac{M}{r} = v^2
-  \]
-  \[
-  v = \sqrt{\frac{G M}{r}}
+  N = m
   \]
 </div>
 
-<p style="text-align:center; font-style:italic; margin-top:-10px;">
-  (Kecepatan orbit satelit mengelilingi Bumi)
-</p>
+	<div class="equation">\[N = m \cdot g\] </div>
+<p>Sekarang kita sudah memiliki 2 keadaan yaitu aturan hukum newton dalam lift dan resultan gaya yang dihasilkan di dalam lift. Sekarang bagaimana ketika kecepatan tidak sama dengan 0? Maka resultan gaya yang dihasilkan</p>
+	<div class="equation">\[N - W = m \cdot a\] </div>
+	<div class="equation">\[N = W + m \cdot a\] </div>
+	<div class="equation">
+  \[
+  N = m \cdot g + m \cdot a
+  \]
+</div>
 
-<p>
-  Dimana:<br>
-  \( G \) = Tetapan gravitasi universal \( (6,67 \times 10^{-11}\, \text{N·m}^2/\text{kg}^2) \)<br>
-  \( M \) = Massa bumi (kg)<br>
-  \( m \) = Massa satelit (kg)<br>
-  \( r \) = Jarak pusat bumi ke satelit (m)<br>
-  \( v \) = Kecepatan orbit satelit (m/s)
-</p>
+<div class="equation">
+  \[
+  N = m (g + a)
+  \]
+</div>
+<p>Nah hubungan ini yang dapat menjawab kenapa ketika kita naik lift padahal massa dan gaya gravitasi kita sama tetapi seperti ada gaya dorongan mengarah keatas.
+Sekarang kita tinjau ketika turun. Ketika kita turun maka resultan yang dihasilkan akan bernilai negatif maka</p>
+<div class="equation">\[N - W = -m \cdot a\] </div>
+<div class="equation">
+  \[
+  N = w + (-ma)
+  \]
+</div>
+<div class="equation">
+  \[
+  N = mg (-ma)
+  \]
+</div>
+<div class="equation">
+  \[
+  N = m (g - a)
+  \]
+</div>
+<p>Nah hubungan ini menjelaskan kenapa ketika lift turun ke bawah badan kita terasa terdorong ke arah bawah.</p>
 
 
+
+<!-- LATIHAN SOAL -->
 <div style="margin-top:30px; background-color:#f8f9fa; padding:20px; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); font-family:'Poppins',sans-serif;">
   <h3 style="text-align:center; color:#333;">Latihan Soal</h3>
 
   <ol style="line-height:1.8;">
     <li>
-      Dua buah planet berada di orbitnya yang sedang mengitari matahari. Planet pertama memiliki orbit dengan jari-jari 
-      \( 8 \times 10^7 \, \text{m} \) dengan periode orbit 8 tahun. 
-      Jika planet kedua memiliki orbit dengan jari-jari \( 2 \times 10^7 \, \text{m} \), 
-      berapakah periode planet kedua?
+      Dua benda bermassa \( m_1 \) dan \( m_2 \) masing-masing memiliki massa 2 kg dan 3 kg dihubungkan dengan seutas tali ringan dan licin melalui katrol licin. 
+      Benda \( m_1 \) berada di atas meja dan benda \( m_2 \) menggantung di sisi meja. 
+      Hitung besar gaya tegang tali (T) yang dihasilkan serta percepatan sistem (a) jika ditinjau percepatan gravitasi \( g = 10 \, \text{m/s}^2 \).
+      <br><br>
+      Pilihan jawaban:<br>
+      A. \( T = 8 \, \text{N}, \, a = 4 \, \text{m/s}^2 \)<br>
+      B. \( T = 12 \, \text{N}, \, a = 6 \, \text{m/s}^2 \)<br>
+      C. \( T = 16 \, \text{N}, \, a = 8 \, \text{m/s}^2 \)<br>
+      D. \( T = 10 \, \text{N}, \, a = 10 \, \text{m/s}^2 \)
     </li>
-    <li>
-      Waktu yang dibutuhkan planet X mengelilingi matahari adalah 1 tahun dan jarak rata-rata antara planet X dengan matahari yaitu 
-      \( 4 \times 10^8 \, \text{m} \). 
-      Jika diketahui periode orbit planet Y adalah \( 2\sqrt{2} \) tahun, 
-      berapa jarak rata-rata antara planet Y dengan matahari?
+
+    <li style="margin-top:20px;">
+      Seorang siswa dengan massa 60 kg berdiri di dalam lift yang bergerak naik dengan percepatan \( a = 2 \, \text{m/s}^2 \). 
+      Hitung besar gaya normal yang dirasakan oleh siswa (anggap \( g = 10 \, \text{m/s}^2 \)).
+      <br><br>
+      Pilihan jawaban:<br>
+      A. 480 N<br>
+      B. 600 N<br>
+      C. 720 N<br>
+      D. 840 N
     </li>
   </ol>
 </div>
@@ -372,91 +226,114 @@ Garis khayal yang menghubungkan matahari dengan planet memiliki luas yang sama d
   </button>
 </div>
 
-<!-- BAGIAN KUNCI JAWABAN -->
+<!-- KUNCI JAWABAN -->
 <div id="answer" style="display:none; margin-top:30px; background-color:#fff; padding:25px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-family:'Poppins',sans-serif;">
   <h3 style="text-align:center; color:#007BFF;">🔑 Kunci Jawaban</h3>
 
   <!-- Nomor 1 -->
   <h4>Nomor 1</h4>
+<p>Pembahasan:</p>
+<img src="foto/katrol.png" alt="Katrol" style="display:block; margin:20px auto; max-width:600px; width:100%; height:auto; border-radius:12px;"> 
+<p>Dari gambar ini terdapat 2 sistem, yaitu sistem horizontal dan sistem vertikal.
+Kita tinjau sistem horizontal</p>
+<p><b>Sistem Pertama</b><br>
   <p><b>Diketahui:</b><br>
-  \( r_1 = 8 \times 10^7 \, \text{m} \)<br>
-  \( r_2 = 2 \times 10^7 \, \text{m} \)<br>
-  \( T_1 = 8 \, \text{tahun} \)</p>
+  \( m_1 = 2 \, \text{kg} \)<br>
+  \( m_2 = 3 \, \text{kg} \)<br>
+  \( g = 10 \, \text{m/s}^2 \)</p>
 
   <p><b>Ditanya:</b><br>
-  \( T_2 \, ? \)</p>
+  \( T \) dan \( a \, ? \)</p>
 
-  <p><b>Jawab:</b></p>
+  <p><b>Penyelesaian:</b></p>
+  <p>Kita tinjau dua sistem:</p>
+
+  <ul>
+    <li><b>Sistem horizontal:</b> </li>
+<p>Gaya tali:</p>
+<div class="equation">
+  \[
+   T_1 = m_1 a
+  \]
+</div>
+
+    <li><b>Sistem vertikal:</b></li>
+<p>Gaya tegang tali:</p>
+<div class="equation">
+  \[
+  \sum F = m \cdot a
+  \]
+</div>
+<div class="equation">
+  \[
+  w - T = m_2 a
+  \]
+</div>
+<div class="equation">
+  \[
+  m_2 g - T_1 = m_2 a
+  \]
+</div>
+<p>Maka resultan gaya tegang tali kedu sistem ini adalah:</p>
+  </ul>
+
   <div class="equation">
     \[
-    \frac{T_1^2}{r_1^3} = \frac{T_2^2}{r_2^3}
+    m_2 g - m_1 a = m_2 a
     \]
     \[
-    \frac{T_1^2}{T_2^2} = \frac{r_1^3}{r_2^3}
+    m_2 g = m_1 a + m_2 a
     \]
     \[
-    \frac{8^2}{T_2^2} = \frac{(8\times10^7)^3}{(2\times10^7)^3}
+    m_2 g = a (m_1 + m_2)
     \]
     \[
-    \frac{64}{T_2^2} = \frac{512\times10^{21}}{8\times10^{21}}
+    a = \frac{m_2 g}{m_1 + m_2} = \frac{3 \times 10}{2 + 3} = \frac{30}{5} = 6 \, \text{m/s}^2
     \]
     \[
-    \frac{64}{T_2^2} = 64
-    \]
-    \[
-    T_2^2 = \sqrt{\frac{64}{64}}
-    \]
-    \[
-    T_2 = 1 \, \text{tahun}
+    T = m_1 a = 2 \times 6 = 12 \, \text{N}
     \]
   </div>
+
+  <p><b>Jadi:</b> \( T = 12 \, \text{N} \) dan \( a = 6 \, \text{m/s}^2 \) ✅</p>
+  <p><b>Jawaban benar:</b> B</p>
 
   <!-- Nomor 2 -->
   <h4>Nomor 2</h4>
+<p>Sebab siswa tersebut bergerak naik, maka akan mengalami percepatan yang resultannya positif, maka:</p>
   <p><b>Diketahui:</b><br>
-  \( r_x = 4\times10^8 \, \text{m} \)<br>
-  \( T_x = 1 \, \text{tahun} \)<br>
-  \( T_y = 2\sqrt{2} \, \text{tahun} \)</p>
+  \( m = 60 \, \text{kg} \)<br>
+  \( a = 2 \, \text{m/s}^2 \)<br>
+  \( g = 10 \, \text{m/s}^2 \)</p>
 
   <p><b>Ditanya:</b><br>
-  \( r_y \, ? \)</p>
+  \( N \, ? \)</p>
 
-  <p><b>Jawab:</b></p>
+  <p><b>Penyelesaian:</b></p>
   <div class="equation">
     \[
-    \frac{T_x^2}{r_x^3} = \frac{T_y^2}{r_y^3}
+    N = m(g + a)
     \]
     \[
-    \frac{T_x^2}{T_y^2} = \frac{r_x^3}{r_y^3}
-    \]
-    \[
-    \frac{1^2}{(2\sqrt{2})^2} = \frac{(4\times10^8)^3}{r_y^3}
-    \]
-    \[
-    \frac{1}{8} = \frac{(4\times10^8)^3}{r_y^3}
-    \]
-    \[
-    r_y^3 = 8 \times (4\times10^8)^3
-    \]
-    \[
-    r_y^3 = 8 \times (64\times10^{24})
-    \]
-    \[
-    r_y^3 = 512\times10^{24}
-    \]
-    \[
-    r_y = \sqrt[3]{512\times10^{24}}
-    \]
-    \[
-    r_y = 8\times10^8 \, \text{m}
+    N = 60(10 + 2) = 720 \, \text{N}
     \]
   </div>
+
+  <p>Jika lift diam, gaya normal yang dirasakan adalah:</p>
+  <div class="equation">
+    \[
+    N = m \cdot g = 60 \times 10 = 600 \, \text{N}
+    \]
+  </div>
+
+  <p><b>Jadi:</b> gaya normal yang dirasakan saat lift bergerak naik adalah \( N = 720 \, \text{N} \) ✅</p>
+  <p><b>Jawaban benar:</b> C</p>
 </div>
 
 <script>
 function showAnswer() {
-  const password = prompt("Masukkan password untuk melihat kunci jawaban:");
-  if (password === "fisikaasyik") {
+  const password = prompt("bagaimana hubungan pada Hukum Kedua Kepler?");
+  if (password === "konstan") {
     document.getElementById("answer").style.display = "block";
   } else if (password === null) {
     alert("Akses dibatalkan.");
@@ -465,6 +342,120 @@ function showAnswer() {
   }
 }
 </script>
+
+<!-- LATIHAN SOAL ISIAN -->
+<div style="margin-top:30px; background-color:#f8f9fa; padding:20px; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); font-family:'Poppins',sans-serif;">
+  <h3 style="text-align:center; color:#333;">Latihan Soal Isian</h3>
+
+  <ol style="line-height:1.8;">
+    <li>
+      Seorang teknisi sedang memperbaiki sistem pengangkat barang di sebuah gedung. 
+      Di dalam lift terdapat sebuah peti bermassa <b>40 kg</b> yang diikat dengan tali ke atap lift. 
+      Kemudian ketika sistem diuji, motor penggerak menggerakkan lift ke atas dengan percepatan <b>3 m/s²</b>. 
+      Beberapa saat kemudian sistem mengalami gangguan sehingga lift bergerak turun dengan percepatan <b>2 m/s²</b> sebelum akhirnya berhenti.
+      <br><br>
+      Berdasarkan informasi tersebut:
+      <ol type="a">
+        <li>Tentukan besar gaya tegang tali (<i>T</i>) saat lift bergerak naik.</li>
+        <li>Tentukan besar gaya tegang tali (<i>T</i>) saat lift bergerak turun.</li>
+        <li>Jelaskan mengapa nilai <i>T</i> kedua posisi tersebut berbeda (gunakan \( g = 10 \, \text{m/s}^2 \)).</li>
+      </ol>
+      <br>
+      <p><b>Jawaban Isian:</b></p>
+      <input type="text" id="jawaban1" placeholder="T saat lift naik (N)" style="width:100%; max-width:400px; padding:8px; border-radius:8px; border:1px solid #ccc; margin-bottom:10px;">
+      <input type="text" id="jawaban2" placeholder="T saat lift turun (N)" style="width:100%; max-width:400px; padding:8px; border-radius:8px; border:1px solid #ccc; margin-bottom:10px;">
+      <textarea id="jawaban3" rows="3" placeholder="Penjelasan perbedaan T..." style="width:100%; max-width:600px; padding:8px; border-radius:8px; border:1px solid #ccc;"></textarea>
+      <br><br>
+      <button onclick="periksaIsian()" style="background-color:#007BFF; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; font-size:16px;">✅ Periksa Jawaban</button>
+    </li>
+  </ol>
+</div>
+
+<div style="text-align:center; margin-top:20px;">
+  <button onclick="showAnswerIsian()" style="background-color:#007BFF; color:white; border:none; padding:10px 20px; border-radius:8px; cursor:pointer; font-size:16px;">
+    🔐 Lihat Kunci Jawaban
+  </button>
+</div>
+
+<!-- KUNCI JAWABAN -->
+<div id="answerIsian" style="display:none; margin-top:30px; background-color:#fff; padding:25px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-family:'Poppins',sans-serif;">
+  <h3 style="text-align:center; color:#007BFF;">🔑 Kunci Jawaban</h3>
+
+  <h4>Pembahasan:</h4>
+  <p><b>Diketahui:</b></p>
+  <div class="equation">
+    \[
+    m = 40 \, \text{kg}, \quad a_+ = 3 \, \text{m/s}^2, \quad a_- = 2 \, \text{m/s}^2, \quad g = 10 \, \text{m/s}^2
+    \]
+  </div>
+
+  <h4>1️⃣ Saat lift bergerak naik:</h4>
+  <div class="equation">
+    \[
+    \sum F = m \cdot a
+    \]
+    \[
+    T - W = m \cdot a
+    \]
+    \[
+    T = m(g + a)
+    \]
+    \[
+    T = 40(10 + 3) = 520 \, \text{N}
+    \]
+  </div>
+
+  <h4>2️⃣ Saat lift bergerak turun:</h4>
+  <div class="equation">
+    \[
+    W - T = m \cdot a
+    \]
+    \[
+    T = m(g - a)
+    \]
+    \[
+    T = 40(10 - 2) = 320 \, \text{N}
+    \]
+  </div>
+
+  <h4>3️⃣ Penjelasan:</h4>
+  <p>
+    Saat lift naik, tali harus memberikan gaya tambahan untuk mempercepat peti ke atas, sehingga gaya tegang tali lebih besar dari beratnya (T > W).  
+    Saat lift turun, sebagian gaya gravitasi membantu mempercepat gerak peti, sehingga gaya tegang tali yang dibutuhkan lebih kecil dari beratnya (T < W).
+  </p>
+</div>
+
+<script>
+function periksaIsian() {
+  const j1 = document.getElementById("jawaban1").value.trim().toLowerCase();
+  const j2 = document.getElementById("jawaban2").value.trim().toLowerCase();
+  const j3 = document.getElementById("jawaban3").value.trim().toLowerCase();
+  const hasil = [];
+
+  if (["520", "520n", "520 n"].includes(j1)) hasil.push("✅ Jawaban 1 benar!");
+  else hasil.push("❌ Jawaban 1 salah");
+
+  if (["320", "320n", "320 n"].includes(j2)) hasil.push("✅ Jawaban 2 benar!");
+  else hasil.push("❌ Jawaban 2 salah");
+
+  if (j3.includes("naik") && j3.includes("lebih") && j3.includes("turun")) hasil.push("✅ Jawaban 3 benar!");
+  else hasil.push("❌ Jawaban 3 salah.");
+
+  alert(hasil.join("\\n"));
+}
+
+function showAnswerIsian() {
+  const password = prompt("Berapa orde pangkat dari nilai G (konstanta gravitasi)");
+  if (password === "10^11") {
+    document.getElementById("answerIsian").style.display = "block";
+  } else if (password === null) {
+    alert("Akses dibatalkan.");
+  } else {
+    alert("❌ Password salah. Coba lagi!");
+  }
+}
+</script>
+
 
    <a href="hukumnewton4.html" 
      style="
