@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materi 5: Hukum Newton</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
+      background: #ffffff;
+      color: #222;
+    }
+    body.dark-mode { background: #0f172a; color: #e2e8f0; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px; background: transparent; flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: center; gap: 15px; }
+    .logo img { height: 50px; }
+    header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
+
+    nav a {
+      margin-left: 25px; text-decoration: none; font-weight: 500;
+      color: inherit; transition: color 0.3s;
+    }
+    nav a:hover { color: #6366f1; }
+    .toggle-btn {
+      margin-left: 25px; cursor: pointer; border: none; background: none;
+      font-size: 1.5rem; transition: transform 0.3s;
+    }
+    .toggle-btn:hover { transform: scale(1.2); }
+
+    .materi-content {
+      padding: 60px 80px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .materi-content h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .materi-content h3 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      color: #4f46e5;
+      border-left: 5px solid #a855f7;
+      padding-left: 12px;
+    }
+
+    .materi-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #374151;
+      text-align: justify;
+      transition: color 0.3s;
+    }
+    body.dark-mode .materi-content p { color: #cbd5e1; }
+
+    .equation {
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 25px 0;
+    }
+
+    .video-placeholder {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0;
+    }
+    .video-placeholder img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      text-align: center; padding: 20px; font-size: 0.9em;
+      color: #6b7280; border-top: 1px solid #ccc; margin-top: 50px;
+    }
+    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
+
+    @media (max-width: 768px) {
+      .materi-content { padding: 30px 20px; }
+      .materi-content h2 { font-size: 2rem; }
+      .materi-content p { font-size: 1rem; }
+      .equation { font-size: 1.3rem; }
+      header { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
+      nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
+      nav a, .toggle-btn { margin-left: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+      <h1>Materi 6: Impuls dan Momentum</h1>
+    </div>
+    <nav>
+      <a href="../../kelas xi.html">Kembali</a>
+      <a href="../../../profil.html">Profil</a>
+      <button class="toggle-btn" id="toggle-dark">🌙</button>
+    </nav>
+  </header>
+
+  <section class="materi-content">
+    <h2>Definisi Momentum</h2>
+
+    <p>Secara umum momentum adalah besaran yang menggambarkan “banyaknya gerak” yang dimiliki oleh suatu benda yang bergerak. Semakin besar massa dan kecepatan suatu benda, maka akan semakin sulit untuk menghentikannya, dan semakin besar pula momentumnya. Dalam bukunya Principia Isaac Newton mendefinisikan momentum yang ia sebut sebagai “quantity of motion” sebagai hasil kali massa dan kecepatan</p>
+<p>Mengapa massa dan kecepatan?</p>
+<p>Coba kita bayangkan terdapat dua benda yang menabrak anda:</p>
+
+    <ol>
+      <li>Sebuah bola tenis dengan massa <strong>0,5 kg</strong> dilempar dengan kecepatan <strong>7 m/s</strong>.</li>
+      <li>Sebuah bola tenis dengan massa <strong>1 kg</strong> dilempar dengan kecepatan <strong>8 m/s</strong>.</li>
+    </ol>
+
+    <p class="muted">Bila kita substitusi nilainya ke persamaan momentum maka:</p>
+<div class="equation">\( p = m.v \)</div>
+<p>Benda 1</p>
+<p>$$ p = m \times v = 0{,}5 \times 7 = 3{,}5~\text{N·s} $$</p>
+<p>Benda 2</p>
+<p>$$ p = m \times v = 1 \times 8 = 8~\text{N·s} $$</p>
+<p>
+Dari kedua benda tersebut, ketika menabrak Anda, Anda akan merasakan suatu “gaya” atau “efek” dari tabrakan itu. 
+Sekarang, bayangkan sebuah truk tronton dengan massa yang sangat besar bergerak dengan kecepatan tinggi. 
+Inilah yang disebut sebagai <em>efek momentum</em>. 
+Persamaan \( p = m \cdot v \) menggambarkan seberapa “sulit” menghentikan sebuah benda yang sedang bergerak. 
+Semakin besar massa atau kecepatannya, semakin besar pula momentumnya.
+</p>
+<ul>
+  <li>
+    <strong>m</strong> mewakili <em>hukum inersia</em> tentang kelembaman. 
+    Semakin besar massa benda, maka semakin besar pula kecenderungannya untuk tetap diam atau mempertahankan geraknya.
+  </li>
+  <li>
+    <strong>v</strong> mewakili <em>vektor gerak</em> itu sendiri, yaitu arah dan besar kecepatan suatu benda.
+  </li>
+</ul>
+<h2>Perubahan Momentum</h2>
+<p>
+Sekarang, bayangkan ada dua pemain bola tenis. Pemain pertama memukul bola tenis yang bermassa 0,2 kg dengan kecepatan 10 m/s ke arah utara. 
+Kemudian, pemain kedua menerima bola tersebut dan memukulnya kembali ke arah selatan dengan kecepatan 5 m/s. 
+Dari peristiwa ini, kita dapat memahami bahwa momentum suatu benda dapat berubah karena kecepatan benda dapat bertambah, berkurang, atau bahkan berubah arah. 
+Hukum Kedua Newton sering ditulis sebagai \( F = m \cdot a \), atau dalam bentuk yang lebih umum dapat dinyatakan sebagai “gaya merupakan laju perubahan momentum”, yang dapat ditulis sebagai:
+</p>
+<div class="equation">\[ F = \frac{dp}{dt} \]</div>
+<div class="equation">\[ F \, dt = dp \]</div>
+
+<div class="equation">\[ \int F \, dt = \int dp \]</div>
+
+<div class="equation">\[ F \, \Delta t = \Delta p \]</div>
+<p>Dari persamaan ini kita mendapatkan hubungan baru yaitu</p>
+<div class="equation">\[ \Delta p = I \, (\text{impuls}) \]</div>
+<p>Jadi ketika ada dua benda yang memiliki kecepatan dan massa dapat berpindah arah disebabkan adanya perubahan dari momentum. Perubahan momentum yang menyebabkan benda berpindah arah ini yang kita sebut sebagai Impuls. Sekarang kita uraikan persamaan ∆p</p>
+<div class="equation">\[ \Delta p = p_{akhir} - p_{awal} = m_1 v_1 - m_0 v_0 \]</div>
+<p>Sebab sering dalam kasus <em>m</em> nilainya konstan, maka:</p>
+<div class="equation">\[ \Delta p = m (v_1 - v_0) = m \Delta v \]</div>
+<p>Jadi persamaan tersebut adalah bentuk khusus dari hubungan Impuls-Momentum yang merupakan konsekuensi langsung dari Hukum II Newton, dengan mengasumsi bahwa massa benda tetap.</p>
+<h2>Momentum Total Sistem</h2>
+<p>Konsep momentum total sistem berasal dari konsekuensi hukum III Newton (aksi-reaksi). Bayangkan terdapat dua benda, benda A dan benda B, yang saling berinteraksi. Saat keduanya berinteraksi, masing-masing benda memberikan gaya pada benda yang lain. Menurut hukum III Newton “jika benda 1 memberikan gaya pada benda 2, maka benda 2 juga memberikan gaya yang sama besar namun dengan arah berlawaman pada benda 1.”</p>
+<p>Artinya</p>
+<div class="equation">\[ F_{12} = -F_{21} \]</div>
+<p>Dimana:</p>
+<ul>
+  <li>\( F_{12} \) = gaya yang diberikan <strong>benda 1</strong> pada <strong>benda 2</strong></li>
+  <li>\( F_{21} \) = gaya yang diberikan <strong>benda 2</strong> pada <strong>benda 1</strong></li>
+</ul>
+<p>Keduanya saling berpasangan, dan tidak dapat berdiri sendiri, dan berlawanan arah.
+Sebab kedua gaya yang terjadi pada saat yang sama dan dalam tumbukan yang sama, maka waktu interaksinya juga sama</p>
+<div class="equation">\[ \Delta t_1 = \Delta t_2 = \Delta t \]</div>
+
+<p>Sebab impuls (<em>I</em>) didefinisikan sebagai hasil kali gaya dengan waktu kerja gaya:</p>
+<div class="equation">\[ I = F \cdot \Delta t \]</div>
+
+<p>Maka:</p>
+<div class="equation">\[ I_1 = F_{21} \cdot \Delta t \quad \text{dan} \quad I_2 = F_{12} \cdot \Delta t \]</div>
+
+<p>Sebab \( F_{12} = -F_{21} \), berarti:</p>
+<div class="equation">\[ I_1 = -I_2 \]</div>
+
+<p>Hal ini berarti impuls pada satu benda sama besar dengan impuls pada benda kedua, tetapi dengan arah yang berlawanan.</p>
+
+<p>Karena impuls juga merupakan perubahan momentum (\( \Delta p \)), maka:</p>
+<div class="equation">\[ I = \Delta p \]</div>
+
+<p>Sehingga:</p>
+<div class="equation">\[ \Delta p_1 = -\Delta p_2 \]</div>
+
+<p>Atau dapat ditulis sebagai:</p>
+<div class="equation">\[ \Delta p_1 + \Delta p_2 = 0 \]</div>
+<p>Artinya, dalam interaksi dua benda, jumlah perubahan momentum total selalu nol. 
+Momentum hilang pada satu benda akan sama dengan momentum yang diperoleh benda lainnya.</p>
+<p>Persamaan ini menunjukkan hukum kekalan momentum total pada sistem tertutup (tidak ada gaya eksternal) dalam hal ini momentum total sebelum dan sesudah tumbukan akan bernilai tetap sama. Jadi secara konsep Hukum III Newton menghasilkan gaya aksi reaksi yang menimbulkan impuls yang arahnya berlawanan, impuls yang berlawanan juga menghasilkan momentum yang berlawanan. Hasil akhirnya momentum total sistem tidak berubah (konstan).</p>
+
+<div style="text-align:center; margin-top:40px; display:flex; justify-content:center; flex-wrap:wrap; gap:15px;">
+  <a href="momentum2.html" 
+     style="
+       display:inline-block;
+       background: linear-gradient(90deg, #6366f1, #a855f7, #f472b6);
+       color:white;
+       padding:12px 28px;
+       border-radius:30px;
+       text-decoration:none;
+       font-weight:600;
+       font-size:1.1rem;
+       transition: all 0.3s ease;">
+    Lanjut Materi Tumbukan
+  </a>
+  </div>
+ 
+ </section>
+
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-dark");
+    const body = document.body;
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>
