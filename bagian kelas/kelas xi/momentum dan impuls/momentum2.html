@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materi 5: Hukum Newton</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
+      background: #ffffff;
+      color: #222;
+    }
+    body.dark-mode { background: #0f172a; color: #e2e8f0; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px; background: transparent; flex-wrap: wrap;
+    }
+    .logo { display: flex; align-items: center; gap: 15px; }
+    .logo img { height: 50px; }
+    header h1 { margin: 0; font-size: 1.6rem; font-weight: 700; color: #4f46e5; }
+
+    nav a {
+      margin-left: 25px; text-decoration: none; font-weight: 500;
+      color: inherit; transition: color 0.3s;
+    }
+    nav a:hover { color: #6366f1; }
+    .toggle-btn {
+      margin-left: 25px; cursor: pointer; border: none; background: none;
+      font-size: 1.5rem; transition: transform 0.3s;
+    }
+    .toggle-btn:hover { transform: scale(1.2); }
+
+    .materi-content {
+      padding: 60px 80px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .materi-content h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .materi-content h3 {
+      font-size: 1.6rem;
+      margin-top: 40px;
+      color: #4f46e5;
+      border-left: 5px solid #a855f7;
+      padding-left: 12px;
+    }
+
+    .materi-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #374151;
+      text-align: justify;
+      transition: color 0.3s;
+    }
+    body.dark-mode .materi-content p { color: #cbd5e1; }
+
+    .equation {
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 25px 0;
+    }
+
+    .video-placeholder {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0;
+    }
+    .video-placeholder img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      text-align: center; padding: 20px; font-size: 0.9em;
+      color: #6b7280; border-top: 1px solid #ccc; margin-top: 50px;
+    }
+    body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
+
+    @media (max-width: 768px) {
+      .materi-content { padding: 30px 20px; }
+      .materi-content h2 { font-size: 2rem; }
+      .materi-content p { font-size: 1rem; }
+      .equation { font-size: 1.3rem; }
+      header { flex-direction: column; align-items: flex-start; padding: 15px 20px; }
+      nav { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
+      nav a, .toggle-btn { margin-left: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+      <h1>Materi 6: Impuls dan Momentum</h1>
+    </div>
+    <nav>
+      <a href="../../kelas xi.html">Kembali</a>
+      <a href="../../../profil.html">Profil</a>
+      <button class="toggle-btn" id="toggle-dark">🌙</button>
+    </nav>
+  </header>
+
+  <section class="materi-content">
+    <h2>TUMBUKAN</h2>
+
+    <p>Kita telah mempelajari hukum kekekalan momentum, yaitu momentum awal sebelum tumbukan benda sama dengan momentum setelah tumbukan akhir benda</p>
+  
+<div class="equation">\( EP_0 = EP \)</div>
+<p>Energi potensial awal sama dengan energi potensial akhir.</p>
+<p>$$ EP_0 = EP $$</p>
+<p>Atau</p>
+<div class="equation">\( m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2' \)</div>
+<p>Dimana:</p>
+<ul>
+  <li>\( E_{P_0} \) = Energi tumbukan sebelum benda bertumbukan (kgm/s)/ N.s</li>
+  <li>\( E_P \) = Energi tumbukan benda setelah bertumbukan (kgm/s)/ N.s</li>
+  <li>\( m_1 \) = massa benda 1 (kg)</li>
+  <li>\( m_2 \) = massa benda 2 (kg)</li>
+  <li>\( v_1 \) = kecepatan benda 1 sebelum tumbukan (m/s)</li>
+  <li>\( v_2 \) = kecepatan benda 2 sebelum tumbukan (m/s)</li>
+  <li>\( v_1' \) = kecepatan benda 1 setelah tumbukan (m/s)</li>
+  <li>\( v_2' \) = kecepatan benda 2 setelah tumbukan (m/s)</li>
+</ul>
+<p>Lalu bagaimana energi kinetik ketika benda sebelum dan sesudah tumbukan? Ternyata</p>
+<div class="equation">\( EK_0 = EK \)</div>
+<p>Berarti energi kinetik total selalu kekal nilainya maka energi kinetik benda sebelum akan mengalami tumbukan dan setelah mengalami tumbukan adalah:</p>
+<div class="equation">
+\( 
+\frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 
+= 
+\frac{1}{2} m_1' {v_1'}^{2} + \frac{1}{2} m_2' {v_2'}^{2}
+\)
+</div>
+<p>Persamaan tersebut dapat digunakan untuk menghitung total energi kinetik pada saat benda mengalami tumbukan elastis sempurna. Terus bagaimana hubungan antara momentum total benda dengan energi kinetik total benda?</p>
+<p>Kita perhatikan bahwa energi kinetik memiliki faktor kuadrat di masing-masing ruas mari kita telaah:
+</p>
+<div class="equation">
+\( 
+v_1^2 + v_2^2 = {v_1'}^{2} + {v_2'}^{2}
+\)
+</div>
+<p>Atau</p>
+<div class="equation">
+\( 
+v_1^2 - {v_1'}^{2} = v_2^2 - {v_2'}^{2}
+\)
+</div>
+<p>Bisa kita tulis menjadi</p>
+<div class="equation">
+\(
+(v_1 - v_1')(v_1 - v_1') = (v_2 - v_2')(v_2 - v_2')
+\)
+</div>
+<p>Kita lihat bahwa faktor \( (v_1 - v_1')(v_1 - v_1') = (v_2 - v_2')(v_2 - v_2') \) juga ada di momentum jadi bagaimana hubungannya? Kita tulis persamanan energi kinetik total:</p>
+
+<div class="equation">
+\(
+\frac{1}{2} m_1 v_1^2 + \frac{1}{2} m_2 v_2^2 
+= 
+\frac{1}{2} m_1 {v_1'}^{2} + \frac{1}{2} m_2 {v_2'}^{2}
+\)
+</div>
+<p>Hilangkan 1/2</p>
+
+<div class="equation">
+\[
+\frac{
+\frac{1}{2} m_1 v_1^{2}
++ \frac{1}{2} m_2 v_2^{2}
+=
+\frac{1}{2} m_1 v_1'^{2}
++ \frac{1}{2} m_2 v_2'^{2}
+}{2}
+\]
+</div>
+
+
+<div class="equation">
+\(
+m_1 v_1^2 + m_2 v_2^2 
+= 
+m_1 {v_1'}^{2} + m_2 {v_2'}^{2}
+\)
+</div>
+
+<div class="equation">
+\(
+m_1 (v_1 - v_1')(v_1 - v_1') 
+= 
+m_2 (v_2 - v_2')(v_2 - v_2')
+\)
+</div>
+<p>Ini merupakan bentuk energi kinetik yang hubungannya mendekati momentum. Pada momentum total bentuk persamaanya adalah:</p>
+<div class="equation">
+\(
+m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'
+\)
+</div>
+<p>Perhatikan pada kedua ruas antara persamaan energi kinetik dan momentum ternyata keduanya memiliki faktor yang sama yaitu:</p>
+
+<div class="equation">
+\( m_1 (v_1 - v_1') \)
+</div>
+
+<p>muncul di persamaan energi momentum dan energi kinetik, kemudian</p>
+
+<div class="equation">
+\( m_2 (v_2 - v_2') \)
+</div>
+
+<p>juga muncul di di persamaan energi momentum dan energi kinetik maka kita bisa menghilangkan \( m_1 (v_1 - v_1') \) dan \( m_2 (v_2 - v_2') \) pada kedua persamaan</p>
+<div class="equation">
+\(
+\frac{m_1 (v_1 - v_1')(v_1 - v_1')}{m_1 (v_1 - v_1')}
+=
+\frac{m_2 (v_2 - v_2')(v_2 - v_2')}{m_2 (v_2 - v_2')}
+\)
+</div>
+
+<div class="equation">
+\( 
+v_1 - v_1' = v_2 - v_2'
+\)
+</div>
+<p>
+Dari persamaan ini ternyata yang menjembatani antara energi kinetik dan momentum adalah selisih kecepatan antara 
+\( v_1 - v_1' = v_2 - v_2' \). 
+Selisih perbedaan kecepatan ini yang kita sebut sebagai koefisien restitusi.
+</p>
+<div style="text-align: center;">
+  <p><em><strong>koefisien restitusi menyatakan "seberapa 'baik' benda memantul kembali setelah tumbukan"</strong></em></p>
+<p>Atau</p>
+  <p><em><strong>“Perbandingan kecepatan relatif setelah tumbukan terhadap kecepatan relatif sebelum tumbukan"</strong></em></p>
+</div>
+<div class="equation">
+\(
+e = \frac{v_2' - v_1'}{\,v_1' - v_2'\,}
+\)
+</div>
+<p>Sebelum tumbukan benda memiliki kecepatan relatif</p>
+
+<div class="equation">
+\( v_1 - v_2 \)
+</div>
+
+<p>Setelah tumbukan benda memiliki kecepatan relatif</p>
+
+<div class="equation">
+\( v_1' - v_2' \)
+</div>
+<p>Dari definisi ini kita dapat membagi koefisien resistansi menjadi 3 keadaan yaitu tumbukan elastis sempurna, tumbukan elastis Sebagian, dan tumbukan tidak elastis. Syarat terjadinya ketiga fenomena itu adalah sebagai berikut:</p>
+<!-- BAGIAN 1 --> 
+<p><strong>1. Tumbukan elastis sempurna</strong><br>
+Syarat terjadinya tumbukan elastis sempurna jika setelah tumbukan kecepatan kedua benda relatif sama besar sebelum dan setelah tumbukan (hanya beda arah) atau:<br>
+\( e = 1 \)
+</p>
+
+<!-- BAGIAN 2 -->
+<p><strong>2. Tumbukan elastis Sebagian</strong><br>
+Syarat terjadinya tumbukan elastis Sebagian jika setelah tumbukan benda memantul tetapi energi kinetik berangsur-angsur menghilang atau syaratnya:<br>
+\( 0 < e < 1 \)
+</p>
+
+<!-- BAGIAN 3 -->
+<p><strong>3. Tumbukan tidak elastis</strong><br>
+Syarat terjadinya tumbukan elastis. Setelah kedua benda mengalami tumbukan salah satu benda akan menyatu dengan benda yang lainnya, sehingga \( v_1' = v_2' = v' \) atau:<br>
+\( e = \frac{v_2' - v_1'}{v_1' - v_2'} = \frac{0}{\,v_1' - v_2'\,} = 0 \)
+</p>
+
+<p>Pada keadaan tumbukan tidak elastis, hukum kekekalan energi kinetik tidak berlaku, tetapi hukum kekekalan momentum berlaku;<br>
+\( m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2' \)<br>
+\( m_1 v = m_2 v' \)<br>
+\( m_1 v_1 + m_2 v_2 = (m_1 + m_2)\, v' \)
+</p>
+
+<div style="text-align:center; margin-top:40px; display:flex; justify-content:center; flex-wrap:wrap; gap:15px;">
+  <a href="momentum2.html" 
+     style="
+       display:inline-block;
+       background: linear-gradient(90deg, #6366f1, #a855f7, #f472b6);
+       color:white;
+       padding:12px 28px;
+       border-radius:30px;
+       text-decoration:none;
+       font-weight:600;
+       font-size:1.1rem;
+       transition: all 0.3s ease;">
+    Lanjut Latihan Soal
+  </a>
+  </div>
+ 
+ </section>
+
+  <footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-dark");
+    const body = document.body;
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>
