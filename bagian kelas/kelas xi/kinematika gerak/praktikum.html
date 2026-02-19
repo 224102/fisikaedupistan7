@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKPD Digital - Analisis GLBB</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* --- TEMA DASAR (Bahan Ajar) --- */
+        body { 
+            margin: 0; 
+            font-family: 'Poppins', sans-serif; 
+            transition: background 0.3s, color 0.3s;
+            background: #ffffff; 
+            color: #222;
+        }
+        body.dark-mode { background: #0f172a; color: #e2e8f0; }
+
+        /* --- HEADER & FOOTER --- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 20px; flex-wrap: wrap; background: transparent;
+        }
+        .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 1; }
+        .logo img { height: 45px; }
+        header h1 { margin: 0; font-size: 1.5rem; font-weight: 700; color: #4f46e5; }
+        nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 5px; }
+        nav a { text-decoration: none; font-weight: 500; color: inherit; transition: color 0.3s; }
+        nav a:hover { color: #6366f1; }
+        .toggle-btn { cursor: pointer; border: none; background: none; font-size: 1.5rem; transition: transform 0.3s; }
+        .toggle-btn:hover { transform: scale(1.2); }
+        
+        footer {
+            text-align: center; padding: 15px; font-size: 0.85em; color: #6b7280;
+            border-top: 1px solid #ccc; margin-top: 40px; transition: color 0.3s, border-color 0.3s;
+        }
+        body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
+
+        /* --- KONTainer UTAMA (Sama seperti Section Bahan Ajar) --- */
+        .container { 
+            max-width: 1000px; 
+            margin: 20px auto 40px auto; 
+            background-color: #f1f5f9; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05); 
+            transition: background 0.3s;
+        }
+        body.dark-mode .container { background: #1e293b; color: #e2e8f0; }
+        
+        /* Tipografi */
+        h2.gradient-text { 
+            text-align: center; margin-bottom: 5px; font-weight: 800; font-size: 2.2rem;
+            background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .subtitle { text-align: center; color: #4b5563; margin-bottom: 30px; font-size: 1.1em; font-weight: 500; }
+        body.dark-mode .subtitle { color: #cbd5e1; }
+        
+        h3.section-title { 
+            margin-top: 30px; font-size: 1.5rem; border-left: 4px solid #6366f1; padding-left: 10px; margin-bottom: 15px;
+            color: #4f46e5;
+        }
+        body.dark-mode h3.section-title { color: #818cf8; border-color: #818cf8; }
+
+        /* --- INPUT & ACTION AREA --- */
+        .input-section, .action-section { 
+            display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; 
+            background: #ffffff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        body.dark-mode .input-section, body.dark-mode .action-section { background: #334155; border-color: #475569; }
+        
+        .input-box { flex: 1; min-width: 150px; }
+        .input-box label { display: block; font-weight: 600; font-size: 0.95em; margin-bottom: 8px; color: #4b5563;}
+        body.dark-mode .input-box label { color: #cbd5e1; }
+        
+        .input-box input, input[type="file"] { 
+            width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; 
+            font-size: 15px; box-sizing: border-box; font-family: 'Poppins', sans-serif;
+            background: #fff; color: #222; transition: background 0.3s, color 0.3s;
+        }
+        body.dark-mode .input-box input, body.dark-mode input[type="file"] { 
+            background: #0f172a; color: #e2e8f0; border-color: #475569; 
+        }
+        .input-box input:focus { border-color: #6366f1; outline: none; }
+        
+        .action-section { align-items: center; justify-content: space-between; }
+        .file-upload label { font-weight: bold; color: #4f46e5; font-size: 1.1em; display: block; margin-bottom: 8px;}
+        body.dark-mode .file-upload label { color: #818cf8; }
+        
+        .btn-process { 
+            background: #6366f1; color: white; padding: 12px 30px; border: none; 
+            border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; 
+            font-family: 'Poppins', sans-serif; transition: transform 0.3s, background 0.3s; 
+        }
+        .btn-process:hover { background: #4f46e5; transform: scale(1.05); }
+
+        /* --- INFO BOX --- */
+        .info-box {
+            background: #fff3cd; padding: 12px; border-left: 5px solid #ffc107; 
+            margin-bottom: 20px; font-size: 0.95em; border-radius: 4px; color: #856404;
+        }
+        body.dark-mode .info-box { background: #422006; border-color: #f97316; color: #fed7aa; }
+
+        /* --- CHARTS --- */
+        .charts-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+            gap: 20px; margin-bottom: 40px;
+        }
+        .chart-box {
+            background: #ffffff; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            /* Dipertahankan terang agar chart js tetap terbaca jelas */
+        }
+        body.dark-mode .chart-box { background: #f8fafc; border-color: #94a3b8; }
+        canvas { width: 100% !important; height: 300px !important; }
+
+        /* --- TABEL --- */
+        .table-responsive { overflow-x: auto; margin-bottom: 40px; border-radius: 8px; border: 1px solid #e2e8f0;}
+        body.dark-mode .table-responsive { border-color: #475569; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th, td { border: 1px solid #e2e8f0; padding: 10px 8px; text-align: center; }
+        body.dark-mode th, body.dark-mode td { border-color: #475569; }
+        
+        th.header-grey { background-color: #e2e8f0; color: #334155;}
+        body.dark-mode th.header-grey { background-color: #334155; color: #f8fafc; }
+        
+        th.sub-eks { background-color: #ffedd5; color: #c2410c; border-bottom: 2px solid #f97316;}
+        body.dark-mode th.sub-eks { background-color: #7c2d12; color: #fed7aa; border-bottom: 2px solid #ea580c;}
+        
+        th.sub-teori { background-color: #dbeafe; color: #1d4ed8; border-bottom: 2px solid #3b82f6;}
+        body.dark-mode th.sub-teori { background-color: #1e3a8a; color: #bfdbfe; border-bottom: 2px solid #60a5fa;}
+        
+        tr:nth-child(even) {background-color: #f8fafc;}
+        body.dark-mode tr:nth-child(even) {background-color: #0f172a;}
+
+        /* --- GOOGLE FORM --- */
+        .form-section { margin-top: 50px; padding-top: 30px; border-top: 3px dashed #cbd5e1; }
+        body.dark-mode .form-section { border-color: #475569; }
+        .iframe-container {
+            width: 100%; display: flex; justify-content: center;
+            background-color: #ffffff; border-radius: 8px; padding: 10px 0; overflow: hidden;
+        }
+        body.dark-mode .iframe-container { background-color: #cbd5e1; } /* Agar form google tetap cerah membaur */
+        
+        /* Responsif Navbar */
+        @media(max-width:768px){
+            header { flex-direction: column; align-items: flex-start; }
+            .charts-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+   <div class="logo">
+    <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+    <h1>Percobaan GLBB</h1>
+  </div>
+  <nav>
+        <a href="gerakmelingkar1.html">Kembali</a>
+        <a href="../../../profil.html">Profil</a>
+        <button class="toggle-btn" id="toggle-dark">🌙</button>
+    </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+     <h2 class="gradient-text">Analisis Praktikum Gerak Lurus Berubah Beraturan</h2>
+    <p>Pelajari konsep GLBB melalui bahan ajar yang disediakan!</p>
+  </div>
+  <img src="foto/ilustrasi siswa.png" alt="Ilustrasi Siswa" id="hero-img">
+</section>
+
+<main class="container">
+    <h2 class="gradient-text">LEMBAR KERJA PESERTA DIDIK (LKPD)</h2>
+    <div class="subtitle">Analisis Gerak Lurus Berubah Beraturan (GLBB) & Teori Ralat</div>
+
+    <div class="input-section">
+        <div class="input-box">
+            <label>Waktu Total ($s$)</label>
+            <input type="number" id="t_total" placeholder="Contoh: 1.4" step="0.1">
+        </div>
+        <div class="input-box">
+            <label>Jarak Teori ($m$)</label>
+            <input type="number" id="s_teori" placeholder="Contoh: 1.0" step="0.1">
+        </div>
+        <div class="input-box">
+            <label>Jarak Eksperimen ($m$)</label>
+            <input type="number" id="s_eks" placeholder="Contoh: 0.98" step="0.1">
+        </div>
+    </div>
+
+    <div class="action-section">
+        <div class="file-upload">
+            <label>Upload File Data Excel</label>
+            <input type="file" id="fileInput" accept=".xlsx, .xls, .csv" />
+            <small style="display:block; margin-top:8px; font-size:0.85em;">Format: Kolom A (Waktu), Kolom B (Posisi)</small>
+        </div>
+        <button class="btn-process" onclick="prosesData()">Hitung Error & Tampilkan Grafik</button>
+    </div>
+
+    <div id="chartsArea" style="display:none;">
+        
+        <h3 class="section-title">A. Visualisasi Grafik</h3>
+        <div class="info-box">
+            <strong>Info Grafik:</strong> Garis Vertikal Merah pada titik oranye adalah <em>Error Bar</em>. Panjang garis ini menunjukkan selisih (Delta) antara hasil Eksperimen Anda dengan Teori. Semakin panjang garisnya, semakin besar penyimpangannya.
+        </div>
+        
+        <div class="charts-container">
+            <div class="chart-box"><canvas id="chart_xt"></canvas></div>
+            <div class="chart-box"><canvas id="chart_xt2"></canvas></div>
+            <div class="chart-box"><canvas id="chart_vt"></canvas></div>
+            <div class="chart-box"><canvas id="chart_at"></canvas></div>
+        </div>
+    
+        <h3 class="section-title">B. Tabel Data Pengukuran</h3>
+        <div class="table-responsive">
+            <table id="tabelAnalisis">
+                <thead>
+                    <tr>
+                        <th rowspan="2" class="header-grey">No</th>
+                        <th rowspan="2" class="header-grey">t ($s$)</th>
+                        <th rowspan="2" class="header-grey">t² ($s^2$)</th>
+                        <th colspan="2" class="header-grey">Posisi ($m$)</th>
+                        <th colspan="2" class="header-grey">Kecepatan ($m/s$)</th>
+                        <th colspan="2" class="header-grey">Percepatan ($m/s^2$)</th>
+                    </tr>
+                    <tr>
+                        <th class="sub-eks">Eksperimen</th><th class="sub-teori">Teori</th>
+                        <th class="sub-eks">Eksperimen</th><th class="sub-teori">Teori</th>
+                        <th class="sub-eks">Eksperimen</th><th class="sub-teori">Teori</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="9">Data belum diproses...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-section">
+            <h3 class="gradient-text" style="font-size: 1.8rem;">C. Lembar Jawaban</h3>
+            <p class="subtitle" style="margin-bottom: 20px;">
+                Berdasarkan grafik dan tabel data di atas, silakan isi lembar evaluasi di bawah ini.
+            </p>
+            
+            <div class="iframe-container">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSdU2yhI3GYY71mL21pVCgg1ZTCPIB4az-2mlkuEz0MBaIIeww/viewform?embedded=true" 
+                    width="100%" 
+                    height="2250" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    Memuat Form...
+                </iframe>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+</footer>
+
+<script>
+    // --- LOGIKA DARK MODE (Sama seperti Bahan Ajar) ---
+    const toggleBtn = document.getElementById("toggle-dark");
+    const body = document.body;
+    toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+
+    // --- VARIABEL & PLUGIN CHART ---
+    let rawDataExcel = [];
+    let charts = {}; 
+
+    const errorBarPlugin = {
+        id: 'errorBarPlugin',
+        afterDatasetsDraw(chart, args, plugins) {
+            const { ctx } = chart;
+            chart.data.datasets.forEach((dataset, i) => {
+                if (dataset.label && dataset.label.includes('Eksperimen')) {
+                    const meta = chart.getDatasetMeta(i);
+                    meta.data.forEach((element, index) => {
+                        const dataPoint = dataset.data[index];
+                        if (dataPoint.error === undefined || dataPoint.error === null) return;
+                        
+                        const { x, y } = element.tooltipPosition();
+                        const yScale = chart.scales.y;
+                        const yMin = yScale.getPixelForValue(dataPoint.y - dataPoint.error);
+                        const yMax = yScale.getPixelForValue(dataPoint.y + dataPoint.error);
+                        
+                        ctx.save();
+                        ctx.beginPath();
+                        ctx.strokeStyle = '#d32f2f';
+                        ctx.lineWidth = 1.5;
+                        ctx.moveTo(x, yMin); 
+                        ctx.lineTo(x, yMax); 
+                        ctx.stroke();
+                        
+                        ctx.beginPath();
+                        ctx.moveTo(x - 4, yMin); ctx.lineTo(x + 4, yMin);
+                        ctx.moveTo(x - 4, yMax); ctx.lineTo(x + 4, yMax);
+                        ctx.stroke();
+                        ctx.restore();
+                    });
+                }
+            });
+        }
+    };
+    Chart.register(errorBarPlugin);
+
+    // --- BACA FILE EXCEL ---
+    document.getElementById('fileInput').addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const data = e.target.result;
+            const workbook = XLSX.read(data, { type: 'binary' });
+            rawDataExcel = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]], { header: 1 });
+            alert("File berhasil diupload! Silakan klik tombol Hitung.");
+        };
+        reader.readAsBinaryString(file);
+    });
+
+    // --- PROSES DATA MATEMATIKA ---
+    function prosesData() {
+        const t_total = parseInput(document.getElementById('t_total').value);
+        const s_teori = parseInput(document.getElementById('s_teori').value);
+        const s_eks   = parseInput(document.getElementById('s_eks').value);
+
+        if (t_total === null || s_teori === null || s_eks === null || rawDataExcel.length === 0) {
+            alert("Mohon lengkapi 3 kotak input parameter dan pastikan file excel sudah diupload.");
+            return;
+        }
+
+        const a_teori_ref = (2 * s_teori) / (t_total ** 2);
+        const a_eks_ref   = (2 * s_eks) / (t_total ** 2);
+        let dataChart = { t: [], t_sq: [], x_eks: [], x_teori: [], v_eks: [], v_teori: [], a_eks: [], a_teori: [] };
+
+        const tbody = document.querySelector('#tabelAnalisis tbody');
+        tbody.innerHTML = ""; 
+        let nomor = 1;
+
+        for (let i = 1; i < rawDataExcel.length; i++) {
+            const row = rawDataExcel[i];
+            if (row.length > 0) {
+                let t = parseExcel(row[0]);
+                let x_eks_file = parseExcel(row[1]);
+                if (t === null) continue;
+
+                let t_sq = t * t;
+                let x_teori_calc = 0.5 * a_teori_ref * t_sq;
+                let v_eks_calc = a_eks_ref * t;
+                let v_teori_calc = a_teori_ref * t;
+                let a_eks_row = (t===0) ? 0 : (v_eks_calc/t);
+                let a_teori_row = (t===0) ? 0 : (v_teori_calc/t);
+                
+                let err_x = Math.abs(x_eks_file - x_teori_calc);
+                let err_v = Math.abs(v_eks_calc - v_teori_calc);
+                let err_a = Math.abs(a_eks_row - a_teori_row);
+
+                dataChart.t.push(t);
+                dataChart.t_sq.push(t_sq);
+                dataChart.x_eks.push({x: t, y: x_eks_file, error: err_x});
+                dataChart.x_teori.push({x: t, y: x_teori_calc});
+                dataChart.v_eks.push({x: t, y: v_eks_calc, error: err_v});
+                dataChart.v_teori.push({x: t, y: v_teori_calc});
+                dataChart.a_eks.push({x: t, y: a_eks_row, error: err_a});
+                dataChart.a_teori.push({x: t, y: a_teori_row});
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${nomor++}</td>
+                    <td>${fmt(t)}</td>
+                    <td>${fmt(t_sq)}</td>
+                    <td>${fmt(x_eks_file)}</td>
+                    <td>${fmt(x_teori_calc)}</td>
+                    <td>${fmt(v_eks_calc)}</td>
+                    <td>${fmt(v_teori_calc)}</td>
+                    <td>${fmt(a_eks_row)}</td>
+                    <td>${fmt(a_teori_row)}</td>
+                `;
+                tbody.appendChild(tr);
+            }
+        }
+
+        document.getElementById('chartsArea').style.display = 'block';
+
+        renderChart('chart_xt', 'Posisi vs Waktu (x-t)', 'Waktu (s)', 'Posisi (m)', dataChart.x_eks, dataChart.x_teori);
+        let x_eks_vs_t2 = dataChart.x_eks.map((item, idx) => ({ x: dataChart.t_sq[idx], y: item.y, error: item.error }));
+        let x_teori_vs_t2 = dataChart.x_teori.map((item, idx) => ({ x: dataChart.t_sq[idx], y: item.y }));
+        renderChart('chart_xt2', 'Posisi vs Waktu² (x-t²)', 'Waktu Kuadrat (s²)', 'Posisi (m)', x_eks_vs_t2, x_teori_vs_t2);
+        renderChart('chart_vt', 'Kecepatan vs Waktu (v-t)', 'Waktu (s)', 'Kecepatan (m/s)', dataChart.v_eks, dataChart.v_teori);
+        renderChart('chart_at', 'Percepatan vs Waktu (a-t)', 'Waktu (s)', 'Percepatan (m/s²)', dataChart.a_eks, dataChart.a_teori);
+    }
+
+    function renderChart(canvasId, title, xLabel, yLabel, dataEksperimen, dataTeori) {
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        if (charts[canvasId]) charts[canvasId].destroy(); 
+        
+        charts[canvasId] = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    { 
+                        label: 'Eksperimen', 
+                        data: dataEksperimen, 
+                        backgroundColor: '#ff9800', 
+                        borderColor: '#e65100', 
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    },
+                    { 
+                        label: 'Teori (Ideal)', 
+                        data: dataTeori, 
+                        borderColor: '#2196f3', 
+                        backgroundColor: 'rgba(33, 150, 243, 0.1)', 
+                        type: 'line', 
+                        pointRadius: 0, 
+                        borderWidth: 2, 
+                        tension: 0.4 
+                    }
+                ]
+            },
+            options: {
+                responsive: true, 
+                maintainAspectRatio: false,
+                plugins: { 
+                    title: { display: true, text: title, font: {size: 15, family: "'Poppins', sans-serif"} }, 
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: {size: 12, family: "'Poppins', sans-serif"} } } 
+                },
+                scales: { 
+                    x: { type: 'linear', position: 'bottom', title: { display: true, text: xLabel, font: {weight: 'bold', family: "'Poppins', sans-serif"} } }, 
+                    y: { title: { display: true, text: yLabel, font: {weight: 'bold', family: "'Poppins', sans-serif"} }, beginAtZero: true } 
+                }
+            }
+        });
+    }
+
+    function parseInput(val) { return val ? parseFloat(val.replace(',', '.')) : null; }
+    function parseExcel(val) { if (!val && val !== 0) return null; return typeof val === 'number' ? val : parseFloat(val.toString().replace(',', '.')); }
+    function fmt(num) { return num !== undefined ? parseFloat(num).toFixed(3).replace('.', ',') : ''; }
+</script>
+
+</body>
+</html>
