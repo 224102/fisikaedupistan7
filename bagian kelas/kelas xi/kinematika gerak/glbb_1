@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bahan Ajar: Gerak Lurus Berubah Beraturan</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  :root {
+    --primary: #4f46e5;
+    --primary-hover: #6366f1;
+    --bg-light: #f8fafc;
+    --text-light: #1e293b;
+    --card-light: #ffffff;
+    --bg-dark: #0f172a;
+    --text-dark: #f1f5f9;
+    --card-dark: #1e293b;
+    --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+    line-height: 1.6;
+  }
+
+  body.dark-mode {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
+
+  /* Header & Navigation */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+
+  body.dark-mode header {
+    background: rgba(15, 23, 42, 0.8);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo img { height: 40px; }
+  header h1 { margin: 0; font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+
+  nav { display: flex; align-items: center; gap: 20px; }
+  nav a { 
+    text-decoration: none; 
+    font-weight: 500; 
+    color: inherit; 
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+  nav a:hover { color: var(--primary); }
+
+  .toggle-btn { 
+    cursor: pointer; 
+    border: none; 
+    background: #e2e8f0; 
+    padding: 8px; 
+    border-radius: 50%; 
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: 0.3s; 
+  }
+  body.dark-mode .toggle-btn { background: #334155; }
+
+  /* Content Layout */
+  .materi-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .card {
+    background: var(--card-light);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: background 0.3s;
+  }
+  body.dark-mode .card { background: var(--card-dark); }
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: 0;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h3 {
+    border-left: 4px solid var(--primary);
+    padding-left: 15px;
+    margin-top: 40px;
+    color: var(--primary);
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: #475569;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  body.dark-mode p { color: #cbd5e1; }
+
+  /* Equation Box */
+  .equation-box {
+    background: #f1f5f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
+  }
+  body.dark-mode .equation-box {
+    background: #0f172a;
+    border-color: #334155;
+  }
+
+  /* Video */
+  .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin: 40px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  .video-container iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  }
+
+  /* Call to Action Button */
+  .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--accent-gradient);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  }
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 60px;
+  }
+  body.dark-mode footer { border-color: #334155; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    header { padding: 15px 20px; }
+    .card { padding: 25px; }
+    h2 { font-size: 1.8rem; }
+    header h1 { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="../../../img/um_logo_resized.png" alt="Logo UM">
+    <h1>GLBB</h1>
+  </div>
+  <nav>
+    <a href="../../kelas xi.html">Kembali</a>
+    <a href="../../../profil.html">Profil</a>
+    <button class="toggle-btn" id="toggle-dark">🌙</button>
+  </nav>
+</header>
+
+<main class="materi-container">
+  <article class="card">
+    <h2>Gerak Lurus Berubah Beraturan</h2>
+    <p>Suatu benda dikatakan bergerak jika benda itu mengalami perubahan kedudukan terhadap titik acuan tertentu. Jadi gerak adalah perubahan posisi atau kedudukan terhadap titik acuan tertentu. Gerak juga dapat dikatakan sebagai perubahan kedudukan suatu benda dalam selang waktu tertentu. Dalam tinjauan kedudukan posisi gerak dibagi menjadi 2 yaitu gerak lurus dan gerak lurus berubah beraturan.</p>
+
+    <h3>Gerak Lurus Beraturan (GLB)</h3> 
+    <p>Gerak lurus beraturan adalah gerak yang terjadi disepanjang lintasan lurus dengan perubahan kecepatan tetap. Kecepatan benda disetiap titik selalu sama, baik besar maupun arahnya dengan begitu percepatan dan kecepatan benda akan selalu bernilai 0.</p>
+
+    <div class="equation-box">
+      $$v = \frac{\Delta x}{\Delta t} = 0$$
+    </div>
+
+    <h3>Gerak Lurus Berubah Beraturan (GLBB)</h3> 
+    <p>Gerak lurus berubah beraturan adalah gerak yang terjadi disepanjang lintasan lurus dengan kecepatan berubah secara teratur setiap saat apakah dipercepat maupun diperlambat. Gerak perubahan kecepatan teratur setiap saat maka menghasilkan percepatan tetap. Persamaan gerak lurus berubah beraturan adalah sebagai berikut:</p>
+
+    <div class="equation-box">
+      $$
+      \begin{aligned}
+      a &= \frac{dv}{dt} \\
+      \int a \, dt &= \int \frac{dv}{dt} \, dt \\
+      at + c &= v
+      \end{aligned}
+      $$
+    </div>
+
+    <p>Maka, kecepatan akhirnya adalah \( v = v_0 + at \) yang menunjukkan hubungan linear.</p>
+    
+    <p>Apabila bila bergerak pada posisi diam tanpa ada gaya eksternal maka kecepatan awalnya juga sama dengan 0 \(v_0 = 0\), maka hubungan tersebut dapat ditulis kembali menjadi:</p>
+
+    <div class="equation-box">
+      $$v = at$$
+    </div>
+
+    <p>Hubungan tersebut menyatakan persamaan kecepatan apabila kecepatan awal benda adalah diam, jika kita substitusi persamaan \( v = v_0 + at \) ke hubungan antara kecepatan dan posisi maka didapatkan hubungan:</p>
+
+    <div class="equation-box">
+      $$
+      \begin{aligned}
+      v &= \frac{dx}{dt} \\
+      \int v \, dt &= \int \frac{dx}{dt} \, dt \\
+      \int (v_0 + at) \, dt &= \int \frac{dx}{dt} \, dt \\
+      \int v_0 \, dt + \int at \, dt &= \int \frac{dx}{dt} \, dt \\
+      v_0 t + \frac{1}{2} at^2 + C &= \int dx \\
+      (x - x_0) = s &= v_0 t + \frac{1}{2} at^2
+      \end{aligned}
+      $$
+    </div>
+
+    <div class="equation-box">
+      $$
+      \begin{aligned}
+      \text{Keterangan:} & \\
+      x &= \text{Posisi akhir } (m) \\
+      x_0 &= \text{Posisi awal } (m) \\
+      s &= \text{Jarak } (m) \\
+      v_0 &= \text{Kecepatan awal } (m/s) \\
+      t &= \text{Waktu } (s) \\
+      a &= \text{Percepatan } (m/s^2)
+      \end{aligned}
+      $$
+    </div>
+
+    <p>Jika kita ingin mengamati benda yang sudah bergerak dengan kecepatan sebesar \( v_t \), maka kita dapat mengetahui posisi benda pada setiap \( v_t \). Kita tahu bahwa:</p>
+
+    <div class="equation-box">
+        $$v = \frac{dx}{dt} \quad ; \quad a = \frac{dv}{dt}$$
+    </div>
+
+    <p>Menggunakan <b>aturan rantai (chain rule)</b> untuk mengeliminasi variabel waktu (\( dt \)):</p>
+
+    <div class="equation-box">
+        $$
+        \begin{aligned}
+        a &= \frac{dv}{dx} \cdot \frac{dx}{dt} \\
+        a &= \frac{dv}{dx} \cdot v \\
+        a \, dx &= v \, dv
+        \end{aligned}
+        $$
+    </div>
+
+    <p>Selanjutnya, kita lakukan integrasi pada kedua sisi dengan batas posisi awal \( x_0 \) ke \( x \) dan kecepatan awal \( v_0 \) ke \( v \):</p>
+
+    <div class="equation-box">
+        $$
+        \begin{aligned}
+        \int_{x_0}^{x} a \, dx &= \int_{v_0}^{v} v \, dv \\
+        a[x]_{x_0}^{x} &= \left[ \frac{1}{2}v^2 \right]_{v_0}^{v} \\
+        a(x - x_0) &= \frac{1}{2}v^2 - \frac{1}{2}v_0^2
+        \end{aligned}
+        $$
+    </div>
+
+    <p>Dengan mengganti \( (x - x_0) \) menjadi jarak \( s \), kita mendapatkan bentuk akhir:</p>
+
+    <div class="equation-box">
+        $$
+        \begin{aligned}
+        as &= \frac{1}{2}(v^2 - v_0^2) \\
+        2as &= v^2 - v_0^2 \\
+        v^2 &= v_0^2 + 2as
+        \end{aligned}
+        $$
+    </div>
+
+   <div class="video-container">
+  <iframe 
+    src="https://www.youtube.com/embed/3YCRAse9irs?rel=0&modestbranding=1" 
+    title="Video Pembelajaran GLBB" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
+      
+    <div style="text-align: center; margin-top: 40px;">
+      <p style="font-weight:600; text-align: center;">
+        Setelah kalian mempelajari semua materi gerak lurus berubah beraturan, sekarang mari kita lakukan percobaan digital.
+      </p>
+      <a href="praktikum.html" class="cta-button">Mulai Percobaan Digital</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+</footer>
+
+<script>
+  const toggleBtn = document.getElementById("toggle-dark");
+  const body = document.body;
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    toggleBtn.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+  });
+</script>
+
+</body>
+</html>
