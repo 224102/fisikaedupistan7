@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perawatan Alat Peraga GLBB</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- TEMA DASAR --- */
+        body { 
+            margin: 0; 
+            font-family: 'Poppins', sans-serif; 
+            transition: background 0.3s, color 0.3s;
+            background: #ffffff; 
+            color: #222;
+        }
+        body.dark-mode { background: #0f172a; color: #e2e8f0; }
+
+        /* --- HEADER & FOOTER --- */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 20px; flex-wrap: wrap; background: transparent;
+        }
+        .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 1; }
+        .logo img { height: 45px; }
+        header h1 { margin: 0; font-size: 1.5rem; font-weight: 700; color: #4f46e5; }
+        nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 5px; }
+        nav a { text-decoration: none; font-weight: 500; color: inherit; transition: color 0.3s; }
+        nav a:hover { color: #6366f1; }
+        .toggle-btn { cursor: pointer; border: none; background: none; font-size: 1.5rem; transition: transform 0.3s; }
+        .toggle-btn:hover { transform: scale(1.2); }
+        
+        footer {
+            text-align: center; padding: 15px; font-size: 0.85em; color: #6b7280;
+            border-top: 1px solid #ccc; margin-top: 40px; transition: color 0.3s, border-color 0.3s;
+        }
+        body.dark-mode footer { border-color: #334155; color: #cbd5e1; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 20px 20px;
+        }
+        h2.gradient-text { 
+            margin-bottom: 10px; font-weight: 800; font-size: 2.2rem;
+            background: linear-gradient(90deg, #a855f7, #f472b6, #fb923c);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+        body.dark-mode .hero p { color: #cbd5e1; }
+
+        /* --- CONTAINER UTAMA --- */
+        .container { 
+            max-width: 1100px; 
+            margin: 20px auto 40px auto; 
+            background-color: #f1f5f9; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05); 
+            transition: background 0.3s;
+        }
+        body.dark-mode .container { background: #1e293b; color: #e2e8f0; }
+
+        /* --- KOMPONEN ALAT & PERAWATAN --- */
+        .grid-komponen {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .card-komponen {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s, background 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-komponen:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.08); }
+        body.dark-mode .card-komponen { background: #0f172a; border-color: #334155; }
+        
+        .img-komponen {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background-color: #e2e8f0; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+        }
+        body.dark-mode .img-komponen { background-color: #334155; color: #64748b;}
+        
+        .card-komponen h4 { color: #4f46e5; margin: 0 0 10px 0; font-size: 1.2rem; }
+        body.dark-mode .card-komponen h4 { color: #818cf8; }
+        .card-komponen p { font-size: 0.95rem; color: #4b5563; line-height: 1.6; margin: 0; flex-grow: 1;}
+        body.dark-mode .card-komponen p { color: #94a3b8; }
+
+        /* --- INFO BOX --- */
+        .info-box {
+            background: #e0e7ff; padding: 15px; border-left: 5px solid #6366f1; 
+            margin-bottom: 30px; font-size: 1rem; border-radius: 4px; color: #3730a3;
+        }
+        body.dark-mode .info-box { background: #1e1b4b; border-color: #818cf8; color: #c7d2fe; }
+
+        /* Responsif HP */
+        @media(max-width:768px){
+            header { flex-direction: column; align-items: flex-start; }
+            h2.gradient-text { text-align: center; }
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+   <div class="logo">
+    <img src="../../../img/um_logo_resized.png" alt="Logo UM" onerror="this.style.display='none';">
+    <h1>Perawatan Alat</h1>
+  </div>
+  <nav>
+        <a href="praktikum.html">Kembali ke menu LKPD</a> 
+        <a href="../../../profil.html">Profil</a>
+        <button class="toggle-btn" id="toggle-dark">🌙</button>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2 class="gradient-text">Petunjuk Perawatan Komponen</h2>
+    <p>
+        Alat peraga eksperimen GLBB ini terdiri dari berbagai komponen elektronik dan mekanik yang presisi. 
+        Ikuti panduan di bawah ini agar alat Anda tetap akurat, awet, dan terhindar dari kerusakan.
+    </p>
+</section>
+
+<main class="container">
+    
+    <div class="info-box">
+        <strong>💡 Aturan Utama:</strong> Pastikan kabel USB sudah tercabut dari sumber listrik sebelum Anda membongkar atau merakit komponen di atas <em>breadboard</em> untuk menghindari korsleting.
+    </div>
+
+    <div class="grid-komponen">
+        <div class="card-komponen">
+            <img src="foto/box.jpg" alt="Box Alat" class="img-komponen" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Box'">
+            <h4>📦 1. Box Penyimpanan</h4>
+            <p>Berfungsi sebagai tempat penyimpanan utama. Pastikan box selalu dalam keadaan kering. Disarankan untuk menambahkan <em>silica gel</em> di dalamnya guna mencegah kelembapan yang dapat membuat pin sensor dan mikrokontroler berkarat.</p>
+        </div>
+        
+        <div class="card-komponen">
+            <img src="foto/lintasan.jpg" alt="Lintasan Bongkar Pasang" class="img-komponen" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Lintasan'">
+            <h4>🛤️ 2. Lintasan Bongkar Pasang</h4>
+            <p>Rakit dan lepas sambungan lintasan secara perlahan agar pengaitnya tidak patah. Simpan lintasan dalam posisi mendatar rata untuk menghindari bengkok/melengkung yang dapat menghambat laju kereta eksperimen.</p>
+        </div>
+        
+        <div class="card-komponen">
+            <img src="foto/esp32.jpg" alt="ESP-32" class="img-komponen" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+ESP-32'">
+            <h4>🧠 3. Mikrokontroler ESP-32</h4>
+            <p>Ini adalah "otak" dari alat peraga. Jauhkan board dari cairan atau benda logam saat alat menyala. Segera cabut sumber daya jika praktikum telah selesai agar chip tidak <em>overheat</em> (terlalu panas).</p>
+        </div>
+
+        <div class="card-komponen">
+            <img src="foto/hcsr04.jpg" alt="Sensor HC-SR04" class="img-komponen" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+HC-SR04'">
+            <h4>📡 4. Sensor HC-SR04</h4>
+            <p>Modul pembaca jarak ini sangat sensitif. <strong>Jangan pernah menekan atau menyentuh</strong> kedua silinder logam (transduser) dengan jari. Pastikan posisinya selalu tegak lurus menghadap objek agar pantulan gelombang terbaca akurat.</p>
+        </div>
+
+        <div class="card-komponen">
+            <img src="foto/breadboard.jpg" alt="Breadboard" class="img-komponen" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Breadboard'">
+            <h4>🔌 5. Breadboard (Papan Rangkaian)</h4>
+            <p>Tancapkan komponen dan kabel jumper secara lurus/tegak agar jepitan tembaga di dalam lubang tidak cepat longgar. Pastikan lubang breadboard bersih dari debu atau serpihan kabel yang patah.</p>
+        </div>
+
+        <div class="card-komponen">
+            <img src="foto/jumper.jpg" alt="Kabel Jumper" class="img-komponen" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Kabel+Jumper'">
+            <h4>🔗 6. Kabel Jumper</h4>
+            <p>Saat mencabut kabel dari breadboard atau ESP-32, selalu pegang dan tarik pada bagian ujung plastik hitamnya (konektor). <strong>Jangan menarik bagian tengah kabel</strong> karena serabut tembaga di dalamnya sangat rentan putus.</p>
+        </div>
+
+        <div class="card-komponen">
+            <img src="foto/kabelusb.jpg" alt="Kabel USB" class="img-komponen" onerror="this.src='https://via.placeholder.com/400x250?text=Foto+Kabel+USB'">
+            <h4>⚡ 7. Kabel USB (Max 3-5 Volt)</h4>
+            <p>Gunakan adapter listrik atau laptop dengan output maksimal 5 Volt. <strong>Dilarang keras menggunakan adapter <em>Fast Charging</em></strong> hp tipe baru (yang tegangannya bisa 9V-12V) karena dapat langsung membakar regulator tegangan pada ESP-32.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Muizz - Universitas Negeri Malang</p>
+</footer>
+
+<script>
+    // --- LOGIKA DARK MODE ---
+    const toggleBtn = document.getElementById("toggle-dark");
+    const body = document.body;
+    
+    // Opsional: Menyimpan preferensi dark mode di localStorage agar saat pindah dari LKPD ke halaman ini, temanya tidak berubah
+    if(localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        
+        if (body.classList.contains("dark-mode")) {
+            toggleBtn.textContent = "☀️";
+            localStorage.setItem('theme', 'dark');
+        } else {
+            toggleBtn.textContent = "🌙";
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
+
+</body>
+</html>
